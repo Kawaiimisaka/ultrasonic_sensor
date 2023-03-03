@@ -1,0 +1,156 @@
+module spi(
+input gclk,
+input rstn,
+input [15:0] spi_data_in,
+input tx_en,
+input miso,
+output reg sclk,
+output reg nss,
+output reg done,
+output reg [15:0] spi_data_out,
+output reg mosi,
+output reg [5:0]CNT,
+output reg WORK);
+
+
+//生成时钟
+reg [4:0] SCLK_CNT;
+reg [4:0] SCLK_FLAG=5'b100; 
+//线性序列机
+//reg [5:0] CNT;
+//reg WORK;
+//移位寄存器
+reg [15:0] DATA_SHIFT;
+//用于将done复位,根据时钟来调整DONG_CNT位数，CNT到达19前，DONG_CNT不能溢出
+reg [4:0]DONE_CNT;
+
+
+
+  
+//生成时钟
+//SCLK_CNT用于时钟分频
+always@(posedge gclk or negedge rstn)
+begin
+  if(~rstn)
+    SCLK_CNT <= 'b0;
+  else if(SCLK_CNT == SCLK_FLAG)
+    SCLK_CNT <= 'b0;
+  else
+    SCLK_CNT <= SCLK_CNT + 'b1;
+ 
+end
+	 
+always@(posedge gclk or negedge rstn)
+begin
+	if(~rstn)
+		sclk<= 'b0;
+	else if (SCLK_CNT == SCLK_FLAG) 
+		sclk <= ~sclk;
+end
+   
+	
+ //使能信号，在发送完每帧数据后拉高，开始发送先拉低,与WORK状态相反
+always@(posedge gclk or negedge rstn)
+   if(~rstn)
+	 nss <= 'b1; 
+	else if(WORK)
+    nss <= 'b0;
+	else
+	 nss <= 'b1;
+	 
+	
+
+	 
+//线性序列机，根据时序发送、接收数据
+//CNT+1说明完成一次发送接收
+always@(posedge sclk or negedge rstn)
+  if(~rstn)
+    CNT <= 'b0;
+  else if(WORK)
+    CNT <= CNT + 'b1;
+	else 
+		CNT<='b0;
+		
+always@(posedge gclk or negedge rstn)
+begin
+  if(~rstn)	
+		done<='b0;
+	else if (DONE_CNT==1)
+		done<='b1;
+	else if (DONE_CNT==2)
+		done<='b0;
+	else
+		done<='b0;
+
+end
+
+//done复位程序
+always@(posedge gclk or negedge rstn)
+begin
+  if(~rstn)	
+		DONE_CNT<='b0;
+		//根据时钟来调整DONG_CNT位数，CNT到达19前，DONG_CNT不能溢出
+	else if (CNT==18)
+		DONE_CNT<=DONE_CNT+'b1;
+	else
+		DONE_CNT<='b0;
+
+end
+
+
+
+//WORK控制程序		
+always@(posedge gclk or negedge rstn)
+begin
+  if(~rstn)	
+		WORK<='b0;
+	else if (CNT==18)
+		WORK<='b0;
+	else 
+		WORK<='b1;
+
+end		
+	
+//上升沿发送数据,下降沿接收数据
+always@(posedge sclk or negedge rstn)begin
+  if(~rstn)begin
+    DATA_SHIFT <= 'b0;
+//	 WORK <= 'b0;
+//	 done <=1'b0;
+	 spi_data_out<='b0;
+	 mosi <= 'bz;
+	end
+//  else if(~tx_en)begin
+//    DATA_SHIFT <= 'b0;
+////	 WORK <= 'b0;
+////	 done<=1'b0;
+//	 spi_data_out<='b0;
+//	 mosi <= 'bz;end
+  else if(WORK&&~done) 
+  begin
+    case(CNT)
+		0:begin 
+		  DATA_SHIFT <= spi_data_in; 
+//		  WORK <= 'b1;
+		  spi_data_out<='b0;
+		  mosi <= 'bz;end
+      1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16:begin 
+		  mosi <= DATA_SHIFT[15];
+		  DATA_SHIFT<={DATA_SHIFT[14:0],miso};end
+		17:begin
+		  mosi <= 'bz;
+//		  done<='b1; 
+//		  WORK<='b0;
+		  spi_data_out<=DATA_SHIFT;end
+      default : begin
+	     DATA_SHIFT <= 'b0;
+//        WORK <= 'b0; 
+        mosi <= 'bz;end 
+	   endcase
+	end
+end
+
+
+
+
+endmodule

@@ -1,0 +1,117 @@
+module main(
+input gclk,
+input rstn,
+input [15:0]spi_data_out,
+input done,
+input ct1,
+input out3,
+input out4,
+output reg [15:0]spi_data_in,
+output reg tuss_ready,
+output reg pulse_times=5,
+output reg ct);//发射脉冲次数
+
+//定义脉冲数
+`define PULSE_NUM 5'b10000
+//芯片配置数据
+reg [15:0] DATA_TO_SPI [9:0];
+//发送数据指示位
+reg [4:0]SPI_CNT;
+//芯片状态位
+reg [15:0] DATA_FROM_SPI;
+reg [1:0] DEV_STATE;
+//发射脉冲参数
+
+
+//三个错误标志位
+reg PULSE_NUM_FLT,DRV_PULSE_FLT,EE_CRC_FLT;
+////检测物体标志位
+//reg FINISH;
+
+
+
+//芯片配置初始化
+initial begin
+DATA_TO_SPI[0]<=16'b1_010000_0_00100101;//0x10,0x25
+DATA_TO_SPI[1]<=16'b1_010001_1_00000000;//0x11,0x00
+DATA_TO_SPI[2]<=16'b1_010010_0_10110011;//0x12,0xB3
+DATA_TO_SPI[3]<=16'b1_010011_1_00000010;//0x13,0x02
+DATA_TO_SPI[4]<=16'b1_010100_1_00000001;//0x14,0x01，设置为IO_MODE1
+DATA_TO_SPI[5]<=16'b1_010110_0_00001111;//0x16,0x0F
+DATA_TO_SPI[6]<=16'b1_010111_1_00011000;//0x17,0x18
+DATA_TO_SPI[7]<=16'b1_011000_1_11010100;//0x18,0xD4
+DATA_TO_SPI[8]<={11'b1_011010_1_000,`PULSE_NUM};//0x1A,0x08,前五位为脉冲数
+DATA_TO_SPI[9]<=16'b1_011011_1_00000000;//0x1B,0x00,进入listen模式
+end
+//向spi发送接收信息
+always @(posedge gclk or negedge rstn)
+begin
+	if(~rstn)
+		spi_data_in<=16'b0;
+	case(SPI_CNT)
+		0:begin
+			spi_data_in<=DATA_TO_SPI[0];
+			DATA_FROM_SPI<=spi_data_in;end
+		1:begin
+			spi_data_in<=DATA_TO_SPI[1];
+			DATA_FROM_SPI<=spi_data_in;end
+		2:begin
+			spi_data_in<=DATA_TO_SPI[2];
+			DATA_FROM_SPI<=spi_data_in;end
+		3:begin
+			spi_data_in<=DATA_TO_SPI[3];
+			DATA_FROM_SPI<=spi_data_in;end
+		4:begin
+			spi_data_in<=DATA_TO_SPI[4];
+			DATA_FROM_SPI<=spi_data_in;end
+		5:begin
+			spi_data_in<=DATA_TO_SPI[5];
+			DATA_FROM_SPI<=spi_data_in;end
+		6:begin
+			spi_data_in<=DATA_TO_SPI[6];
+			DATA_FROM_SPI<=spi_data_in;end
+		7:begin
+			spi_data_in<=DATA_TO_SPI[7];
+			DATA_FROM_SPI<=spi_data_in;end
+		8:begin
+			spi_data_in<=DATA_TO_SPI[8];
+			DATA_FROM_SPI<=spi_data_in;end
+		9:begin
+			spi_data_in<=DATA_TO_SPI[9];
+			DATA_FROM_SPI<=spi_data_in;end
+		default:begin
+			spi_data_in<=16'bz;end
+		endcase
+end
+
+//发送接收信息标志位
+always @(posedge gclk or negedge rstn)
+begin
+	if(~rstn)
+		SPI_CNT<='b0;
+	else if(done)
+		SPI_CNT<=SPI_CNT+1'b1;
+		
+end
+
+//判断接收到的信息
+always @(posedge gclk or negedge rstn)
+begin
+	if(~rstn)
+		tuss_ready<='b0;
+	else if((DATA_FROM_SPI[14]==1)&&DATA_FROM_SPI[10:9]==01)
+		tuss_ready<='b1;
+end
+		
+endmodule
+//芯片配置
+	//从SPI模块收发数据        								ps：每帧数据发送前tx_en都要先拉低再拉高；弄清各个寄存器的配置值，SPI各位的值
+	//根据从SPI模块返回的信息判断芯片是否准备就绪 		ps：VDRV电压以及芯片的模式
+
+
+//物体检测
+	//在芯片准备就绪后io1/io2控制产生脉冲 					ps:通过SPI的2、3、4位检测错误，如果检测到错误则重新发送
+	//根据OUT3,OUT4返回的信息判断本次是否检测到物体  	ps:OUT3作用在于增加稳定性
+	//确认检测到物体后，通过CT控制LED灯亮					ps:检测逻辑 
+	//亮灯反馈信号CT1进行计数
+
