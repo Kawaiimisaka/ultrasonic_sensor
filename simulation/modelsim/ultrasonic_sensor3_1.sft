@@ -1,4 +1,0 @@
-set tool_name "ModelSim (Verilog)"
-set corner_file_list {
-    {{"Slow Model"} {ultrasonic_sensor3_1.vo ultrasonic_sensor3_1_v.sdo}}
-}
