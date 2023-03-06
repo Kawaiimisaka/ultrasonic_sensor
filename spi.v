@@ -5,7 +5,7 @@ input miso,
 output reg sclk,
 output reg nss,
 output reg mosi,
-output reg spi_data_out);
+output reg tuss_ready);
 
 
 //生成时钟
@@ -16,9 +16,11 @@ reg done;
 reg [5:0] CNT;
 reg WORK;
 	//发送数据缓存
-reg [15:0]DATA_BUF;
+reg [15:0]DATA_IN_BUF;
+	//接收数据缓存
+reg [15:0]DATA_OUT_BUF;
 	//发送帧数标志位
-reg [5:0]SPI_CNT;
+reg [19:0]SPI_CNT;
 	//移位寄存器
 reg [15:0] DATA_SHIFT;
 //用于将done复位,根据时钟来调整DONG_CNT位数，CNT到达19前，DONG_CNT不能溢出
@@ -28,48 +30,50 @@ reg [4:0]DONE_CNT;
 //芯片配置数据
 reg [15:0]DATA_TO_TUSS;
 //脉冲数
-`define PULSE_NUM 5'b01010
+`define PULSE_NUM 5'b00101
+
+
 	//向TUSS发送接收信息
 always @(posedge gclk or negedge rstn)
 begin
 	if(~rstn)
-		DATA_BUF=16'b0;
+		DATA_IN_BUF=16'b0;
 	case(SPI_CNT)
 		0:begin
-			DATA_BUF<=16'b1_010000_0_00100101;//0x10,0x25;
+			DATA_IN_BUF<=16'b1_010000_0_00100101;//0x10,0x25;
 			end
 		1:begin
-			DATA_BUF<=16'b1_010001_1_00000000;//0x11,0x00
+			DATA_IN_BUF<=16'b1_010001_1_00000000;//0x11,0x00
 			end
 	
 		2:begin
-			DATA_BUF<=16'b1_010010_0_10110011;//0x12,0xB3
+			DATA_IN_BUF<=16'b1_010010_0_10110011;//0x12,0xB3
 			end
 
 		3:begin
-			DATA_BUF<=16'b1_010011_1_00000010;//0x13,0x02
+			DATA_IN_BUF<=16'b1_010011_1_00000010;//0x13,0x02
 			end
 
 		4:begin
-			DATA_BUF<=16'b1_010100_1_00000001;//0x14,0x01，设置为IO_MODE1
+			DATA_IN_BUF<=16'b1_010100_1_00000001;//0x14,0x01，设置为IO_MODE1
 			end
 		5:begin
-			DATA_BUF<=16'b1_010110_0_00001111;//0x16,0x0F
+			DATA_IN_BUF<=16'b1_010110_0_00001111;//0x16,0x0F
 			end
 		6:begin
-			DATA_BUF<=16'b1_010111_1_00011000;//0x17,0x18
+			DATA_IN_BUF<=16'b1_010111_1_00011000;//0x17,0x18
 			end
 		7:begin
-			DATA_BUF<=16'b1_011000_1_11010100;//0x18,0xD4
+			DATA_IN_BUF<=16'b1_011000_1_11010100;//0x18,0xD4
 			end
 		8:begin
-			DATA_BUF<={11'b1_011010_1_000,`PULSE_NUM};//0x1A,0x08,前五位为脉冲数
+			DATA_IN_BUF<={11'b1_011010_1_000,`PULSE_NUM};//0x1A,0x08,前五位为脉冲数
 			end
 		9:begin
-			DATA_BUF<=16'b1_011011_1_00000000;//0x1B,0x00,进入listen模式
+			DATA_IN_BUF<=16'b1_011011_1_00000000;//0x1B,0x00,进入listen模式
 			end
 	default:begin
-		DATA_BUF<=16'b0;end
+		DATA_IN_BUF<=16'b0;end
 	endcase
 end
 
@@ -84,7 +88,14 @@ begin
 		
 end
 
-
+//判断TUSS返回的信息
+always @(posedge gclk or negedge rstn)
+begin
+	if(~rstn)
+		tuss_ready<='b0;
+	else if((DATA_OUT_BUF[14]=='b1)&&DATA_OUT_BUF[10:9]=='b11)
+		tuss_ready<='b1;
+end
 
   
 //生成时钟
@@ -131,7 +142,8 @@ always@(posedge sclk or negedge rstn)
     CNT <= CNT + 'b1;
 	else 
 		CNT<='b0;
-		
+	
+//发出一个脉宽的done信号	
 always@(posedge gclk or negedge rstn)
 begin
   if(~rstn)	
@@ -145,7 +157,7 @@ begin
 
 end
 
-//done复位程序
+//done复位程序，解决sclk与gclk之间的逻辑问题
 always@(posedge gclk or negedge rstn)
 begin
   if(~rstn)	
@@ -177,7 +189,7 @@ end
 always@(posedge sclk or negedge rstn)begin
   if(~rstn)begin
     DATA_SHIFT <= 'b0;
-	 spi_data_out<='b0;
+	 DATA_OUT_BUF<='b0;
 	 mosi <= 'bz;
 	end
 
@@ -185,15 +197,15 @@ always@(posedge sclk or negedge rstn)begin
   begin
     case(CNT)
 		0:begin 
-		  DATA_SHIFT <= DATA_BUF; 
-		  spi_data_out<='b0;
+		  DATA_SHIFT <= DATA_IN_BUF; 
+		  DATA_OUT_BUF<='b0;
 		  mosi <= 'bz;end
       1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16:begin 
 		  mosi <= DATA_SHIFT[15];
 		  DATA_SHIFT<={DATA_SHIFT[14:0],miso};end
 		17:begin
 		  mosi <= 'bz;
-		  spi_data_out<=DATA_SHIFT;end
+		  DATA_OUT_BUF<=DATA_SHIFT;end
       default : begin
 	     DATA_SHIFT <= 'b0;
         mosi <= 'bz;end 

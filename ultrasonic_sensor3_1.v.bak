@@ -1,4 +1,6 @@
-module ultrasonic_sensor3_1(
+module ultrasonic_sensor3_1
+//修改端口后记得例化！！！
+(
 input out3,
 input out4,
 input ct1,
@@ -15,23 +17,28 @@ output io2);
 main m1(
 .gclk (gclk),
 .rstn (rstn),
-.spi_data_out (spi_data_out),
 .burst_en (burst_en),
+.burst_rstn(burst_rstn),
+.burst_finish(burst_finish),
+.tuss_ready(tuss_ready),
+.detect_en(detect_en),
+.detected(detected),
+.ndetected(ndetected)
+
 //.ct (ct),
 //.ct1 (ct1),
-//.out3 (out3),
-//.out4 (out4)
+
 
 );
 
 spi m2(
 .gclk (gclk),
 .rstn (rstn),
-.spi_data_out (spi_data_out),
+.tuss_ready(tuss_ready),
 .mosi (mosi),
 .miso (miso),
 .sclk (sclk),
-.nss (nss)
+.nss (nss),
 );
 
 
@@ -40,8 +47,21 @@ pulse_generation m3(
 .gclk (gclk),
 .rstn (rstn),
 .burst_en (burst_en),
+.burst_finish(burst_finish),
+.burst_rstn(burst_rstn),
 .io1 (io1),
 .io2 (io2)
+);
+
+
+
+detected m4(
+.out3(out3),
+.out4(out4),
+.detect_en(detect_en),
+.detected(detected),
+.ndetected(ndetected)
+
 );
 
 

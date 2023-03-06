@@ -1,0 +1,11 @@
+module detection(
+input gclk,
+input rstn,
+output reg detected);
+
+initial begin
+detected =1;
+end
+
+
+endmodule

@@ -1,8 +1,8 @@
 module ultrasonic_sensor3_1
-
+//修改端口后记得例化！！！
 (
-input out3,
-input out4,
+input out_3,
+input out_4,
 input ct1,
 input gclk,
 input rstn,
@@ -17,19 +17,23 @@ output io2);
 main m1(
 .gclk (gclk),
 .rstn (rstn),
-.spi_data_out (spi_data_out),
-.burst_en (burst_en)
-//.ct (ct),
-//.ct1 (ct1),
-//.out3 (out3),
-//.out4 (out4)
+.burst_en (burst_en),
+.burst_rstn(burst_rstn),
+.burst_finish(burst_finish),
+.tuss_ready(tuss_ready),
+.out_3(out_3),
+.out_4(oout_4),
+//.detect_en(detect_en),
+//.detected(detected),
+.ct (ct),
+.ct1 (ct1)
 
 );
 
 spi m2(
 .gclk (gclk),
 .rstn (rstn),
-.spi_data_out (spi_data_out),
+.tuss_ready(tuss_ready),
 .mosi (mosi),
 .miso (miso),
 .sclk (sclk),
@@ -42,9 +46,22 @@ pulse_generation m3(
 .gclk (gclk),
 .rstn (rstn),
 .burst_en (burst_en),
+.burst_finish(burst_finish),
+.burst_rstn(burst_rstn),
 .io1 (io1),
 .io2 (io2)
 );
+
+
+
+//detection m4(
+//.gclk(gclk),
+//.rstn(rstn),
+//.out_3(out_3),
+//.out_4(out_4),
+//.detect_en(detect_en),
+//.detected(detected)
+//);
 
 
 
@@ -56,7 +73,7 @@ pulse_generation m3(
 
 //物体检测
 	//在芯片准备就绪后io1/io2控制产生脉冲 					ps:通过SPI的2、3、4位检测错误，如果检测到错误则重新发送
-	//根据OUT3,OUT4返回的信息判断本次是否检测到物体  	ps:OUT3作用在于增加稳定性
+	//根据out_3,out_4返回的信息判断本次是否检测到物体  	ps:out_3作用在于增加稳定性
 	//确认检测到物体后，通过CT控制LED灯亮					ps:检测逻辑 
 	//亮灯反馈信号CT1进行计数
 

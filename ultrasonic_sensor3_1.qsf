@@ -59,5 +59,7 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH ultrasonic_sens
 set_global_assignment -name EDA_TEST_BENCH_NAME ultrasonic_sensor3_1_vlg_tst -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ultrasonic_sensor3_1_vlg_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ultrasonic_sensor3_1_vlg_tst -section_id ultrasonic_sensor3_1_vlg_tst
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/ultrasonic_sensor3_1.vt -section_id ultrasonic_sensor3_1_vlg_tst
 set_global_assignment -name VERILOG_FILE pulse_generation.v
+set_global_assignment -name VERILOG_FILE detected.v
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/ultrasonic_sensor3_1.vt -section_id ultrasonic_sensor3_1_vlg_tst
+set_global_assignment -name VERILOG_FILE detection.v

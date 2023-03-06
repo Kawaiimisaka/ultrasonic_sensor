@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Mar 06 14:27:32 2023
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : ultrasonic_sensor3_1
+Top-level Entity Name : ultrasonic_sensor3_1
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 103 / 240 ( 43 % )
+Total pins : 12 / 80 ( 15 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
