@@ -1,0 +1,44 @@
+% -*- coding=utf-8 -*-
+% main.tex
+\documentclass[UTF8, a4paper]{ctexart}
+\usepackage{titlesec}
+\newfontfamily\sectionef{Arial}										% 设置Arial字体		
+% \newCJKfontfamily\sectioncf{STXihei}								% 设置黑体
+\titleformat{\section}{\center\zihao{-3}\heiti\sectionef}{			% 设置一级标题居中，中文字体为黑体，英文字体为Arial，字号为小三号
+	第\,\thesection\,章}{1em}{}
+\titleformat*{\subsection}{\zihao{4}\heiti\sectionef}				% 设置二级标题中文字体为黑体，英文字体为Arial字号为四号
+\usepackage{geometry}												
+\geometry{left=3.2cm,right=3.2cm,top=3.8cm,bottom=3.8cm}			% 设置页边距
+\usepackage[bookmarks=true,colorlinks,linkcolor=black,
+citecolor=black]{hyperref}											% 设置超链接
+\usepackage{graphicx}
+\usepackage[superscript]{cite}										% 引入参考文献格式包
+\bibliographystyle{mybst}											% 参考文献格式采用自制的mybst
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{
+			\citeleft}\cite{#1}\textsuperscript{\citeright}}}					% 设置参考文献序号格式
+\usepackage{setspace}
+\usepackage{fancyhdr}												% 设置页眉
+\pagestyle{fancy}	
+\fancyhf{}															
+\cfoot{\thepage}													% 设置页码
+% \CTEXsetup[name = {第,章}]{section}								% 设置章节格式
+\begin{document}
+	\include{cover}													% 封面
+	\include{abstract_cn}											% 中文摘要
+	\include{abstract_en}											% 英文摘要
+	\fancyhead[C]{\leftmark}										% 设置页眉内容为章标题
+	\include{contents}												% 目录
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	\renewcommand{\sectionmark}[1]{\markboth{第\thesection 章\quad 	% 设置页眉内容为章标题
+			\ #1}{}}
+	\markboth{leftmark}{rightmark}
+	%------------------以下部分可写成一个文件然后以章节形式导入---------------------------
+	\section{引\texorpdfstring{\quad}{} 言}							% 将\quad替换为“ ”在书签中显示
+	\subsection{课题的目的和意义}
+	核辐射开始放假\upcite{1,2,3}
+	\newpage
+	\section{Arial Unicode MS}
+	%----------------------------------------------------------------------------------------------------------
+	\include{conclusion_reference_thanks}
+\end{document}
