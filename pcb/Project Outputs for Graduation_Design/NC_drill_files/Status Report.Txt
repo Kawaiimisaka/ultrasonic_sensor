@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Graduation_Design.PrjPcb]
+   Generated File[超声波接近电路2-22PcbDoc.TXT]
+   Generated File[超声波接近电路2-22PcbDoc.LDP]
+   Generated File[超声波接近电路2-22PcbDoc.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 20:52:30 On 2023/3/7

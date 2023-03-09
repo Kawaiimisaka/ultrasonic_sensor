@@ -1,3 +1,9 @@
+\ttl@change@i {\@ne }{section}{0cm}{\heiti \zihao {-4}}{\contentslabel {1em}}{}{\titlerule *[0.5pc]{$\cdot $}\contentspage \hspace *{1cm}}\relax 
+\ttl@change@v {section}{}{}{}\relax 
+\ttl@change@i {\@ne }{subsection}{1cm}{\songti \zihao {-4}}{\contentslabel {2.5em}}{}{\titlerule *[0.5pc]{$\cdot $}\contentspage \hspace *{1cm}}\relax 
+\ttl@change@v {subsection}{}{}{}\relax 
+\ttl@change@i {\@ne }{subsubsection}{2cm}{\songti \zihao {-4}}{\contentslabel {2.5em}}{}{\titlerule *[0.5pc]{$\cdot $}\contentspage \hspace *{1cm}}\relax 
+\ttl@change@v {subsubsection}{}{}{}\relax 
 \contentsline {section}{\numberline {1}绪\hskip 1em\relax 论}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}研究背景}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}研究目的与意义}{1}{subsection.1.2}%
@@ -13,3 +19,7 @@
 \contentsline {subsection}{\numberline {4.2}传感器程序设计}{4}{subsection.4.2}%
 \contentsline {section}{\numberline {5}实验与结果分析}{5}{section.5}%
 \contentsline {section}{\numberline {6}结论与建议}{6}{section.6}%
+\contentsline {section}{结论}{7}{section.6}%
+\contentsline {section}{参考文献}{8}{section*.2}%
+\contentsline {section}{致谢}{9}{section*.3}%
+\contentsfinish 
