@@ -40,40 +40,6 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=Graduation_Design.OutJob
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document2]
-DocumentPath=C:\Users\GGGGGoat\Desktop\毕业设计\板子\超声波接近电路2-22.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=0
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=ZXYXMBCK
-
-[Document3]
 DocumentPath=超声波接近电路.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -90,7 +56,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YHRDHYUK
 
-[Document4]
+[Document2]
 DocumentPath=Graduation_Design.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -107,8 +73,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BLSLOIQY
 
-[Document5]
-DocumentPath=超声波接近电路2-22PcbDoc.PcbDoc
+[Document3]
+DocumentPath=..\..\..\AD Project\Graduation_Design\超声波接近电路3-21PcbDoc.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -123,6 +89,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=EFOEQBSI
+
+[Document4]
+DocumentPath=超声波接近电路3-21.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ZXYXMBCK
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Graduation_Design\Design Rule Check - 超声波接近电路2-22PcbDoc.html

@@ -1,0 +1,109 @@
+% -*- coding=utf-8 -*-
+% main.tex
+\documentclass[UTF8, a4paper]{ctexart}
+
+
+\usepackage{ctex,algorithm,amsmath}
+\usepackage{titlesec}
+\usepackage{titletoc}
+									
+%设置times new roman字体
+\usepackage{fontspec}
+\newfontfamily\enfont{Times New Roman}
+%设置主要字体
+% \setmainfont{\songti\zihao{-4}}
+
+
+% 设置一级标题居中，中文字体为黑体，tnr，字号为三号
+\titleformat{\section} {\bfseries\center\zihao{3}\heiti\enfont}{			
+	第\,\thesection\,章}{1em}{}
+
+% 设置二级标题中文字体为黑体，英文字体为times new roman
+\titleformat*{\subsection}{\bfseries\zihao{-4}\heiti\enfont}		
+
+%设置三级标题为小四号黑体
+\titleformat*{\subsubsection}{\zihao{-4}\heiti\enfont}	
+
+
+
+
+% 设置页边距
+\usepackage{geometry}												
+\geometry{left=3cm,right=2cm,top=3cm,bottom=2.5cm}	
+%修改行距为1.5
+\linespread{1.5}
+
+% 使用indentfirst宏包设置首行缩进距离
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+% 设置超链接
+\usepackage[bookmarks=true,colorlinks,linkcolor=black,
+citecolor=black]{hyperref}
+
+% 引入参考文献格式包
+\usepackage[superscript]{cite}	
+\usepackage{gbt7714}
+\bibliographystyle{gbt7714-numerical}				
+% 设置参考文献序号格式
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}					
+% 设置页眉页脚
+\usepackage{fancyhdr}
+\fancypagestyle{myfancy}{
+	%页眉
+	\fancyhf{}
+	\fancyhead{}
+	%页脚
+	\fancyfoot[R]{\enfont\zihao{-5}{\thepage}}
+}
+\pagestyle{myfancy}	
+
+%插入图片宏包
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+%图片对齐
+\usepackage[export]{adjustbox}
+	
+%表格单元格内换行
+\usepackage{makecell}
+%设置表格标题格式
+\captionsetup[table]{labelfont=bf,textfont=bf}
+
+% 插入代码
+\usepackage{listings}
+
+%正文
+\begin{document}
+    % 封面
+	\include{cover}			
+    % 中文摘要
+	\include{abstract_cn}	
+    % 英文摘要
+	\include{abstract_en}
+		
+    % 设置页眉内容为章标题
+	\fancyhead[C]{\leftmark}	
+    % 目录
+	\include{contents}
+						
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+    % 设置页眉内容为章标题
+	\renewcommand{\sectionmark}[1]{\markboth{第\thesection 章\quad 
+			\ #1}{}}
+ 
+    %------------------第一章---------------------------
+    \include{第一章}
+    %------------------第二章---------------------------
+    \include{第二章}
+    %------------------第三章---------------------------
+    \include{第三章}
+    %------------------第四章---------------------------
+    \include{第四章}
+    %------------------第五章---------------------------
+    \include{第五章}
+    %------------------第六章---------------------------
+    \newpage
+	\section{结论与建议}
+	\include{conclusion_reference_thanks}
+\end{document}

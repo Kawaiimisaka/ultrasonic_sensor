@@ -1,12 +1,12 @@
 % contents.tex
 
-\thispagestyle{empty}
+
 
 % 自定义目录标题格式
 % contents.tex
 \phantomsection													% 解决目录中超链接地址问题
 % 自定义目录标题格式
-\renewcommand{\contentsname}{\textbf{\heiti\zihao{3}{目录}}}	
+\renewcommand{\contentsname}{\bfseries\heiti\zihao{3}{目录}}	
 
 
 %调整目录格式
@@ -21,23 +21,24 @@
 \titlecontents{subsection}
 [1cm]
 {\songti\zihao{-4}}%
-{\contentslabel{2.5em}}%
+{\contentslabel{2em}}%
 {}%
 {\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{1cm}}%
 
 \titlecontents{subsubsection}
 [2cm]
 {\songti\zihao{-4}}%
-{\contentslabel{2.5em}}%
+{\contentslabel{3em}}%
 {}%
 {\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{1cm}}%
 
 
 
-
-
+% 显示目录，前后pagestyle设置为空，可设置多页目录的格式
 \begin{center}
-	\tableofcontents											% 显示目录
+    \thispagestyle{empty}
+	\tableofcontents
+	\thispagestyle{empty}
 \end{center}
 
 
