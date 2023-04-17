@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  17 APR 2023 17:31
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  17 APR 2023 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,7 +1147,8 @@ LaTeX Warning: Label `芯片状态表' multiply defined.
 
 LaTeX Warning: Label `芯片状态表' multiply defined.
 
-) (chapter/第六章.aux) (chapter/conclusion.aux) (chapter/thank.aux))
+) (chapter/第六章.aux) (chapter/conclusion.aux) (chapter/analyze2.aux)
+(chapter/thank.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -1422,46 +1423,44 @@ Underfull \vbox (badness 10000) detected at line 40
 
 
 
-])
+] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [2]
+ [3]
 \openout2 = `chapter/第一章.aux'.
 
  (chapter/第一章.tex
 LaTeX Font Info:    Trying to load font information for TU+Times New Roman on i
-nput line 18.
-LaTeX Font Info:    No file TUTimes New Roman.fd. on input line 18.
+nput line 20.
+LaTeX Font Info:    No file TUTimes New Roman.fd. on input line 20.
 
 
 LaTeX Font Warning: Font shape `TU/Times New Roman/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 18.
+(Font)              using `TU/lmr/m/n' instead on input line 20.
 
 [1
 
 
 
-]) [2]
+] [2]) [3]
 \openout2 = `chapter/第二章.aux'.
 
  (chapter/第二章.tex
-File: figure/physical map.png Graphic file (type bmp)
-<figure/physical map.png>
- [3
+File: figure/overall designment.png Graphic file (type bmp)
+<figure/overall designment.png>
+ [4
 
 
 
 
-]) [4]
+]) [5]
 \openout2 = `chapter/第三章.aux'.
 
  (chapter/第三章.tex
 File: figure/Overall circuit.png Graphic file (type bmp)
 <figure/Overall circuit.png>
-File: figure/Power circuit.png Graphic file (type bmp)
-<figure/Power circuit.png>
- [5
+ [6
 
 
 
@@ -1469,15 +1468,9 @@ File: figure/Power circuit.png Graphic file (type bmp)
 ]
 File: figure/JTAG download circuit.png Graphic file (type bmp)
 <figure/JTAG download circuit.png>
- [6]
 File: figure/detection count circuit.png Graphic file (type bmp)
 <figure/detection count circuit.png>
-File: figure/clock circuit.png Graphic file (type bmp)
-<figure/clock circuit.png>
- [7]
-File: figure/reset circuit.png Graphic file (type bmp)
-<figure/reset circuit.png>
- [8]
+ [7] [8]
 File: figure/Function Block Diagram.png Graphic file (type bmp)
 <figure/Function Block Diagram.png>
  [9]
@@ -1486,55 +1479,37 @@ File: figure/Analog Front-End Block Diagram.png Graphic file (type bmp)
 File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
 <figure/TUSS4470 peripheral circuit.png>
 
-Overfull \hbox (11.52994pt too wide) in paragraph at lines 104--118
-[]\TU/SimSun(0)/m/n/12.045 回 波 接 收 模 块 的 详 细 工 作 框 图 如 图[][]\TU/TimesNewRoman(0
-)/m/n/12.045 3.8[][]\TU/SimSun(0)/m/n/12.045 所 示。| 参 考 芯 片 手 册 相 关 内 容，|  进 行 了
- \TU/TimesNewRoman(0)/m/n/12.045 TUSS4470
- []
-
-File: figure/vout pin.png Graphic file (type bmp)
-<figure/vout pin.png>
 [10]
-File: figure/vout pin.png Graphic file (type bmp)
-<figure/vout pin.png>
-File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
-<figure/TUSS4470 peripheral circuit.png>
+File: figure/VPWR PIN.png Graphic file (type bmp)
+<figure/VPWR PIN.png>
  [11]
 File: figure/TUSS4470 Transducer Drive Options.png Graphic file (type bmp)
 <figure/TUSS4470 Transducer Drive Options.png>
-
-Overfull \hbox (14.3785pt too wide) in paragraph at lines 153--154
- [][] 
- []
-
-File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
-<figure/TUSS4470 peripheral circuit.png>
-File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
-<figure/TUSS4470 peripheral circuit.png>
-[12]
-File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
-<figure/TUSS4470 peripheral circuit.png>
+File: figure/OUTA PIN.png Graphic file (type bmp)
+<figure/OUTA PIN.png>
+File: figure/seperate ground.png Graphic file (type bmp)
+<figure/seperate ground.png>
+ [12]
+File: figure/overall pcb.png Graphic file (type bmp)
+<figure/overall pcb.png>
 File: figure/overall pcb.png Graphic file (type bmp)
 <figure/overall pcb.png>
  [13]
-File: figure/overall pcb.png Graphic file (type bmp)
-<figure/overall pcb.png>
- [14]
 File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
 <figure/TUSS4470 peripheral circuit.png>
- [15]) [16]
+ [14]) [15]
 \openout2 = `chapter/第四章.aux'.
 
  (chapter/第四章.tex
 File: figure/VOUT image.png Graphic file (type bmp)
 <figure/VOUT image.png>
- [17
+ [16
 
 
 
 
 ]
-Overfull \hbox (4.1616pt too wide) in paragraph at lines 36--36
+Overfull \hbox (4.1616pt too wide) in paragraph at lines 32--32
 \TU/SimSun(0)/m/n/12.045 灯 亮\TU/TimesNewRoman(0)/m/n/12.045 ; \TU/SimSun(0)/m/n
 /12.045 有 效 脉 冲 波 的 次 数 小 于 或 等 于 三 次 时，|  判 断 为 未 检 测 到 物 体，| \TU/TimesNewRoma
 n(0)/m/n/12.045 DETECTED_STATE=0, 
@@ -1544,25 +1519,25 @@ File: figure/Overall program block diagram.png Graphic file (type bmp)
 <figure/Overall program block diagram.png>
 File: figure/LED state transition diagram.png Graphic file (type bmp)
 <figure/LED state transition diagram.png>
-[18]
+[17]
 File: figure/Overall program block diagram.png Graphic file (type bmp)
 <figure/Overall program block diagram.png>
- [19]
+ [18]
 File: figure/MAIN module flow chart.png Graphic file (type bmp)
 <figure/MAIN module flow chart.png>
 
-Overfull \hbox (7.2572pt too wide) in paragraph at lines 86--87
+Overfull \hbox (7.2572pt too wide) in paragraph at lines 82--83
 \TU/TimesNewRoman(0)/m/n/12.045 MAIN \TU/SimSun(0)/m/n/12.045 模 块 发 出 \TU/Times
 NewRoman(0)/m/n/12.045 burst_finish \TU/SimSun(0)/m/n/12.045 脉 冲 发 射 完 成 信 号，| 
  此 时 \TU/TimesNewRoman(0)/m/n/12.045 MAIN \TU/SimSun(0)/m/n/12.045 模 块 将 \TU/Ti
 mesNewRoman(0)/m/n/12.045 PULSE_GENERATION
  []
 
-[20]
+[19]
 File: figure/DATA_SHIFT.png Graphic file (type bmp)
 <figure/DATA_SHIFT.png>
- [21]
-Overfull \hbox (18.19157pt too wide) in paragraph at lines 116--117
+ [20]
+Overfull \hbox (18.19157pt too wide) in paragraph at lines 112--113
 []\TU/SimSun(0)/m/n/12.045 当 复 位 时，|  对 \TU/TimesNewRoman(0)/m/n/12.045 DATA_SH
 IFT \TU/SimSun(0)/m/n/12.045 寄 存 器 进 行 初 始 化；|  当 计 数 器 \TU/TimesNewRoman(0)/m/
 n/12.045 CNT \TU/SimSun(0)/m/n/12.045 为 \TU/TimesNewRoman(0)/m/n/12.045 0 \TU/S
@@ -1571,32 +1546,32 @@ imSun(0)/m/n/12.045 时，|  将 \TU/TimesNewRoman(0)/m/n/12.045 DATA_IN_BUF
 
 File: figure/SPI Program Flow Chart.png Graphic file (type bmp)
 <figure/SPI Program Flow Chart.png>
-[22]
+[21]
 File: figure/SPI Frame.png Graphic file (type bmp)
 <figure/SPI Frame.png>
 File: figure/SPI Transfer Sequence.png Graphic file (type bmp)
 <figure/SPI Transfer Sequence.png>
- [23] [24] [25]
+ [22] [23] [24]
 File: figure/IO MODE1.png Graphic file (type bmp)
 <figure/IO MODE1.png>
 File: figure/single pulse control.png Graphic file (type bmp)
 <figure/single pulse control.png>
 File: figure/1.jpg Graphic file (type bmp)
 <figure/1.jpg>
- [26]
+ [25]
 
 Package caption Warning: \label without proper reference on input line 271.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `检测计数模块流程图' on page 27 undefined on input line 274.
+LaTeX Warning: Reference `检测计数模块流程图' on page 26 undefined on input line 270.
 
-[27] [28]
+[26] [27]
 File: figure/TESTBENCH structure.png Graphic file (type bmp)
 <figure/TESTBENCH structure.png>
 File: figure/wave simulation.png Graphic file (type bmp)
 <figure/wave simulation.png>
- [29]) [30]
+ [28]) [29]
 \openout2 = `chapter/第五章.aux'.
 
  (chapter/第五章.tex
@@ -1604,7 +1579,7 @@ File: figure/physical map.png Graphic file (type bmp)
 <figure/physical map.png>
 File: figure/debug waveform1.png Graphic file (type bmp)
 <figure/debug waveform1.png>
- [31
+ [30
 
 
 
@@ -1618,7 +1593,7 @@ File: figure/debug waveform3.png Graphic file (type bmp)
 <figure/debug waveform3.png>
 
 
-LaTeX Warning: Reference `超声探头波形图' on page 32 undefined on input line 46.
+LaTeX Warning: Reference `超声探头波形图' on page 31 undefined on input line 46.
 
 File: figure/debug waveform4.png Graphic file (type bmp)
 <figure/debug waveform4.png>
@@ -1630,25 +1605,64 @@ File: figure/debug waveform7.png Graphic file (type bmp)
 <figure/debug waveform7.png>
 File: figure/debug wave form8.png Graphic file (type bmp)
 <figure/debug wave form8.png>
-[32] [33] [34] [35]) [36]
+[31] [32] [33] [34]) [35]
 \openout2 = `chapter/第六章.aux'.
 
- (chapter/第六章.tex) [37
+ (chapter/第六章.tex) [36
 
 
 
 
-] [38]
+] [37]
 \openout2 = `chapter/conclusion.aux'.
 
  (chapter/conclusion.tex)
-[39
+[38
 
 
 
 
 
-] (main.bbl) [40
+]
+\openout2 = `chapter/analyze2.aux'.
+
+ (chapter/analyze2.tex
+
+Package natbib Warning: Citation `刘国钧1979图书馆史研究' on page 39 undefined on input 
+line 3.
+
+
+Package natbib Warning: Citation `张和生1998地质力学系统理论' on page 39 undefined on inpu
+t line 6.
+
+
+Package natbib Warning: Citation `1988汉语拼音正词法基本规则' on page 39 undefined on inpu
+t line 6.
+
+
+Package natbib Warning: Citation `情感工学破解"舒服"之迷' on page 39 undefined on input l
+ine 6.
+
+
+Package natbib Warning: Citation `王明亮1998关于中国学术期刊标准化数据库系统工程的进展' on page 39 unde
+fined on input line 6.
+
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+) [39
+
+
+
+
+] [40] [41] (main.bbl) [42
 
 
 
@@ -1656,13 +1670,18 @@ File: figure/debug wave form8.png Graphic file (type bmp)
 ]
 \openout2 = `chapter/thank.aux'.
 
- (chapter/thank.tex) [41
+ (chapter/thank.tex) [43
 
 
 
-] (main.aux (chapter/ZhAbstract.aux) (chapter/EnAbstract.aux) (chapter/第一章.aux)
- (chapter/第二章.aux) (chapter/第三章.aux) (chapter/第四章.aux) (chapter/第五章.aux) (chapt
-er/第六章.aux) (chapter/conclusion.aux) (chapter/thank.aux))
+]
+
+Package natbib Warning: There were undefined citations.
+
+(main.aux (chapter/ZhAbstract.aux) (chapter/EnAbstract.aux) (chapter/第一章.aux)
+(chapter/第二章.aux) (chapter/第三章.aux) (chapter/第四章.aux) (chapter/第五章.aux)
+(chapter/第六章.aux) (chapter/conclusion.aux) (chapter/analyze2.aux)
+(chapter/thank.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1673,15 +1692,15 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0C47654082712EB9E43E37D550D5E468;7072.
+(rerunfilecheck)             Checksum: B931DBCBA538E69BBF08A773FC7709F5;8013.
  ) 
 Here is how much of TeX's memory you used:
- 44613 strings out of 410532
- 1078683 string characters out of 2820404
- 1520163 words of memory out of 3000000
- 64993 multiletter control sequences out of 15000+600000
- 489660 words of font info for 155 fonts, out of 8000000 for 9000
+ 44829 strings out of 410532
+ 1090266 string characters out of 2820404
+ 1527808 words of memory out of 3000000
+ 65189 multiletter control sequences out of 15000+600000
+ 492174 words of font info for 170 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,17n,131p,1230b,634s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 103i,17n,131p,1230b,681s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (47 pages).
+Output written on main.pdf (50 pages).
