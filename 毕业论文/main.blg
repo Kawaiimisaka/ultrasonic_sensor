@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+The style file: gbt7714-numerical.bst
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapter/ZhAbstract.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapter/EnAbstract.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第一章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第二章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第三章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第四章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第五章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第六章.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: chapter/thank.aux
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 150 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Reference.bib
+You've used 11 entries,
+            5374 wiz_defined-function locations,
+            1079 strings with 8292 characters,
+and the built_in function-call counts, 44438 in all, are:
+= -- 1709
+> -- 3785
+< -- 5603
++ -- 2250
+- -- 704
+* -- 480
+:= -- 6976
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 22
+chr.to.int$ -- 1784
+cite$ -- 11
+duplicate$ -- 275
+empty$ -- 795
+format.name$ -- 290
+if$ -- 11217
+int.to.chr$ -- 1
+int.to.str$ -- 12
+missing$ -- 0
+newline$ -- 69
+num.names$ -- 33
+pop$ -- 380
+preamble$ -- 1
+purify$ -- 11
+quote$ -- 0
+skip$ -- 4379
+stack$ -- 0
+substring$ -- 2744
+swap$ -- 11
+text.length$ -- 255
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 143
+warning$ -- 0
+while$ -- 277
+width$ -- 0
+write$ -- 177

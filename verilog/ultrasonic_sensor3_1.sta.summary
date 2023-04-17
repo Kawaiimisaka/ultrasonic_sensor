@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'spi:m2|sclk'
+Slack : -12.004
+TNS   : -185.013
+
+Type  : Setup 'gclk'
+Slack : -5.030
+TNS   : -144.411
+
+Type  : Hold 'gclk'
+Slack : -1.617
+TNS   : -1.617
+
+Type  : Hold 'spi:m2|sclk'
+Slack : 2.151
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'gclk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'spi:m2|sclk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

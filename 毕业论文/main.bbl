@@ -1,0 +1,80 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[杨媛\ 等(2000)杨媛, 高勇, 马军, and 李福德]{1}
+杨媛, 高勇, 马军, 等.
+\newblock
+  {CPLD在超声波传感器驱动控制电路中的应用}\allowbreak[J].
+\newblock 西安理工大学学报, 2000\allowbreak (4): 381-383.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{2}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{JTAG}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{CPLD芯片手册}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{TUSS4470芯片手册}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{分离接地}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{寄生效应}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{噪声耦合}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{检测原理}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{Verilog介绍}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{SPI}
+韩韧, 金永威, 王强.
+\newblock
+  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\end{thebibliography}

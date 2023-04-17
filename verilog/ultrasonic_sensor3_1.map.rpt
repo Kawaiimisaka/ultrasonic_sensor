@@ -1,0 +1,360 @@
+Analysis & Synthesis report for ultrasonic_sensor3_1
+Fri Mar 24 21:11:29 2023
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "pulse_generation:m3"
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Mar 24 21:11:29 2023           ;
+; Quartus Prime Version       ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name               ; ultrasonic_sensor3_1                            ;
+; Top-level Entity Name       ; ultrasonic_sensor3_1                            ;
+; Family                      ; MAX II                                          ;
+; Total logic elements        ; 122                                             ;
+; Total pins                  ; 12                                              ;
+; Total virtual pins          ; 0                                               ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                                   ;
++-----------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                  ;
++------------------------------------------------------------------+----------------------+----------------------+
+; Option                                                           ; Setting              ; Default Value        ;
++------------------------------------------------------------------+----------------------+----------------------+
+; Device                                                           ; EPM240T100C5         ;                      ;
+; Top-level entity name                                            ; ultrasonic_sensor3_1 ; ultrasonic_sensor3_1 ;
+; Family name                                                      ; MAX II               ; Cyclone V            ;
+; Use smart compilation                                            ; Off                  ; Off                  ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                   ; On                   ;
+; Enable compact report table                                      ; Off                  ; Off                  ;
+; Restructure Multiplexers                                         ; Auto                 ; Auto                 ;
+; Create Debugging Nodes for IP Cores                              ; Off                  ; Off                  ;
+; Preserve fewer node names                                        ; On                   ; On                   ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable               ; Enable               ;
+; Verilog Version                                                  ; Verilog_2001         ; Verilog_2001         ;
+; VHDL Version                                                     ; VHDL_1993            ; VHDL_1993            ;
+; State Machine Processing                                         ; Auto                 ; Auto                 ;
+; Safe State Machine                                               ; Off                  ; Off                  ;
+; Extract Verilog State Machines                                   ; On                   ; On                   ;
+; Extract VHDL State Machines                                      ; On                   ; On                   ;
+; Ignore Verilog initial constructs                                ; Off                  ; Off                  ;
+; Iteration limit for constant Verilog loops                       ; 5000                 ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                   ; 250                  ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                   ; On                   ;
+; Infer RAMs from Raw Logic                                        ; On                   ; On                   ;
+; Parallel Synthesis                                               ; On                   ; On                   ;
+; NOT Gate Push-Back                                               ; On                   ; On                   ;
+; Power-Up Don't Care                                              ; On                   ; On                   ;
+; Remove Redundant Logic Cells                                     ; Off                  ; Off                  ;
+; Remove Duplicate Registers                                       ; On                   ; On                   ;
+; Ignore CARRY Buffers                                             ; Off                  ; Off                  ;
+; Ignore CASCADE Buffers                                           ; Off                  ; Off                  ;
+; Ignore GLOBAL Buffers                                            ; Off                  ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                  ; Off                  ;
+; Ignore LCELL Buffers                                             ; Off                  ; Off                  ;
+; Ignore SOFT Buffers                                              ; On                   ; On                   ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                  ; Off                  ;
+; Optimization Technique                                           ; Balanced             ; Balanced             ;
+; Carry Chain Length                                               ; 70                   ; 70                   ;
+; Auto Carry Chains                                                ; On                   ; On                   ;
+; Auto Open-Drain Pins                                             ; On                   ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                  ; Off                  ;
+; Auto Shift Register Replacement                                  ; Auto                 ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                 ; Auto                 ;
+; Auto Clock Enable Replacement                                    ; On                   ; On                   ;
+; Allow Synchronous Control Signals                                ; On                   ; On                   ;
+; Force Use of Synchronous Clear Signals                           ; Off                  ; Off                  ;
+; Auto Resource Sharing                                            ; Off                  ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing              ; On                   ; On                   ;
+; Ignore translate_off and synthesis_off directives                ; Off                  ; Off                  ;
+; Report Parameter Settings                                        ; On                   ; On                   ;
+; Report Source Assignments                                        ; On                   ; On                   ;
+; Report Connectivity Checks                                       ; On                   ; On                   ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                  ; Off                  ;
+; Synchronization Register Chain Length                            ; 2                    ; 2                    ;
+; Power Optimization During Synthesis                              ; Normal compilation   ; Normal compilation   ;
+; HDL message level                                                ; Level2               ; Level2               ;
+; Suppress Register Optimization Related Messages                  ; Off                  ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                 ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                 ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                  ; 100                  ;
+; Clock MUX Protection                                             ; On                   ; On                   ;
+; Block Design Naming                                              ; Auto                 ; Auto                 ;
+; Synthesis Effort                                                 ; Auto                 ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                   ; On                   ;
+; Analysis & Synthesis Message Level                               ; Medium               ; Medium               ;
+; Disable Register Merging Across Hierarchies                      ; Auto                 ; Auto                 ;
++------------------------------------------------------------------+----------------------+----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; ultrasonic_sensor3_1.v           ; yes             ; Auto-Found Verilog HDL File  ; D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v ;         ;
+; main.v                           ; yes             ; Auto-Found Verilog HDL File  ; D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v                 ;         ;
+; spi.v                            ; yes             ; Auto-Found Verilog HDL File  ; D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v                  ;         ;
+; pulse_generation.v               ; yes             ; Auto-Found Verilog HDL File  ; D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/pulse_generation.v     ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 122   ;
+;     -- Combinational with no register       ; 64    ;
+;     -- Register only                        ; 6     ;
+;     -- Combinational with a register        ; 52    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 60    ;
+;     -- 3 input functions                    ; 15    ;
+;     -- 2 input functions                    ; 38    ;
+;     -- 1 input functions                    ; 3     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 91    ;
+;     -- arithmetic mode                      ; 31    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 12    ;
+;     -- asynchronous clear/load mode         ; 57    ;
+;                                             ;       ;
+; Total registers                             ; 58    ;
+; Total logic cells in carry chains           ; 35    ;
+; I/O pins                                    ; 12    ;
+; Maximum fan-out node                        ; rstn  ;
+; Maximum fan-out                             ; 57    ;
+; Total fan-out                               ; 539   ;
+; Average fan-out                             ; 4.02  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                  ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name          ; Entity Name          ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+----------------------+--------------+
+; |ultrasonic_sensor3_1      ; 122 (0)     ; 58           ; 0          ; 12   ; 0            ; 64 (0)       ; 6 (0)             ; 52 (0)           ; 35 (0)          ; 0 (0)      ; |ultrasonic_sensor3_1        ; ultrasonic_sensor3_1 ; work         ;
+;    |spi:m2|                ; 122 (122)   ; 58           ; 0          ; 0    ; 0            ; 64 (64)      ; 6 (6)             ; 52 (52)          ; 35 (35)         ; 0 (0)      ; |ultrasonic_sensor3_1|spi:m2 ; spi                  ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; main:m1|burst_en                       ; Stuck at GND due to stuck port data_in      ;
+; main:m1|DETECTED_CNT[0..5]             ; Stuck at GND due to stuck port data_in      ;
+; pulse_generation:m3|pulse_num[0..4]    ; Stuck at GND due to stuck port clock_enable ;
+; pulse_generation:m3|BURST_DIS          ; Stuck at GND due to stuck port data_in      ;
+; main:m1|detected                       ; Stuck at GND due to stuck port data_in      ;
+; pulse_generation:m3|burst_finish       ; Stuck at GND due to stuck port data_in      ;
+; main:m1|burst_rstn                     ; Stuck at VCC due to stuck port data_in      ;
+; main:m1|DETECTED_NUM[1..6]             ; Stuck at GND due to stuck port data_in      ;
+; main:m1|DETECTED_NUM[0]                ; Lost fanout                                 ;
+; main:m1|ct                             ; Stuck at VCC due to stuck port clock_enable ;
+; pulse_generation:m3|io1                ; Stuck at VCC due to stuck port data_in      ;
+; pulse_generation:m3|IO2_CNT[0..5]      ; Stuck at GND due to stuck port data_in      ;
+; pulse_generation:m3|io2                ; Stuck at VCC due to stuck port clock_enable ;
+; Total Number of Removed Registers = 32 ;                                             ;
++----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                              ;
++-------------------------+---------------------------+------------------------------------------------------------------------------------+
+; Register name           ; Reason for Removal        ; Registers Removed due to This Register                                             ;
++-------------------------+---------------------------+------------------------------------------------------------------------------------+
+; main:m1|burst_en        ; Stuck at GND              ; pulse_generation:m3|pulse_num[4], pulse_generation:m3|pulse_num[3],                ;
+;                         ; due to stuck port data_in ; pulse_generation:m3|pulse_num[2], pulse_generation:m3|pulse_num[1],                ;
+;                         ;                           ; pulse_generation:m3|pulse_num[0], pulse_generation:m3|BURST_DIS,                   ;
+;                         ;                           ; pulse_generation:m3|burst_finish, pulse_generation:m3|io1, pulse_generation:m3|io2 ;
+; main:m1|DETECTED_CNT[5] ; Stuck at GND              ; main:m1|detected, main:m1|DETECTED_NUM[6], main:m1|DETECTED_NUM[5],                ;
+;                         ; due to stuck port data_in ; main:m1|DETECTED_NUM[4], main:m1|DETECTED_NUM[3], main:m1|DETECTED_NUM[1],         ;
+;                         ;                           ; main:m1|DETECTED_NUM[0]                                                            ;
+; main:m1|burst_rstn      ; Stuck at VCC              ; pulse_generation:m3|IO2_CNT[5], pulse_generation:m3|IO2_CNT[4],                    ;
+;                         ; due to stuck port data_in ; pulse_generation:m3|IO2_CNT[3], pulse_generation:m3|IO2_CNT[2],                    ;
+;                         ;                           ; pulse_generation:m3|IO2_CNT[1], pulse_generation:m3|IO2_CNT[0]                     ;
++-------------------------+---------------------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 58    ;
+; Number of registers using Synchronous Clear  ; 11    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 57    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 37    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; spi:m2|nss                             ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 7:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |ultrasonic_sensor3_1|spi:m2|DATA_SHIFT[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pulse_generation:m3"                                                                                          ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; IO2_CNT   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; BURST_DIS ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; pulse_num ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Fri Mar 24 21:11:23 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ultrasonic_sensor3_1 -c ultrasonic_sensor3_1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (12125): Using design file ultrasonic_sensor3_1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ultrasonic_sensor3_1 File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at ultrasonic_sensor3_1.v(20): created implicit net for "burst_en" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at ultrasonic_sensor3_1.v(21): created implicit net for "burst_rstn" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at ultrasonic_sensor3_1.v(22): created implicit net for "burst_finish" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at ultrasonic_sensor3_1.v(23): created implicit net for "tuss_ready" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at ultrasonic_sensor3_1.v(25): created implicit net for "oout_4" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 25
+Info (12127): Elaborating entity "ultrasonic_sensor3_1" for the top level hierarchy
+Warning (12125): Using design file main.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: main File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v Line: 2
+Info (12128): Elaborating entity "main" for hierarchy "main:m1" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 31
+Warning (10855): Verilog HDL warning at main.v(38): initial value for variable detect_en should be constant File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v Line: 38
+Warning (10855): Verilog HDL warning at main.v(38): initial value for variable burst_en should be constant File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v Line: 38
+Warning (10230): Verilog HDL assignment warning at main.v(82): truncated value with size 32 to match size of target (6) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v Line: 82
+Warning (10230): Verilog HDL assignment warning at main.v(105): truncated value with size 32 to match size of target (7) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v Line: 105
+Warning (10030): Net "detect_en" at main.v(33) has no driver or initial value, using a default initial value '0' File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/main.v Line: 33
+Warning (12125): Using design file spi.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: spi File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 1
+Info (12128): Elaborating entity "spi" for hierarchy "spi:m2" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 41
+Warning (10230): Verilog HDL assignment warning at spi.v(110): truncated value with size 32 to match size of target (5) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 110
+Warning (10230): Verilog HDL assignment warning at spi.v(142): truncated value with size 32 to match size of target (6) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 142
+Warning (10230): Verilog HDL assignment warning at spi.v(167): truncated value with size 32 to match size of target (5) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 167
+Warning (10230): Verilog HDL assignment warning at spi.v(193): truncated value with size 32 to match size of target (1) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 193
+Warning (10230): Verilog HDL assignment warning at spi.v(202): truncated value with size 32 to match size of target (1) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 202
+Warning (10230): Verilog HDL assignment warning at spi.v(207): truncated value with size 32 to match size of target (1) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 207
+Warning (10230): Verilog HDL assignment warning at spi.v(211): truncated value with size 32 to match size of target (1) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 211
+Warning (12125): Using design file pulse_generation.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pulse_generation File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/pulse_generation.v Line: 2
+Info (12128): Elaborating entity "pulse_generation" for hierarchy "pulse_generation:m3" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 53
+Warning (10230): Verilog HDL assignment warning at pulse_generation.v(45): truncated value with size 32 to match size of target (6) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/pulse_generation.v Line: 45
+Warning (10230): Verilog HDL assignment warning at pulse_generation.v(68): truncated value with size 32 to match size of target (5) File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/pulse_generation.v Line: 68
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ct" is stuck at VCC File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 10
+    Warning (13410): Pin "io1" is stuck at VCC File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 14
+    Warning (13410): Pin "io2" is stuck at VCC File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 15
+Info (18000): Registers with preset signals will power-up high File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/spi.v Line: 6
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "out_3" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 4
+    Warning (15610): No output dependent on input pin "out_4" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 5
+    Warning (15610): No output dependent on input pin "ct1" File: D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.v Line: 6
+Info (21057): Implemented 134 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 122 logic cells
+Info (144001): Generated suppressed messages file D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4700 megabytes
+    Info: Processing ended: Fri Mar 24 21:11:29 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Softwaredata/Githhub Repository/ultrasonic_sensor/verilog/ultrasonic_sensor3_1.map.smsg.
+
+
