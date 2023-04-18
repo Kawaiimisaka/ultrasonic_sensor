@@ -6,21 +6,17 @@ input rstn,
 input burst_rstn,
 output reg io1,
 output reg io2,
-output reg burst_finish,
-output reg [5:0]IO2_CNT,
-output reg BURST_DIS,
-output reg [4:0]pulse_num);
+output reg burst_finish);
 
-
-//时钟分频,//T1=80*T2
-//reg [5:0]IO2_CNT;
-reg [5:0]IO2_FLAG='b101000;
+//时钟分频
+reg [7:0]IO2_CNT;
+reg [7:0]IO2_FLAG='d45;
 //脉冲控制
-//reg BURST_DIS;
+reg BURST_DIS;
 //记录当前发出的脉冲数
-//reg [4:0]pulse_num;
+reg [4:0]pulse_num;
 //脉冲数
-`define PULSE_NUM 5'b00101
+`define PULSE_NUM 5'b00100
 
 //io2使能失能控制位
 always @(posedge gclk or negedge rstn or negedge burst_rstn)
@@ -31,36 +27,34 @@ begin
 	else if(BURST_DIS)
 		io1<='b1;
 	else if(burst_en)
-		io1<='b0;
-	
-		
+		io1<='b0;	
 end
 
-//产生指定脉冲数300khz的io2，gclk=24Mhz
+//产生指定脉冲数300khz的io2，gclk=27Mhz
 always @(posedge gclk or negedge rstn or negedge burst_rstn)
 begin
 	if(~rstn||~burst_rstn)
 		IO2_CNT<=0;
-	else if(~io1)
-		IO2_CNT<=IO2_CNT+'b1;
 	else if(IO2_CNT==IO2_FLAG)
-		IO2_CNT<='b0;	
+		IO2_CNT<='d0;
+	else if(~io1)
+		IO2_CNT<=IO2_CNT+'d1;	
 end
 
 always @(posedge gclk or negedge rstn or negedge burst_rstn)
 begin
 	if(~rstn||~burst_rstn)
 		io2<='b1;
+	else if(pulse_num==(`PULSE_NUM)+'b1)//发出指定脉冲数后，io2拉高,end of burst
+		io2<='b1;
 	else if(IO2_CNT==IO2_FLAG)
 		io2<=~io2;
-	else if(pulse_num==(`PULSE_NUM+'b1))//发出指定脉冲数后，io2拉高,end of burst
-		io2<='b1;
 end
 
 
 
 //当前脉冲数,下降沿计数
-always @(posedge io2 or negedge rstn or negedge burst_rstn)
+always @(negedge io2 or negedge rstn or negedge burst_rstn)
 begin
 	if(~rstn||~burst_rstn)
 		pulse_num<='b0;
@@ -70,11 +64,11 @@ begin
 end
 
 //停止计数
-always @(posedge io2 or negedge rstn or negedge burst_rstn)
+always @(negedge io2 or negedge rstn or negedge burst_rstn)
 begin
 	if(~rstn||~burst_rstn)
 		BURST_DIS<='b0;
-	else if (pulse_num==(`PULSE_NUM+'b1))
+	else if (pulse_num==(`PULSE_NUM))
 		BURST_DIS<='b1;
 	else
 		BURST_DIS<='b0;
