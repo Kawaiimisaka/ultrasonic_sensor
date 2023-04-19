@@ -41,7 +41,7 @@
 \pgfplotsset{compat=1.18}
 
 \RequirePackage{setspace} % 有人反映缺乏此宏包
-% \RequirePackage{cite} % 引用
+%\RequirePackage{cite} % 引用
 %----------------------- 定义计数器 -----------------------
 \newcounter{GDUT@now@page}
 \newcounter{GDUT@appendix}
@@ -119,7 +119,7 @@
 \titleformat{\section}{\bfseries\cjkht\zihao{3}\centering}{\tnr\thesection}{1em}{}
 \titleformat{\subsection}{\bfseries\cjkht\zihao{-4}}{\tnr\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\cjkht\zihao{-4}}{\tnr\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[hang]{\bfseries}{\theparagraph、}{0em}{}
+\titleformat{\paragraph}[hang]{\bfseries}{（\theparagraph）}{0em}{}
 
 
 \titlespacing{\section}{0em}{\GDUT@half@line@space}{\GDUT@half@line@space}
@@ -441,10 +441,10 @@
 %------------------------ 参考文献 ------------------------
 \bibliographystyle{gbt7714-numerical}
 \newcommand{\makereference}[1]{
-	\clearpage
-   \phantomsection
-   \addcontentsline{toc}{section}{参考文献}
-   \bibliography{Reference.bib}
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{section}{参考文献}
+    \bibliography{#1}
 }
 \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 
