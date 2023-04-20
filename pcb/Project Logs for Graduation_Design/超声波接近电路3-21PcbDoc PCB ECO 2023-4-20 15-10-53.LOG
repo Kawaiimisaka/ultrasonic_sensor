@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=OUTB Pin=300kHz Transducer-1
+Removed Pin From Net: NetName=OUTB Pin=R10-2
+Removed Pin From Net: NetName=OUTB Pin=U2-16
+Change Net Name : Old Net Name=OUTB New Net Name=GND
+Added Pin To Net: NetName=OUTB Pin=300kHz Transducer-1
+Added Pin To Net: NetName=OUTB Pin=R10-2
+Added Pin To Net: NetName=OUTB Pin=U2-16
+Added Net: Name=OUTB

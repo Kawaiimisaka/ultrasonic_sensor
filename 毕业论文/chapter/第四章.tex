@@ -23,7 +23,7 @@
      
     \subsection{传感器程序设计}
     \subsubsection{程序总体设计}
-    本设计所使用的EPM240T100C5N芯片采用Verilog HDL作为编程语言，Quartus II作为编程烧录软件。Verilog HDL\upcite{Verilog介绍}是一种硬件描述语言（HDL:Hardware Description Language），以文本形式来描述数字系统硬件的结构和行为的语言，用它可以表示逻辑电路图、逻辑表达式，还可以表示数字逻辑系统所完成的逻辑功能。\par
+    本设计所使用的EPM240T100C5N芯片采用Verilog HDL作为编程语言，Quartus II作为编程烧录软件。Verilog HDL是一种硬件描述语言（HDL:Hardware Description Language），以文本形式来描述数字系统硬件的结构和行为的语言，用它可以表示逻辑电路图、逻辑表达式，还可以表示数字逻辑系统所完成的逻辑功能\upcite{Verilog介绍}。\par
     在本设计中，如图\ref{程序整体框图}所示，将MCU分成四个模块，分别是：MAIN模块、SPI模块、PULSE\_GENERATION模块、DETECTED\_COUNT模块,实现配置TUSS4470芯片、产生脉冲信号、到位指示以及计数等功能。
          \begin{figure}[!h]
         \centering
@@ -141,7 +141,7 @@
             STAT 5 - VDRV\_READY    &   VDRV引脚达到配置电压值时置1  \\ 
             STAT 4 - PULSE\_NUM\_FLT &  发生脉冲数目错误是置1  \\
             STAT 3 - DRV\_PULSE\_FLT &  脉冲发生无响应时置1 \\
-            STAT 2 - EE\_CRC\_FLT & 加载内部EEPROM存储器出现CRC错误时置1\\
+            STAT 2 - EE\_CRC\_FLT & 加载内部EEPROM存储器出现错误时置1\\
             STAT <1:0> - DEV\_STATE  &  \makecell{芯片模式:\\
                                         00 - 检测模式\\
                                         01 - 脉冲发生模式\\
@@ -166,7 +166,7 @@
         \centering
         \caption{寄存器配置}
         
-        \begin{GDUTtable}{\textwidth}{Y Y Y Y}
+        \begin{GDUTtable}{\textwidth}{cYcY}
         \textbf{寄存器名} & \textbf{缩写}& \textbf{地址} &\textbf{配置值}\\ 
         \hline
         Bandpass filter settings&BPF\_CONFIG\_1&0x10& 0x25 \\ 
@@ -186,9 +186,9 @@
             \end{GDUTtable}
         \label{寄存器配置}    
          \end{table}
-    其中BPF\_CONFIG\_1用于配置带通滤波器的中心频率，该频率需匹配超声波传感器的工作频率，查阅芯片手册可以得知，当寄存器配置为0x25时，带通滤波器的中心频率为301.28$KHz$，与超声波传感器最匹配；\par
+    其中BPF\_CONFIG\_1用于配置带通滤波器的中心频率，该频率需匹配超声波传感器的工作频率，查阅芯片手册可以得知，当寄存器配置为0x25时，带通滤波器的中心频率为$301.28KHz$，与超声波传感器最匹配；\par
     BPF\_CONFIG\_2用于设置滤波器的Q因素，修正滤波器的频率范围；\par
-    DEV\_CTRL\_1用于调整对数放大器参数，通过查阅资料，将其设置为0xB3；\par
+    DEV\_CTRL\_1用于调整对数放大器参数，通过实际应用，将其设置为0xB3；\par
     DEV\_CTRL\_2用于设置放大器（LNA）的增益；\par
     DEV\_CTRL\_3用于配置脉冲发生的模式，本设计采用IO\_MODE3，故将该寄存器配置为0x03；\par
     VDRV\_CTRL寄存器主要用于配置VDRV引脚的参考电压，当该引脚的实际电压超过参考电压时，驱动芯片的VDRV\_READY状态位置1，然后通过SPI将该状态位返回至MCU芯片。本设计采用12V的驱动电压，根据芯片手册所给出的公式得出该寄存器配置为0x0F；\par
@@ -208,35 +208,45 @@
         \caption{脉冲模式1}
         \label{脉冲模式1}
     \end{figure}
-    在本设计的脉冲发生模块中，将能产生指定频率，指定脉冲数的脉冲波，如图\ref{单次脉冲程序流程图}为单次脉冲程序流程图，实现的功能为发出一次指定脉冲数、指定频率的脉冲波。
+    在本设计的脉冲发生模块中，将能产生指定频率，指定脉冲数的脉冲波，如图\ref{单次脉冲信号产生程序流程图}为单次脉冲程序流程图，实现的功能为发出一次指定脉冲数、指定频率的脉冲波。
     
         
-       \begin{figure}[ht]
-        \centering
-        \includegraphics[width=5cm]{figure/single pulse control.png}
-        \caption{单次脉冲程序流程图}
-        \label{单次脉冲程序流程图}
-    \end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\subfloat[单次脉冲信号产生程序流程图]{
+		
+		\begin{minipage}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[height=7cm]{figure/single pulse control.png}
+		\end{minipage}
+		\label{单次脉冲信号产生程序流程图}
+	}
+	\subfloat[多次脉冲信号产生程序流程图]{
+		
+		\begin{minipage}[b]{0.5\textwidth}
+			\centering
+			\includegraphics[height=7cm]{figure/multiple pulse control.png}
+		\end{minipage}
+		\label{多次脉冲信号产生程序流程图}
+	}
+	\caption{脉冲信号产生程序流程图}
+	\label{脉冲信号产生程序流程图}
+\end{figure}
 
     其中pulse\_num为脉冲数计数位，用于记录当前发射的脉冲数，PULSE\_NUM为预期发射的脉冲数，IO2\_CNT为时钟分频标志位。当io1拉低时，开始产生脉冲，分频标志位开始计数，每当标志位累加到设定值时，io2的状态都会翻转，从而产生特定频率的脉冲信号，其换算公式如式\ref{时钟分频换算}，分频后时钟的周期为原时钟周期的2b倍。
     \begin{equation}
         T_2=2bT_1
     \label{时钟分频换算}
-    \end{equation}
-    当io2翻转次数，即发出的脉冲数等于预期脉冲数时，io2、io1拉高，结束单次脉冲的发送。多次脉冲的发送与检测通过MAIN模块来配合控制，每发射一次脉冲都会进行检测并计数，结束一次检测周期后都会进行状态转移判断。
+    \end{equation}\par
+    当io2翻转次数，即发出的脉冲数等于预期脉冲数时，io2、io1拉高，结束单次脉冲的发送。多次脉冲信号的发生与检测通过MAIN模块来配合控制，其程序流程如图\ref{多次脉冲信号产生程序流程图}所示，每发射一次脉冲都会进行检测并计数，结束一次检测周期后都会进行状态转移判断。
     
   
     \subsubsection{检测计数模块}
     
-    该模块功能在于，对到达指定位置的钢化玻璃进行计数，可以准确得知流水线上到位钢化玻璃的数量，便于后续统计。
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=6cm]{figure/1.jpg}
-        \caption{检测计数模块程序流程图}
-        \label{检测计数模块程序流程图}
-    \end{figure}
-
-    其功能实现流程如图\ref{检测计数模块程序流程图}示：当一块玻璃到位后，到位检测指示灯LED1变亮，CPLD芯片从CT\_1口得到一个高电平信号，计数寄存器object\_num加1；当钢化玻璃离开检测区域后，检测指示灯灭，等待下一块玻璃到位。\par
+    该模块功能在于，对到达指定位置的钢化玻璃进行计数，可以准确得知流水线上到位钢化玻璃的数量，便于后续统计。\par
+    其功能实现流程如下所示：\par
+    当一块玻璃到位后，到位检测指示灯LED1变亮，CPLD芯片从CT\_1口得到一个高电平信号，计数寄存器object\_num由CT\_1上升沿信号触发，每次触发时加1；当钢化玻璃离开检测区域后，检测指示灯灭，等待下一块玻璃到位。\par
    
     
     \subsubsection{仿真模拟}
@@ -261,7 +271,7 @@
     在QUARTUS II软件中，需要编写TESTBENCH文件来为程序提供虚拟的外部激励以进行仿真调试，在本设计中，程序包含的外部激励端口有gclk、rstn、out3、out4、ct1。如图\ref{TESTBENCH结构图}所示，TESTBENCH的结构中包括了信号声明、复位信号产生、时钟生成、外部激励生成、模块例化、自校验、停止仿真。\par
     \begin{figure}[ht]
         \centering
-        \includegraphics[width=10cm]{figure/TESTBENCH structure.png}
+        \includegraphics[width=6cm]{figure/TESTBENCH structure.png}
         \caption{TESTBENCH结构图}
         \label{TESTBENCH结构图}
     \end{figure}
@@ -273,7 +283,7 @@
     \end{equation}
     对于其它的激励信号，在程序开始时，复位信号拉低，程序复位，延时一段时间后，复位信号拉高，程序开始运行。out3和out4信号一直保持着拉高状态。
 	
-	\newpage
+
     \paragraph{波形仿真}
     在完成上述配置后，编译程序，就可以在MODELSIM软件内进行仿真，调试波形。
     
@@ -305,7 +315,8 @@
 \end{figure}
 
 
-    如图\ref{超声波接近传感器整体仿真波形图}所示，可以在MODELSIM软件中看到各个端口整体输出的波形状态。图\ref{SPI通信仿真波形图}为SPI通信部分的仿真波形，MOSI引脚可以正常向TUSS4470芯片发送配置数据，在发送完成数据后，如图\ref{脉冲信号产生仿真波形图},io1和io2端口配合产生脉冲波。在产生完成指定的脉冲数后，检测到外部激励OUT4信号拉高，程序判断为检测到物体，CT拉高，检测指示LED灯亮。\par
+    如图\ref{SPI通信仿真波形图}所示，NSS、SCLK、MOSI引脚配合向TUSS4470芯片发送配置数据。在发送完成数据后，如图\ref{脉冲信号产生仿真波形图},io1和io2端口配合产生脉冲数为4的脉冲波。\par
+    图\ref{超声波接近传感器整体仿真波形图}显示的是各个端口整体输出的波形状态,当发送五次脉冲波经历一次检测周期后，检测逻辑判断为检测到物体，CT端口输出信号拉高，检测指示灯更新状态置为1。\par
     \subsection{本章小结}
     本章首先介绍了超声波接近传感器的检测原理和检测策略，采用多次发射脉冲波，检测是否达到次数阈值的检测策略。然后讲解了程序的总体设计框图，将程序分为了主控制模块、SPI通信模块、脉冲信号产生模块，分别详细介绍了各个模块的基本功能、实现原理、程序算法。最后讲解了进行仿真模拟所进行的流程，包括仿真环境搭建、工程文件的创建、仿真激励文件的编写以及最后使用MODELSIM软件进行波形仿真。下一章将介绍实物制作以及实验设计部分的工作。
     

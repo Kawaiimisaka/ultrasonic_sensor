@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -11,70 +11,86 @@
   \let\eprint\href
 \fi
 
-\bibitem[杨媛\ 等(2000)杨媛, 高勇, 马军, and 李福德]{1}
+\bibitem[杨媛\ 等(2000)杨媛, 高勇, 马军, and
+  李福德]{CPLD在超声波传感器驱动控制电路中}
 杨媛, 高勇, 马军, 等.
-\newblock
-  {CPLD在超声波传感器驱动控制电路中的应用}\allowbreak[J].
+\newblock {CPLD在超声波传感器驱动控制电路中}\allowbreak[J].
 \newblock 西安理工大学学报, 2000\allowbreak (4): 381-383.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{2}
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and
+  王强]{基于STM32和超声波测距的倒车雷达预警系统设计}
 韩韧, 金永威, 王强.
 \newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+  基于STM32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
 \newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{JTAG}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[~(2022)]{CPLD芯片介绍}
+~ A~C.
+\newblock {EPM}240t100c5n-datasheet\allowbreak[EB/OL].
+\newblock \allowbreak(2022).
+\newblock \url{https://datasheet.ciiva.com/26806/epm240t100c5n-26806819.pdf}.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{CPLD芯片手册}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[黄丽萍(2010)]{车载可视倒车雷达预警系统的研制}
+黄丽萍.
+\newblock 车载可视倒车雷达预警系统的研制\allowbreak[Z].
+\newblock 2010.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{TUSS4470芯片手册}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[Kuratli et~al.(1998)Kuratli and Huang]{13}
+KURATLI C, HUANG Q.
+\newblock Circuit and system design of a silicon-based miniaturized ultrasound
+  range finder system\allowbreak[C]//\allowbreak
+Where Instrumentation Is Going - Conference Proceedings, Vols 1 and 2.
+\newblock New York: Ieee, 1998: 1372-1376.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{分离接地}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[Smorfa et~al.(2006)Smorfa, Olivieri, Mancuso, and Lienhard]{14}
+SMORFA S, OLIVIERI M, MANCUSO R, et~al.
+\newblock A physical-level {LCD} driver model and simulator with application to
+  pixel crosstalk suppression\allowbreak[J].
+\newblock Ieee Transactions on Consumer Electronics, 2006, 52\allowbreak (3):
+  1027-1034.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{寄生效应}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[Shin et~al.(2019)Shin, Kim, and Choi]{15}
+SHIN S, KIM M~H, CHOI S~B.
+\newblock Ultrasonic distance measurement method with crosstalk rejection at
+  high measurement rate\allowbreak[J].
+\newblock Ieee Transactions on Instrumentation and Measurement, 2019,
+  68\allowbreak (4): 972-979.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{噪声耦合}
-韩韧, 金永威, 王强.
+\bibitem[~(2022)]{TUSS4470芯片手册}
+~ T~I.
+\newblock {TUSS}4470芯片手册\allowbreak[EB/OL].
+\newblock \allowbreak(2022).
 \newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+  \url{https://www.ti.com.cn/cn/lit/ds/symlink/tuss4470.pdf?ts=1681895303209&ref_url=https%253A%252F%252Fwww.ti.com.cn%252Fproduct%252Fcn%252FTUSS4470%253Fqgpn%253Dtuss4470}.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{检测原理}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[徐继芳(2001)]{分离接地}
+徐继芳.
+\newblock 将保护接地与通信接地分离
+  提高通信设备的运行安全\allowbreak[J].
+\newblock 广东通信技术, 2001\allowbreak (4): 25-28.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{Verilog介绍}
-韩韧, 金永威, 王强.
-\newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+\bibitem[李万华(2018)]{寄生效应}
+李万华.
+\newblock 走线寄生效应分析\allowbreak[J].
+\newblock 内燃机与配件, 2018\allowbreak (18): 219-220.
 
-\bibitem[韩韧\ 等(2016)韩韧, 金永威, and 王强]{SPI}
-韩韧, 金永威, 王强.
+\bibitem[~(2022)]{Verilog介绍}
+~ H.
+\newblock （verilog）{SPI协议详讲与实现}\allowbreak[EB/OL].
+\newblock \allowbreak(2022).
+\newblock \url{https://zhuanlan.zhihu.com/p/546827770}.
+
+\bibitem[~(2022)]{SPI}
+~ H.
+\newblock （verilog）{SPI协议详讲与实现}\allowbreak[EB/OL].
+\newblock \allowbreak(2022).
+\newblock \url{https://zhuanlan.zhihu.com/p/546827770}.
+
+\bibitem[~(2021)]{线性序列机}
+~ P.
+\newblock {FPGA学习}-线性序列机\allowbreak[EB/OL].
+\newblock \allowbreak(2021).
 \newblock
-  基于{STM}32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
-\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+  \url{https://blog.csdn.net/weixin_58634335/article/details/122012668}.
 
 \end{thebibliography}

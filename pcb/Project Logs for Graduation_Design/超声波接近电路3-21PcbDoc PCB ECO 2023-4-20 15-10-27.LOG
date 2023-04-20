@@ -1,0 +1,14 @@
+Added Pin To Net: NetName=GND Pin=300kHz Transducer-1
+Added Pin To Net: NetName=GND Pin=R10-2
+Added Pin To Net: NetName=GND Pin=U2-16
+Change Net Name : Old Net Name=GND New Net Name=OUTB
+Change Net Name : Old Net Name=NetC15_1 New Net Name=VPWR
+Change Net Name : Old Net Name=NetC16_1 New Net Name=FLT
+Change Net Name : Old Net Name=NetC17_1 New Net Name=VDRV
+Change Net Name : Old Net Name=NetC18_1 New Net Name=INP
+Change Net Name : Old Net Name=NetC19_1 New Net Name=INN
+Change Net Name : Old Net Name=P29 New Net Name=OUT3
+Change Net Name : Old Net Name=P33 New Net Name=OUT4
+Change Net Name : Old Net Name=P38 New Net Name=NCS
+Change Net Name : Old Net Name=P83 New Net Name=IO1
+Change Net Name : Old Net Name=P84 New Net Name=IO2

@@ -19,7 +19,9 @@ Reallocating 'name_of_file' (item size: 1) to 22 items.
 A level-1 auxiliary file: chapter/第五章.aux
 Reallocating 'name_of_file' (item size: 1) to 22 items.
 A level-1 auxiliary file: chapter/第六章.aux
-Reallocating 'name_of_file' (item size: 1) to 14 items.
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapter/conclusion.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
 Reallocating 'name_of_file' (item size: 1) to 18 items.
 A level-1 auxiliary file: chapter/thank.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
@@ -35,44 +37,47 @@ Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Reference.bib
-You've used 11 entries,
+Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
+--line 34 of file Reference.bib
+You've used 13 entries,
             5374 wiz_defined-function locations,
-            1079 strings with 8292 characters,
-and the built_in function-call counts, 44438 in all, are:
-= -- 1709
-> -- 3785
-< -- 5603
-+ -- 2250
-- -- 704
-* -- 480
-:= -- 6976
-add.period$ -- 33
-call.type$ -- 11
-change.case$ -- 22
-chr.to.int$ -- 1784
-cite$ -- 11
-duplicate$ -- 275
-empty$ -- 795
-format.name$ -- 290
-if$ -- 11217
+            1136 strings with 10130 characters,
+and the built_in function-call counts, 57344 in all, are:
+= -- 1481
+> -- 5844
+< -- 7854
++ -- 2495
+- -- 458
+* -- 469
+:= -- 8237
+add.period$ -- 44
+call.type$ -- 13
+change.case$ -- 50
+chr.to.int$ -- 2075
+cite$ -- 13
+duplicate$ -- 304
+empty$ -- 929
+format.name$ -- 255
+if$ -- 14997
 int.to.chr$ -- 1
-int.to.str$ -- 12
+int.to.str$ -- 14
 missing$ -- 0
-newline$ -- 69
-num.names$ -- 33
-pop$ -- 380
+newline$ -- 85
+num.names$ -- 39
+pop$ -- 2215
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 13
 quote$ -- 0
-skip$ -- 4379
+skip$ -- 5834
 stack$ -- 0
-substring$ -- 2744
-swap$ -- 11
-text.length$ -- 255
+substring$ -- 2798
+swap$ -- 13
+text.length$ -- 223
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 143
+type$ -- 155
 warning$ -- 0
-while$ -- 277
+while$ -- 245
 width$ -- 0
-write$ -- 177
+write$ -- 190
+(There was 1 warning)

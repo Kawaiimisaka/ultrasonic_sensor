@@ -40,17 +40,19 @@ TMS为测试模式选择，
     \end{figure}
 \newpage
        \subsubsection{超声波接近传感器控制电路PCB设计}
-       在完成控制电路原理图的设计后，就将进行PCB部分的设计。如图\ref{超声波接近传感器整体PCB设计}为传感器PCB整体的设计图，图\ref{超声波接近传感器控制电路PCB设计}为控制电路PCB的设计。
+       在完成控制电路原理图的设计后，就将进行PCB部分的设计。如图\ref{超声波接近传感器整体PCB设计}为传感器PCB整体设计图，图\ref{超声波接近传感器控制电路PCB设计}为控制电路PCB的设计。
 \begin{figure}[ht]
 	\centering
 	\subfloat[超声波接近传感器整体PCB设计]{
-		\begin{minipage}[b]{0.6\textwidth}
+		\begin{minipage}[b]{0.5\textwidth}
+			\centering
 			\includegraphics[height=4.5cm]{figure/overall pcb.png}
 		\end{minipage}
 		\label{超声波接近传感器整体PCB设计}
 	}
 	\subfloat[超声波接近传感器控制电路PCB设计]{
-		\begin{minipage}[b]{0.4\textwidth}
+		\begin{minipage}[b]{0.5\textwidth}
+			\centering
 			\includegraphics[height=4.5cm]{figure/cpld pcb.png}
 		\end{minipage}
 		\label{超声波接近传感器控制电路PCB设计}
@@ -82,7 +84,7 @@ TMS为测试模式选择，
 式中\quad $G_{VOUT}$---对数放大器斜率增益调整（Slope or gain adjustment）；\par
 \quad$SL_{LOG}$---对数运算放大器斜率调整（slope of logarithmicamplifier）；\par
 \quad$G_{LNA}$---回波增益;\par
-\quad$G_{BPF}$---0.9V/V;\par
+\quad$G_{BPF}$---$0.9v/v$;\par
 \quad$V_{IN}$---INN引脚输入;\par
 \quad$INT_{LOG}$---对数放大器截距（ logarithmic amplifier intercept）；\par
 \quad$K_X$---对数截距平差（log intercept adjustment）\par
@@ -95,12 +97,13 @@ TMS为测试模式选择，
     \end{figure}\par
 
     参考芯片手册相关内容，进行了TUSS4470芯片外围电路的设计，如图\ref{TUSS4470芯片外围电路}所示。
-    \begin{figure}[ht]
+    \begin{figure}[!h]
         \centering
-        \includegraphics[width=10cm]{figure/TUSS4470 peripheral circuit.png}
+        \includegraphics[width=9cm]{figure/TUSS4470 peripheral circuit.png}
         \caption{TUSS4470芯片外围电路}
         \label{TUSS4470芯片外围电路}
     \end{figure}
+\newpage
     \subsubsection{VPWR引脚电路}
     VPWR引脚输入电压范围为5V到36V，TUSS4470设备可能受到电池瞬变和反向电流的影响，因此采用外部组件保护芯片十分必要。图\ref{VPWR引脚}中除了靠近引脚的电容C15，二极管D3、D4和电阻R9就起到了保护芯片的作用。
      \begin{figure}[ht]
@@ -120,12 +123,14 @@ TMS为测试模式选择，
 	\centering
 	\subfloat[参考配置方式]{
 		\begin{minipage}[b]{0.5\textwidth}
+			\centering
 			\includegraphics[height=4.5cm]{figure/TUSS4470 Transducer Drive Options.png}
 		\end{minipage}
 		\label{参考配置方式}
 	}
 	\subfloat[实际配置方式]{
 		\begin{minipage}[b]{0.5\textwidth}
+			\centering
 			\includegraphics[height=4.5cm]{figure/OUTA PIN.png}
 		\end{minipage}
 		\label{实际配置方式}
@@ -144,25 +149,21 @@ TMS为测试模式选择，
         \label{分离接地电路}
     \end{figure}
 	\subsubsection{TUSS4479芯片外围电路PCB设计}
-    由于本设计中涉及到的信号类型较多，包括了数字信号、模拟信号、高频信号、大功率信号，各信号间会存在较大的干扰，因此在布线过程中将各信号分离十分重要，直接关系到传感器的稳定性和精度。如图\ref{超声波接近传感器整体PCB设计}为超声波接近传感器整体PCB设计图，\ref{TUSS4470芯片外围电路PCB设计}为TUSS4470芯片外围电路PCB设计本设计采用两层板来完成布线。
-      \begin{figure}[ht]
-      	\centering
-      	\subfloat[超声波接近传感器整体PCB设计]{
-      		\begin{minipage}[b]{0.6\textwidth}
-      			\includegraphics[height=4.5cm]{figure/overall pcb.png}
-      		\end{minipage}
-      		\label{超声波接近传感器整体PCB设计}
-      	}
-      	\subfloat[TUSS4470芯片外围电路PCB设计]{
-      		\begin{minipage}[b]{0.4\textwidth}
-      			\includegraphics[height=4.5cm]{figure/TUSS4470 pcb.png}
-      		\end{minipage}
-      		\label{TUSS4470芯片外围电路PCB设计}
-      	}
-      	\caption{超声波接近传感器PCB设计}
-      	\label{超声波接近传感器PCB设计}
-      \end{figure}
-  
+    由于本设计中涉及到的信号类型较多，包括了数字信号、模拟信号、高频信号、大功率信号，各信号间会存在较大的干扰，因此在布线过程中将各信号分离十分重要，直接关系到传感器的稳定性和精度。如图\ref{TUSS4470芯片外围电路PCB设计}为TUSS4470芯片外围电路PCB设计，图\ref{TUSS4470芯片引脚图}为芯片对应的引脚图。本设计采用两层板来完成布线。
+  \begin{figure}[!h]
+   		\begin{minipage}[t]{0.5\linewidth}
+  			\centering
+  			\includegraphics[height=5cm]{figure/TUSS4470 pcb.png}
+  			\caption{TUSS4470芯片外围电路PCB设计}
+  			\label{TUSS4470芯片外围电路PCB设计}
+  		\end{minipage}
+   		\begin{minipage}[t]{0.5\linewidth}
+  			\centering
+  			\includegraphics[height=5cm]{figure/TUSS4470 PIN.png}
+  			\caption{TUSS4470芯片引脚图}
+  			\label{TUSS4470芯片引脚图}
+  		\end{minipage}  		 
+  \end{figure}\par
     在TUSS4470驱动芯片的PCB设计过程中，最重要的就是将芯片的电源信号、数字信号以及模拟信号进行分离。参考芯片手册\upcite{TUSS4470芯片手册}，在布线时考虑到了如下事项。\par
     \paragraph{各类信号分离接地}
     在连接到主地前，数字接地、传感器接地、回波接地都要先通过0$\Omega$电阻或者铜迹线，如图\ref{分离接地电路}，本设计在原理图设计时采用了0$\Omega$电阻的方式来实现分离接地，因此在布线时就不需要考虑该问题。
