@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -27,7 +27,7 @@
 \bibitem[~(2022)]{CPLD芯片介绍}
 ~ A~C.
 \newblock {EPM}240t100c5n-datasheet\allowbreak[EB/OL].
-\newblock \allowbreak(2022).
+\newblock 2022.
 \newblock \url{https://datasheet.ciiva.com/26806/epm240t100c5n-26806819.pdf}.
 
 \bibitem[黄丽萍(2010)]{车载可视倒车雷达预警系统的研制}
@@ -35,33 +35,55 @@
 \newblock 车载可视倒车雷达预警系统的研制\allowbreak[Z].
 \newblock 2010.
 
-\bibitem[Kuratli et~al.(1998)Kuratli and Huang]{13}
+\bibitem[Kuratli et~al.(1998)Kuratli and
+  Huang]{车载可视倒车雷达预警系统的研制13}
 KURATLI C, HUANG Q.
 \newblock Circuit and system design of a silicon-based miniaturized ultrasound
   range finder system\allowbreak[C]//\allowbreak
 Where Instrumentation Is Going - Conference Proceedings, Vols 1 and 2.
 \newblock New York: Ieee, 1998: 1372-1376.
 
-\bibitem[Smorfa et~al.(2006)Smorfa, Olivieri, Mancuso, and Lienhard]{14}
+\bibitem[Smorfa et~al.(2006-08)Smorfa, Olivieri, Mancuso, and
+  Lienhard]{车载可视倒车雷达预警系统的研制14}
 SMORFA S, OLIVIERI M, MANCUSO R, et~al.
 \newblock A physical-level {LCD} driver model and simulator with application to
   pixel crosstalk suppression\allowbreak[J].
-\newblock Ieee Transactions on Consumer Electronics, 2006, 52\allowbreak (3):
-  1027-1034.
+\newblock Ieee Transactions on Consumer Electronics, 2006-08, 52\allowbreak
+  (3): 1027-1034.
 
-\bibitem[Shin et~al.(2019)Shin, Kim, and Choi]{15}
+\bibitem[Shin et~al.(2019-04)Shin, Kim, and
+  Choi]{车载可视倒车雷达预警系统的研制15}
 SHIN S, KIM M~H, CHOI S~B.
 \newblock Ultrasonic distance measurement method with crosstalk rejection at
   high measurement rate\allowbreak[J].
-\newblock Ieee Transactions on Instrumentation and Measurement, 2019,
+\newblock Ieee Transactions on Instrumentation and Measurement, 2019-04,
   68\allowbreak (4): 972-979.
+
+\bibitem[~(2022)]{51单片机超声波测距仪防撞报警倒车雷达设计}
+~ T~I.
+\newblock {TUSS}4470芯片手册\allowbreak[EB/OL].
+\newblock 2022.
+\newblock
+  \url{https://www.ti.com.cn/cn/lit/ds/symlink/tuss4470.pdf?ts=1681895303209&ref_url=https%253A%252F%252Fwww.ti.com.cn%252Fproduct%252Fcn%252FTUSS4470%253Fqgpn%253Dtuss4470}.
+
+\bibitem[Fernando(1992)]{车载可视倒车雷达预警系统的研制16}
+FERNANDO F~J.
+\newblock A method for accurate detection of time of arrival: Analysis and
+  design of an ultrasonic ranging system\allowbreak[J].
+\newblock The Journal of the Acoustical Society of America, 1992.
 
 \bibitem[~(2022)]{TUSS4470芯片手册}
 ~ T~I.
 \newblock {TUSS}4470芯片手册\allowbreak[EB/OL].
-\newblock \allowbreak(2022).
+\newblock 2022.
 \newblock
   \url{https://www.ti.com.cn/cn/lit/ds/symlink/tuss4470.pdf?ts=1681895303209&ref_url=https%253A%252F%252Fwww.ti.com.cn%252Fproduct%252Fcn%252FTUSS4470%253Fqgpn%253Dtuss4470}.
+
+\bibitem[欧赛龙科技(2011)]{超声探头手册}
+欧赛龙科技.
+\newblock 300E10TR-1手册\allowbreak[EB/OL].
+\newblock 2011.
+\newblock \url{http://www.osenon.com/cp_view.asp?/18+300E10TR-1.html}.
 
 \bibitem[徐继芳(2001)]{分离接地}
 徐继芳.
@@ -74,23 +96,29 @@ SHIN S, KIM M~H, CHOI S~B.
 \newblock 走线寄生效应分析\allowbreak[J].
 \newblock 内燃机与配件, 2018\allowbreak (18): 219-220.
 
-\bibitem[~(2022)]{Verilog介绍}
-~ H.
-\newblock （verilog）{SPI协议详讲与实现}\allowbreak[EB/OL].
-\newblock \allowbreak(2022).
-\newblock \url{https://zhuanlan.zhihu.com/p/546827770}.
+\bibitem[~(2019)]{Verilog介绍}
+~ U.
+\newblock Verilog语法入门\allowbreak[EB/OL].
+\newblock 2019.
+\newblock \url{https://vlab.ustc.edu.cn/guide/doc_verilog.html}.
 
 \bibitem[~(2022)]{SPI}
 ~ H.
 \newblock （verilog）{SPI协议详讲与实现}\allowbreak[EB/OL].
-\newblock \allowbreak(2022).
+\newblock 2022.
 \newblock \url{https://zhuanlan.zhihu.com/p/546827770}.
 
 \bibitem[~(2021)]{线性序列机}
 ~ P.
 \newblock {FPGA学习}-线性序列机\allowbreak[EB/OL].
-\newblock \allowbreak(2021).
+\newblock 2021.
 \newblock
   \url{https://blog.csdn.net/weixin_58634335/article/details/122012668}.
+
+\bibitem[~(2021)]{Verilog环境搭建}
+~ T.
+\newblock Verilog环境搭建\allowbreak[EB/OL].
+\newblock 2021.
+\newblock \url{https://www.runoob.com/w3cnote/verilog-install.html}.
 
 \end{thebibliography}

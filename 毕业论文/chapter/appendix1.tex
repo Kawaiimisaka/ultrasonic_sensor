@@ -1,7 +1,17 @@
 %!TEX root = ../main.tex
-\makeappendix{\texorpdfstring{$1/f$}频谱图}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{example-image}
-    \caption{频谱图}
-\end{figure}
+\makeappendix{主要程序代码}
+\noindent
+顶层模块
+\lstinputlisting[language=Verilog]{./code/ultrasonic_sensor3_1.v}
+\noindent
+MAIN模块
+\lstinputlisting[language=Verilog]{./code/main.v}
+\noindent
+SPI模块
+\lstinputlisting[language=Verilog]{./code/spi.v}
+\noindent
+脉冲信号发生模块
+\lstinputlisting[language=Verilog]{./code/pulse_generation.v}
+\noindent
+检测计数模块
+\lstinputlisting[language=Verilog]{./code/detected_count.v}

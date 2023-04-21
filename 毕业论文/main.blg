@@ -24,6 +24,10 @@ A level-1 auxiliary file: chapter/conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Reallocating 'name_of_file' (item size: 1) to 18 items.
 A level-1 auxiliary file: chapter/thank.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/appendix1.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/appendix2.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 150 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
@@ -39,45 +43,49 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Reference.bib
 Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
 --line 34 of file Reference.bib
-You've used 13 entries,
+Warning--I didn't find a database entry for "35"
+Warning--I didn't find a database entry for "面向机器人安全避障的ＭＥＭＳ压电超声接近觉传感器的研究"
+Warning--I didn't find a database entry for "面向机器人安全避障的ＭＥＭＳ压电超声接近觉传感器的研究38"
+Warning--I didn't find a database entry for "CPLD芯片设计指南"
+You've used 17 entries,
             5374 wiz_defined-function locations,
-            1136 strings with 10130 characters,
-and the built_in function-call counts, 57344 in all, are:
-= -- 1481
-> -- 5844
-< -- 7854
-+ -- 2495
-- -- 458
-* -- 469
-:= -- 8237
-add.period$ -- 44
-call.type$ -- 13
-change.case$ -- 50
-chr.to.int$ -- 2075
-cite$ -- 13
-duplicate$ -- 304
-empty$ -- 929
-format.name$ -- 255
-if$ -- 14997
+            1159 strings with 11062 characters,
+and the built_in function-call counts, 74363 in all, are:
+= -- 1845
+> -- 7600
+< -- 10267
++ -- 3255
+- -- 550
+* -- 566
+:= -- 10624
+add.period$ -- 59
+call.type$ -- 17
+change.case$ -- 62
+chr.to.int$ -- 2676
+cite$ -- 17
+duplicate$ -- 410
+empty$ -- 1208
+format.name$ -- 309
+if$ -- 19484
 int.to.chr$ -- 1
-int.to.str$ -- 14
+int.to.str$ -- 18
 missing$ -- 0
-newline$ -- 85
-num.names$ -- 39
-pop$ -- 2215
+newline$ -- 108
+num.names$ -- 51
+pop$ -- 3071
 preamble$ -- 1
-purify$ -- 13
+purify$ -- 17
 quote$ -- 0
-skip$ -- 5834
+skip$ -- 7525
 stack$ -- 0
-substring$ -- 2798
-swap$ -- 13
-text.length$ -- 223
+substring$ -- 3583
+swap$ -- 17
+text.length$ -- 284
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 155
+type$ -- 187
 warning$ -- 0
-while$ -- 245
+while$ -- 310
 width$ -- 0
-write$ -- 190
-(There was 1 warning)
+write$ -- 241
+(There were 5 warnings)
