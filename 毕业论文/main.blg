@@ -42,50 +42,46 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Reference.bib
 Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
---line 34 of file Reference.bib
-Warning--I didn't find a database entry for "35"
-Warning--I didn't find a database entry for "面向机器人安全避障的ＭＥＭＳ压电超声接近觉传感器的研究"
-Warning--I didn't find a database entry for "面向机器人安全避障的ＭＥＭＳ压电超声接近觉传感器的研究38"
-Warning--I didn't find a database entry for "CPLD芯片设计指南"
-You've used 17 entries,
+--line 127 of file Reference.bib
+You've used 32 entries,
             5374 wiz_defined-function locations,
-            1159 strings with 11062 characters,
-and the built_in function-call counts, 74363 in all, are:
-= -- 1845
-> -- 7600
-< -- 10267
-+ -- 3255
-- -- 550
-* -- 566
-:= -- 10624
-add.period$ -- 59
-call.type$ -- 17
-change.case$ -- 62
-chr.to.int$ -- 2676
-cite$ -- 17
-duplicate$ -- 410
-empty$ -- 1208
-format.name$ -- 309
-if$ -- 19484
+            1233 strings with 13732 characters,
+and the built_in function-call counts, 126185 in all, are:
+= -- 3840
+> -- 12135
+< -- 16659
++ -- 5701
+- -- 1347
+* -- 1075
+:= -- 18505
+add.period$ -- 107
+call.type$ -- 32
+change.case$ -- 103
+chr.to.int$ -- 4590
+cite$ -- 32
+duplicate$ -- 768
+empty$ -- 2240
+format.name$ -- 605
+if$ -- 32797
 int.to.chr$ -- 1
-int.to.str$ -- 18
+int.to.str$ -- 33
 missing$ -- 0
-newline$ -- 108
-num.names$ -- 51
-pop$ -- 3071
+newline$ -- 187
+num.names$ -- 96
+pop$ -- 4200
 preamble$ -- 1
-purify$ -- 17
+purify$ -- 32
 quote$ -- 0
-skip$ -- 7525
+skip$ -- 12531
 stack$ -- 0
-substring$ -- 3583
-swap$ -- 17
-text.length$ -- 284
+substring$ -- 6583
+swap$ -- 32
+text.length$ -- 560
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 187
+type$ -- 352
 warning$ -- 0
-while$ -- 310
+while$ -- 602
 width$ -- 0
-write$ -- 241
-(There were 5 warnings)
+write$ -- 439
+(There was 1 warning)
