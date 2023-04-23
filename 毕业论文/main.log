@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  22 APR 2023 21:34
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  24 APR 2023 00:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1437,35 +1437,39 @@ LaTeX Font Warning: Font shape `TU/Times New Roman/m/n' undefined
 
 
 
-] [2] [3] [4]
+] [2] [3]
 File: figure/双压电晶片示意图.png Graphic file (type bmp)
 <figure/双压电晶片示意图.png>
 File: figure/双压电晶片等效电路.png Graphic file (type bmp)
 <figure/双压电晶片等效电路.png>
 
-Overfull \hbox (2.0075pt too wide) in paragraph at lines 78--90
+Overfull \hbox (2.0075pt too wide) in paragraph at lines 75--87
 []$[]$ $[]$ 
  []
 
-[5]
+[4]
 File: figure/超声换能器结构图.png Graphic file (type bmp)
 <figure/超声换能器结构图.png>
 File: figure/连续波相位检测法.png Graphic file (type bmp)
 <figure/连续波相位检测法.png>
- [6]
-File: figure/飞行时间检测法.png Graphic file (type bmp)
-<figure/飞行时间检测法.png>
- [7]
-File: figure/VOUT image.png Graphic file (type bmp)
-<figure/VOUT image.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8]
+[5]
+File: figure/飞行时间检测法.png Graphic file (type bmp)
+<figure/飞行时间检测法.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6] [7]
+File: figure/VOUT image.png Graphic file (type bmp)
+<figure/VOUT image.png>
+ [8]
 File: figure/overall designment.png Graphic file (type bmp)
 <figure/overall designment.png>
- [9] [10]) [11]
+ [9]) [10]
 \openout2 = `chapter/第二章.aux'.
 
  (chapter/第二章.tex
@@ -1473,7 +1477,7 @@ File: figure/Overall circuit.png Graphic file (type bmp)
 <figure/Overall circuit.png>
 File: figure/JTAG download circuit.png Graphic file (type bmp)
 <figure/JTAG download circuit.png>
- [12
+ [11
 
 
 
@@ -1481,7 +1485,7 @@ File: figure/JTAG download circuit.png Graphic file (type bmp)
 ]
 File: figure/detection count circuit.png Graphic file (type bmp)
 <figure/detection count circuit.png>
- [13]
+ [12]
 File: figure/overall pcb.png Graphic file (type bmp)
 <figure/overall pcb.png>
 
@@ -1496,15 +1500,15 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 52--60
  [][][][] 
  []
 
-[14]
+[13]
 File: figure/Function Block Diagram.png Graphic file (type bmp)
 <figure/Function Block Diagram.png>
- [15]
+ [14]
 File: figure/Analog Front-End Block Diagram.png Graphic file (type bmp)
 <figure/Analog Front-End Block Diagram.png>
 File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
 <figure/TUSS4470 peripheral circuit.png>
- [16]
+ [15]
 File: figure/VPWR PIN.png Graphic file (type bmp)
 <figure/VPWR PIN.png>
 File: figure/TUSS4470 Transducer Drive Options.png Graphic file (type bmp)
@@ -1516,7 +1520,7 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 130--138
  [][][][] 
  []
 
-[17]
+[16]
 File: figure/seperate ground.png Graphic file (type bmp)
 <figure/seperate ground.png>
 File: figure/TUSS4470 pcb.png Graphic file (type bmp)
@@ -1528,7 +1532,7 @@ Overfull \hbox (2.0075pt too wide) in paragraph at lines 154--166
 [][] [] 
  []
 
-[18] [19]) [20]
+[17] [18]) [19]
 \openout2 = `chapter/第三章.aux'.
 
  (chapter/第三章.tex
@@ -1537,17 +1541,25 @@ File: figure/detection logic.png Graphic file (type bmp)
 File: figure/LED state transition diagram.png Graphic file (type bmp)
 <figure/LED state transition diagram.png>
 
-Overfull \hbox (12.84642pt too wide) in paragraph at lines 7--19
-\TU/SimSun(0)/m/n/12.045 亮\TU/TimesNewRoman(0)/m/n/12.045 ; \TU/SimSun(0)/m/n/1
-2.045 有 效 脉 冲 波 的 次 数 小 于 或 等 于 \TU/TimesNewRoman(0)/m/n/12.045 a \TU/SimSun(0)
-/m/n/12.045 次 时，|  判 断 为 未 检 测 到 物 体，| \TU/TimesNewRoman(0)/m/n/12.045 DETECTED
-_STATE=0,LED
- []
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21
+
+Overfull \hbox (4.56647pt too wide) in paragraph at lines 22--22
+[]\TU/SimSun(0)/m/n/12.045 流 程 图 中 \TU/TimesNewRoman(0)/m/n/12.045 i \TU/SimSun
+(0)/m/n/12.045 为 发 射 脉 冲 波 的 次 数，| \TU/TimesNewRoman(0)/m/n/12.045 PULSE_GENERA
+TION_TIMES \TU/SimSun(0)/m/n/12.045 和 \TU/TimesNewRoman(0)/m/n/12.045 DETECTED_
+NU-
+ []
+
+
+Overfull \hbox (1.22684pt too wide) in paragraph at lines 22--22
+\TU/TimesNewRoman(0)/m/n/12.045 M_THRESHOLD \TU/SimSun(0)/m/n/12.045 用 于 定 义 一 
+个 检 测 周 期 包 括 的 发 射 脉 冲 次 数 和 检 测 阈 值，| \TU/TimesNewRoman(0)/m/n/12.045 DETECTE
+D_-
+ []
+
+[20
 
 
 
@@ -1555,68 +1567,68 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ]
 File: figure/Overall program block diagram.png Graphic file (type bmp)
 <figure/Overall program block diagram.png>
- [22]
+ [21]
 File: figure/MAIN module flow chart.png Graphic file (type bmp)
 <figure/MAIN module flow chart.png>
 
-Overfull \hbox (7.2572pt too wide) in paragraph at lines 52--53
+Overfull \hbox (7.2572pt too wide) in paragraph at lines 54--55
 \TU/TimesNewRoman(0)/m/n/12.045 MAIN \TU/SimSun(0)/m/n/12.045 模 块 发 出 \TU/Times
 NewRoman(0)/m/n/12.045 burst_finish \TU/SimSun(0)/m/n/12.045 脉 冲 发 射 完 成 信 号，| 
  此 时 \TU/TimesNewRoman(0)/m/n/12.045 MAIN \TU/SimSun(0)/m/n/12.045 模 块 将 \TU/Ti
 mesNewRoman(0)/m/n/12.045 PULSE_GENERATION
  []
 
-[23]
+[22]
 File: figure/DATA_SHIFT.png Graphic file (type bmp)
 <figure/DATA_SHIFT.png>
- [24]
-Overfull \hbox (18.19157pt too wide) in paragraph at lines 97--98
+ [23]
+Overfull \hbox (18.19157pt too wide) in paragraph at lines 99--100
 []\TU/SimSun(0)/m/n/12.045 当 复 位 时，|  对 \TU/TimesNewRoman(0)/m/n/12.045 DATA_SH
 IFT \TU/SimSun(0)/m/n/12.045 寄 存 器 进 行 初 始 化；|  当 计 数 器 \TU/TimesNewRoman(0)/m/
 n/12.045 CNT \TU/SimSun(0)/m/n/12.045 为 \TU/TimesNewRoman(0)/m/n/12.045 0 \TU/S
 imSun(0)/m/n/12.045 时，|  将 \TU/TimesNewRoman(0)/m/n/12.045 DATA_IN_BUF
  []
 
-[25]
+[24]
 File: figure/SPI Program Flow Chart.png Graphic file (type bmp)
 <figure/SPI Program Flow Chart.png>
 File: figure/SPI Frame.png Graphic file (type bmp)
 <figure/SPI Frame.png>
 File: figure/SPI Transfer Sequence.png Graphic file (type bmp)
 <figure/SPI Transfer Sequence.png>
- [26] [27] [28]
+ [25] [26] [27]
 File: figure/IO MODE1.png Graphic file (type bmp)
 <figure/IO MODE1.png>
 File: figure/single pulse control.png Graphic file (type bmp)
 <figure/single pulse control.png>
 File: figure/multiple pulse control.png Graphic file (type bmp)
 <figure/multiple pulse control.png>
- [29] [30]
+ [28] [29]
 File: figure/TESTBENCH structure.png Graphic file (type bmp)
 <figure/TESTBENCH structure.png>
- [31]
+ [30] [31]
 File: figure/overall wave simulation.png Graphic file (type bmp)
 <figure/overall wave simulation.png>
 
-Overfull \hbox (22.76358pt too wide) in paragraph at lines 296--296
+Overfull \hbox (22.76358pt too wide) in paragraph at lines 298--298
 [][] 
  []
 
 File: figure/spi wave simulation.png Graphic file (type bmp)
 <figure/spi wave simulation.png>
 
-Overfull \hbox (22.76358pt too wide) in paragraph at lines 303--303
+Overfull \hbox (22.76358pt too wide) in paragraph at lines 305--305
 [][] 
  []
 
 File: figure/pulse wave simulation.png Graphic file (type bmp)
 <figure/pulse wave simulation.png>
 
-Overfull \hbox (22.76358pt too wide) in paragraph at lines 309--309
+Overfull \hbox (22.76358pt too wide) in paragraph at lines 311--311
 [][] 
  []
 
-) [32] [33]
+) [32]
 \openout2 = `chapter/第四章.aux'.
 
  (chapter/第四章.tex
@@ -1624,7 +1636,7 @@ File: figure/physical map.png Graphic file (type bmp)
 <figure/physical map.png>
 File: figure/debug waveform1.png Graphic file (type bmp)
 <figure/debug waveform1.png>
- [34
+ [33
 
 
 
@@ -1632,21 +1644,21 @@ File: figure/debug waveform1.png Graphic file (type bmp)
 ]
 File: figure/debug waveform2.png Graphic file (type bmp)
 <figure/debug waveform2.png>
- [35]
+ [34]
 File: figure/debug waveform9.png Graphic file (type bmp)
 <figure/debug waveform9.png>
 File: figure/debug waveform3.png Graphic file (type bmp)
 <figure/debug waveform3.png>
 File: figure/debug waveform4.png Graphic file (type bmp)
 <figure/debug waveform4.png>
- [36]
+ [35]
 File: figure/debug waveform5.png Graphic file (type bmp)
 <figure/debug waveform5.png>
 File: figure/debug waveform6.png Graphic file (type bmp)
 <figure/debug waveform6.png>
 File: figure/debug waveform7.png Graphic file (type bmp)
 <figure/debug waveform7.png>
- [37]
+ [36]
 File: figure/debug wave form8.png Graphic file (type bmp)
 <figure/debug wave form8.png>
 File: figure/虚拟示波器.png Graphic file (type bmp)
@@ -1658,7 +1670,7 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 103--111
  [][][][] 
  []
 
-[38] [39]
+[37] [38]
 File: figure/G3.png Graphic file (type bmp)
 <figure/G3.png>
 File: figure/G1.png Graphic file (type bmp)
@@ -1670,10 +1682,10 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 209--217
  [][][][] 
  []
 
-[40]) [41]
+[39]) [40]
 \openout2 = `chapter/第五章.aux'.
 
- (chapter/第五章.tex) [42
+ (chapter/第五章.tex) [41
 
 
 
@@ -1681,22 +1693,22 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 209--217
 ]
 \openout2 = `chapter/conclusion.aux'.
 
- (chapter/conclusion.tex) [43
+ (chapter/conclusion.tex) [42
 
 
 
 
 
 ] (main.bbl
-[44
+[43
 
 
 
 
-] [45]) [46]
+] [44]) [45]
 \openout2 = `chapter/thank.aux'.
 
- (chapter/thank.tex) [47
+ (chapter/thank.tex) [46
 
 
 
@@ -1716,18 +1728,18 @@ File: lstlang3.sty 2020/03/24 1.8d listings language file
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 5.
  (code/ultrasonic_sensor3_1.v
-[48
+[47
 
 
 
 
 
-]) (code/main.v [49] [50] [51] [52] [53] [54] [55]) (code/spi.v [56]
-[57] [58] [59] [60] [61] [62]) (code/pulse_generation.v [63] [64] [65])
-(code/detected_count.v)) [66]
+]) (code/main.v [48] [49] [50] [51] [52] [53] [54]) (code/spi.v [55]
+[56] [57] [58] [59] [60] [61]) (code/pulse_generation.v [62] [63] [64])
+(code/detected_count.v)) [65]
 \openout2 = `chapter/appendix2.aux'.
 
- (chapter/appendix2.tex) [67
+ (chapter/appendix2.tex) [66
 
 
 
@@ -1747,10 +1759,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  45201 strings out of 410532
  1089185 string characters out of 2820404
- 1790362 words of memory out of 3000000
+ 1790359 words of memory out of 3000000
  65533 multiletter control sequences out of 15000+600000
  489668 words of font info for 156 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,18n,131p,1230b,2087s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (73 pages).
+Output written on main.pdf (72 pages).

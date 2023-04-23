@@ -4,21 +4,23 @@
 \subsection{超声波接近传感器的检测策略}
 在配置完成TUSS4470驱动芯片后，即可开始产生脉冲信号并通过超声换能器发送脉冲波。与传统的超声波传感器不同，采用该驱动芯片可发送指定次数、指定脉冲数的脉冲波，这就为我们设计丰富的检测策略提供了硬件基础。考虑到钢化玻璃处于复杂的工厂环境，传感器易受到各种电磁信号以及本身回波信号的叠加干扰，因此增加传感器的稳定性就变得至关重要。\par
 
-本设计采用多次发射脉冲波的检测策略，在发送完一次指定脉冲数的脉冲波之后，传感器就进入检测模式，假如检测到了有效回波，检测标志位加一。连续发射a次脉冲，以a次脉冲波的发射作为一次检测周期，每个检测周期后都会更新检测状态。当一个检测周期内有超过b次检测到有效回波时，判断为检测到物体，DETECTED\_STATE=1,LED灯亮;有效脉冲波的次数小于或等于a次时，判断为未检测到物体，DETECTED\_STATE=0,LED灯灭。如图\ref{检测策略流程图}为实现检测策略的程序流程图，图\ref{检测状态转移图}为检测状态转移图。
+本设计采用多次发射脉冲波的检测策略，在发送完一次指定脉冲数的脉冲波之后，传感器就进入检测模式，假如检测到了有效回波，检测标志位加一。连续发射a次脉冲，以a次脉冲波的发射作为一次检测周期，在每个检测周期结束后都会更新检测状态。当一个检测周期内有超过b次检测到有效回波时，判断为检测到物体，DETECTED\_STATE=1,LED灯亮;反之，有效脉冲波的次数小于或等于a次时，判断为未检测到物体，DETECTED\_STATE=0,LED灯灭。如图\ref{检测策略流程图}为实现检测策略的程序流程图，图\ref{检测状态转移图}为检测状态转移图。
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=7cm]{figure/detection logic.png}
+	\includegraphics[width=6.5cm]{figure/detection logic.png}
 	\caption{检测策略流程图}
 	\label{检测策略流程图}%文中引用该图片代号
 \end{figure}
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=7cm]{figure/LED state transition diagram.png}
+	\includegraphics[width=6.5cm]{figure/LED state transition diagram.png}
 	\caption{检测状态转移图}
 	\label{检测状态转移图}%文中引用该图片代号
 \end{figure}\par
-流程图中i用于记录发射脉冲波的次数，PULSE\_GENERATION\_TIMES和DETECTED\_NUM\_THRESHOLD用于定义一个检测周期包括的发射脉冲次数和检测阈值，DETECTED\_NUM用于记录一次检测周期中有效回波的次数，当DETECTED\_NUM超过所设定阈值时，检测状态指示位DETECTED\_STATE就转移为1。\par
-此种检测策略可以极大的增加传感器的稳定性，只有在指定位置持续检测到钢化玻璃时才会认为检测到物体，一定程度上可以避免发生因外界干扰而出现错误检测的情况。
+
+
+流程图中i为发射脉冲波的次数，PULSE\_GENERATION\_TIMES和DETECTED\_NU-M\_THRESHOLD用于定义一个检测周期包括的发射脉冲次数和检测阈值，DETECTED\_-NUM用于记录一次检测周期中有效回波的次数，当一次检测周期内DETECTED\_NUM超过所设定阈值时，检测状态指示位DETECTED\_STATE转移为1。\par
+此种检测策略可以极大的增加传感器的稳定性，只有在指定位置持续检测到钢化玻璃时才会认为检测到物体，一定程度上可以避免发生因外界干扰而出现错误检测的情况。同时，可以根据应用场景来调整检测策略，极大的增加了传感器的灵活性。
 
 
 \subsection{传感器程序设计}
@@ -61,7 +63,7 @@ MAIN模块的主要逻辑通过状态机的方式来实现，状态机包括了B
 在本设计中，采用的是四线制SPI，其包括：SCLK（时钟信号）、NCS（片选信号）、MOSI（MCU输出信号）、MISO（MCU输入信号）。SCLK时钟信号和NCS片选信号都由主设备产生，NCS信号拉低为有效信号。
 \noindent
 \paragraph{SPI模块通信模式选择}
-SPI通信模式通过CPOL（时钟极性）和CPHA（时钟相位）来确定。其中CPOL配置SCLK电平的有效态，当CPOL=0时，SCLK低电平处于空闲态，高电平有效，当CPOL=1时，SCLK高电平为空闲态，低电平有效；CPHA配置数据采样发生在第几个边沿，当CPHA=0时，在第一个边沿数据采样，在第二个边沿数据发送，当CPHA=1时，在第一个边沿数据发送，在第二个边沿数据采样\upcite{SPI}。\par
+SPI通信模式通过CPOL（时钟极性）和CPHA（时钟相位）来确定。其中CPOL配置SCLK电平的有效态，当CPOL=0时，SCLK低电平处于IDLE态，高电平有有效，当CPOL=1时，SCLK高电平为IDLE态，低电平有效；CPHA设置数据采样发生在第几个边沿，当CPHA=0时，在第一个边沿进行数据采样，在第二个边沿数据进行发送，当CPHA=1时，在第一个边沿数据发送，在第二个边沿数据采样\upcite{SPI}。\par
 根据芯片手册可以得知驱动芯片为高电平有效，在上升沿接收数据，在下降沿发送数据，即MCU在上升沿发送数据，在下降沿接收数据，可以得知选择的SPI模式为:CPOL=0,CPHA=1。
 \noindent
 \paragraph{SPI模块实现原理}
@@ -248,22 +250,22 @@ TUSS4470超声驱动芯片有4种脉冲模式来为超声传感器提供激励�
 其功能实现流程为：
 当一块玻璃到位后，到位检测指示灯LED1变亮，CPLD芯片从CT\_1口得到一个高电平信号，计数寄存器object\_num由CT\_1上升沿信号触发，每次触发时加1；当钢化玻璃离开检测区域后，检测指示灯灭，等待下一块玻璃到位。\par
 \subsubsection{仿真模拟}
-\paragraph{仿真环境的搭建}
-在完成程序设计部分的工作后，就要开始搭建环境，来完成代码的编写，以及时序调试与仿真，来验证其可行性，本设计采取QUARTUS II配合MODELSIM联合仿真的测试方式。\par
-Quartus II是由Intel公司推出的FPGA设计软件。FPGA是一种可编程逻辑器件，Quartus II软件可以用于FPGA设计的各个环节，包括原理图设计、硬件描述语言(HDL)编程、仿真、综合、布局布线等。Quartus II软件支持的HDL包括VHDL和Verilog。使用Quartus II软件可以快速完成FPGA的设计、验证和调试;
-ModelSim是一种常用的数字电路仿真工具，由Mentor Graphics公司开发。它支持VHDL和Verilog两种硬件描述语言，并且支持多种硬件平台，包括Intel FPGA、Altera FPGA等。\par
+\paragraph{环境的搭建}
+在完成程序设计部分的工作后，就要开始搭建环境，来完成代码的编写，以及时序调试与仿真，来验证其可行性，本设计采取QUARTUS II配合MODELSIM联合仿真的测试方式\upcite{Verilog环境搭建}。\par
+Quartus II软件作为一款全面的FPGA设计软件，支持从设计、验证到实现等多个环节。它不仅支持常见的HDL语言，如VHDL和Verilog，而且支持SystemVerilog等高级语言。Quartus II软件还提供了多种集成的EDA工具，包括仿真工具、合成工具、时序分析工具等，使得FPGA的设计、验证和调试变得更加简单和高效。
+ModelSim是一款由Mentor Graphics公司开发的数字电路仿真工具，它广泛用于FPGA设计中。该软件支持VHDL和Verilog等硬件描述语言，同时支持多种硬件平台，如Intel FPGA、Altera FPGA等。\par
 本设计中QUARTUS II使用的版本为18.0，MODELSIM采用的版本为10.1，软件运行的环境为64bit-win10系统。\par
 \paragraph{工程文件的创建}
-QUARTUS II在编写代码前需要建立工程文件。首先打开Quartus软件，选择File -> New Project Wizard\upcite{Verilog环境搭建}。
+QUARTUS II在编写代码前需要建立工程文件。首先打开Quartus软件，选择File、New Project Wizard\upcite{Verilog环境搭建}。
 在弹出的New Project Wizard窗口中，选择Create a new project选项，然后单击Next。
 在下一个窗口中，输入项目名称和存储位置，并选择要使用的FPGA器件系列。然后单击Next。
 在接下来的窗口中，选择要添加到项目中的源文件类型，例如VHDL、Verilog等，并选择项目的顶层实体文件。然后单击Next。
 在下一个窗口中，选择要使用的IP核和约束文件，如果没有，则可以跳过这一步。然后单击Next。
 在接下来的窗口中，选择要使用的EDA工具，例如ModelSim等。然后单击Next。
 在最后一个窗口中，查看项目设置的摘要，并单击Finish以创建工程。
-完成这些步骤后，Quartus将创建一个新的工程文件夹，其中包含工程文件源文件和约束文件。在文件夹中可以新建顶层模块和各子模块的源文件，顶层模块的模块名必须要和工程名保持一致。在本设计中，顶层模块不实现任何逻辑，只起到端口例化，连接各个子模块的作用。\par
-在进行仿真模拟之前，需要选择仿真工具，创建TESTBENCH文件。在Tool->Options->EDA Tool Options中，将 Modelsim 的地址改为 Modelsim 启动程序的路径；在Assignments -> Simulation中选择Tool name为ModelSim；然后选择Processing->start->Start TESTBENCH Template Writer，如果设置正确，会在工程路径 simulation/modelsim 下产生 .vt 文件，TESTBENCH就将在这个文件中进行编写。在完成上述设置后，还需要将 TESTBENCH 添加到工程中，点击Assignments -> Settings -> Simulation，
-在 Compile test bench 选项中，选择 new，设置 Test bench name，并通过 File name 查找的方式，将上一步生成的 .vt 文件添加到工程中。重新一键编译后，点击Tools->Run simulation Tool->RTL Simulation进行仿真。
+完成这些步骤后，Quartus将创建一个新的工程文件夹，其中包含工程文件源文件和约束文件。在文件夹中可以新建顶层模块和各子模块的源文件，顶层模块的模块名必须要和工程名保持一致。在本设计中，顶层模块不实现任何逻辑，只起到端口例化，连接各个子模块的作用。在完成工程文件的创建后即可在文件中进行程序的编写。\par
+进行仿真模拟之前，需要选择仿真工具，创建TESTBENCH文件。在Tool、Options、EDA Tool Options中，将 Modelsim 的地址改为 Modelsim 启动程序的路径；在Assignments、Simulation中选择Tool name为ModelSim；然后选择Processing、start、Start TESTBENCH Template Writer，如果设置正确，会在工程路径 simulation/modelsim 下产生 .vt 文件，TESTBENCH就将在这个文件中进行编写。在完成上述设置后，还需要将 TESTBENCH 添加到工程中，点击Assignments、Settings、Simulation，
+在 Compile test bench 选项中，选择 new，设置 Test bench name，并通过 File name 查找的方式，将上一步生成的 .vt 文件添加到工程中。重新一键编译后，点击Tools、Run simulation Tool、RTL Simulation进行仿真。
 
 \paragraph{仿真激励文件编写}
 在QUARTUS II软件中，需要编写TESTBENCH文件来为程序提供虚拟的外部激励以进行仿真调试，在本设计中，程序包含的外部激励端口有gclk、rstn、out3、out4、ct1。如图\ref{TESTBENCH结构图}所示，TESTBENCH的结构中包括了信号声明、复位信号产生、时钟生成、外部激励生成、模块例化、自校验、停止仿真。\par
@@ -278,12 +280,12 @@ QUARTUS II在编写代码前需要建立工程文件。首先打开Quartus软件
 \begin{equation}
 	T=\frac{2\pi}{f}
 	\label{周期计算公式}
-\end{equation}
-对于其它的激励信号，在程序开始时，复位信号拉低，程序复位，延时一段时间后，复位信号拉高，程序开始运行。out3和out4信号一直保持着拉高状态。
+\end{equation}\par
+对于其它的激励信号，在程序开始时，复位信号拉低，程序复位，延时一段时间后，复位信号拉高，程序开始运行。out3和out4信号一直保持着拉高状态。信号的状态都可以在MODELSIM的仿真界面中观察到，下面将介绍波形的仿真结果。
 
-
+\newpage
 \paragraph{波形仿真}
-在完成上述配置后，编译程序，就可以在MODELSIM软件内进行仿真，调试波形。
+在完成上述配置后，编译程序，就可以对所设计的程序进行仿真，并且在MODELSIM软件内调试波形。
 
 
 \begin{figure}[ht]

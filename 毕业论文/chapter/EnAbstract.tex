@@ -1,8 +1,11 @@
 %!TEX root = ../main.tex
 \begin{EnAbstract}
-    In the automation production, the stability and accuracy of the in-place sensor play a very important role. This graduation project plans to develop and design an ultrasonic proximity sensor based on the TUSS4470 integrated chip, mainly used for in-place detection in the tempered glass automation production line. Compared with traditional single-chip control, this design uses a CPLD chip to generate sensor drive control signals, obtaining drive signals with higher precision and stability than traditional control signals.\par
-    The hardware design of the sensor includes CPLD minimum system design, TUSS4470 chip peripheral circuit design, and PCB design. The software design includes chip configuration, pulse generation, and in-place detection. This design adopts a detection strategy of sending multiple pulse waves and setting the detection threshold to judge the detection status. The number of pulse emissions and pulses can be adjusted according to the application scenario, greatly improving the flexibility and reliability of the sensor in production application.\par
-    The experiment shows that the sensor can detect objects in the range of $100mm$ to $200mm$ with a detection accuracy of up to $1mm$ and a detection cycle of $10ms$. This design has achieved the expected goals and has the characteristics of good stability, high accuracy, and rich application scenarios.
+    
+    This design aims to solve the problem of detecting the positioning of tempered glass on the production line. A highly stable, flexible and widely applicable ultrasonic proximity sensor is developed. Compared with traditional single-chip control, this design uses a CPLD chip to generate sensor driving control signals. Combined with the TUSS4470 integrated chip, higher precision and more stable driving signals can be obtained. At the same time, the design uses a detection strategy of multiple pulse waves and a set detection threshold to judge the detection status. By adjusting the number of pulse wave emissions and the number of pulses, the flexibility and reliability of the sensor in production applications are improved.
+    
+    The design aims to create an ultrasonic proximity sensor capable of detecting objects within the range of $100mm \sim 200mm$ with a detection accuracy of $1mm$.
+    
+    This article will detail the design process and working principle of the ultrasonic proximity sensor's hardware and software components. After completing the simulation of the hardware and software components, physical welding and production will be performed, and the program will be debugged using an oscilloscope. Finally, an experimental plan will be designed to test the sensor's performance parameters and echo characteristics.
   
   
     \EnglishKeyWord ultrasonic proximity sensor, CPLD chip, TUSS4470 integrated chip , detection strategy
