@@ -7,27 +7,8 @@ Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: chapter/ZhAbstract.aux
 Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: chapter/EnAbstract.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/第一章.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/第二章.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/第三章.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/第四章.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/第五章.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/第六章.aux
-Reallocating 'name_of_file' (item size: 1) to 23 items.
-A level-1 auxiliary file: chapter/conclusion.aux
-Reallocating 'name_of_file' (item size: 1) to 10 items.
-Reallocating 'name_of_file' (item size: 1) to 18 items.
-A level-1 auxiliary file: chapter/thank.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/appendix1.aux
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-A level-1 auxiliary file: chapter/appendix2.aux
+I found no \citation commands---while reading file main.aux
+I found no \bibdata command---while reading file main.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 150 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
@@ -40,48 +21,45 @@ Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Database file #1: Reference.bib
-Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
---line 127 of file Reference.bib
-You've used 32 entries,
+You've used 0 entries,
             5374 wiz_defined-function locations,
-            1233 strings with 13732 characters,
-and the built_in function-call counts, 126185 in all, are:
-= -- 3840
-> -- 12135
-< -- 16659
-+ -- 5701
-- -- 1347
-* -- 1075
-:= -- 18505
-add.period$ -- 107
-call.type$ -- 32
-change.case$ -- 103
-chr.to.int$ -- 4590
-cite$ -- 32
-duplicate$ -- 768
-empty$ -- 2240
-format.name$ -- 605
-if$ -- 32797
+            1045 strings with 7689 characters,
+and the built_in function-call counts, 85 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 48
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 2
 int.to.chr$ -- 1
-int.to.str$ -- 33
+int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 187
-num.names$ -- 96
-pop$ -- 4200
+newline$ -- 14
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 0
 quote$ -- 0
-skip$ -- 12531
+skip$ -- 2
 stack$ -- 0
-substring$ -- 6583
-swap$ -- 32
-text.length$ -- 560
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 352
+type$ -- 0
 warning$ -- 0
-while$ -- 602
+while$ -- 0
 width$ -- 0
-write$ -- 439
-(There was 1 warning)
+write$ -- 13
+(There were 2 error messages)

@@ -1,0 +1,64 @@
+`timescale 1 ns/ 1 ns
+module ultrasonic_sensor3_1_vlg_tst();
+// constants                                           
+// general purpose registers
+reg eachvec;
+// test vector input registers
+reg ct1;
+reg gclk;
+reg miso;
+reg out_3;
+reg out_4;
+reg rstn;
+// wires                                               
+wire ct;
+wire io1;
+wire io2;
+wire mosi;
+wire nss;
+wire sclk;
+
+// assign statements (if any)                          
+ultrasonic_sensor3_1 i1 (
+// port map - connection between master ports and signals/registers   
+	.ct(ct),
+	.ct1(ct1),
+	.gclk(gclk),
+	.io1(io1),
+	.io2(io2),
+	.miso(miso),
+	.mosi(mosi),
+	.nss(nss),
+	.out_3(out_3),
+	.out_4(out_4),
+	.rstn(rstn),
+	.sclk(sclk)
+);
+
+initial                                                
+begin 
+rstn=0;#60;                                                 
+rstn=1;    
+out_3=1;
+out_4=1;      
+miso=1;                            
+$display("Running testbench");                       
+end            
+
+//gclk=24Mhz                                        
+always begin
+	gclk=0;#(1000/48);
+	gclk=1;#(1000/48);  
+end  
+
+initial                                                
+begin                                                                                  
+$display("Running testbench");                       
+end     
+
+always                                                           
+begin                                                                                                            
+@eachvec;                                                                                        
+end                                                    
+endmodule
+
