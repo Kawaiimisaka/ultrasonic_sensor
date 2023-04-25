@@ -7,8 +7,23 @@ Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: chapter/ZhAbstract.aux
 Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: chapter/EnAbstract.aux
-I found no \citation commands---while reading file main.aux
-I found no \bibdata command---while reading file main.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第一章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第二章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第三章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第四章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第五章.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/第六章.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+A level-1 auxiliary file: chapter/thank.aux
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: chapter/appendix1.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 150 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
@@ -21,45 +36,48 @@ Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 0 entries,
+Database file #1: Reference.bib
+Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
+--line 127 of file Reference.bib
+You've used 30 entries,
             5374 wiz_defined-function locations,
-            1045 strings with 7689 characters,
-and the built_in function-call counts, 85 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 48
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 2
+            1217 strings with 13109 characters,
+and the built_in function-call counts, 106763 in all, are:
+= -- 3440
+> -- 9863
+< -- 13830
++ -- 4907
+- -- 1188
+* -- 959
+:= -- 15828
+add.period$ -- 101
+call.type$ -- 30
+change.case$ -- 84
+chr.to.int$ -- 3901
+cite$ -- 30
+duplicate$ -- 717
+empty$ -- 2090
+format.name$ -- 527
+if$ -- 27746
 int.to.chr$ -- 1
-int.to.str$ -- 1
+int.to.str$ -- 31
 missing$ -- 0
-newline$ -- 14
-num.names$ -- 0
-pop$ -- 0
+newline$ -- 176
+num.names$ -- 90
+pop$ -- 3303
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 30
 quote$ -- 0
-skip$ -- 2
+skip$ -- 10399
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 5666
+swap$ -- 30
+text.length$ -- 508
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 330
 warning$ -- 0
-while$ -- 0
+while$ -- 546
 width$ -- 0
-write$ -- 13
-(There were 2 error messages)
+write$ -- 411
+(There was 1 warning)

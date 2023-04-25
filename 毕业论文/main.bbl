@@ -1,4 +1,4 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{30}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -10,5 +10,193 @@
   \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
   \let\eprint\href
 \fi
+
+\bibitem[廖一\ 等(2008)廖一 and
+  曾迎生]{超声波测距传感器的研究6}
+廖一, 曾迎生.
+\newblock 基于超声传感器阵列的陆地自主车测距\allowbreak[J].
+\newblock 微计算机信息, 2008\allowbreak (10): 3.
+
+\bibitem[杜晓\ 等(2008)杜晓 and
+  张重雄]{超声波测距传感器的研究7}
+杜晓, 张重雄.
+\newblock 基于SOPC技术的井下参数测试仪的开发\allowbreak[J].
+\newblock 微计算机信息, 2008.
+
+\bibitem[王洪青\ 等(2008)王洪青, 褚金奎, 李荣华, and
+  李庆瀛]{超声波测距传感器的研究8}
+王洪青, 褚金奎, 李荣华, 等.
+\newblock
+  并行超声波测距系统在移动机器人上的应用\allowbreak[J].
+\newblock 传感器与微系统, 2008\allowbreak (09): 115-117.
+
+\bibitem[杜刚\ 等(2009)杜刚 and
+  刘建一]{超声波测距传感器的研究9}
+杜刚, 刘建一.
+\newblock 基于ARM的超声波测距系统设计\allowbreak[J].
+\newblock 福建电脑, 2009\allowbreak (3): 2.
+
+\bibitem[王丽娜(2009)]{超声波测距传感器的研究10}
+王丽娜.
+\newblock
+  基于小波变换高精度在线超声波测距技术研究\allowbreak[D].
+\newblock 长春理工大学, 2009.
+
+\bibitem[王育慷(2005)]{超声波测距传感器的研究11}
+王育慷.
+\newblock 超声波原理与现代应用探讨\allowbreak[J].
+\newblock 贵州大学学报：自然科学版, 2005, 22\allowbreak (3): 4.
+
+\bibitem[Wei et~al.(2000)Wei, Tian, Zhao, and
+  Sun]{超声波测距传感器的研究14}
+WEI S~S, TIAN L~J, ZHAO C~S, et~al.
+\newblock The design of impedance matching transformer of ultrasonic
+  motor\allowbreak[J].
+\newblock ELECTRIC MACHINES AND CONTROL, 2000.
+
+\bibitem[杨媛\ 等(2000)杨媛, 高勇, 马军, and
+  李福德]{CPLD在超声波传感器驱动控制电路中}
+杨媛, 高勇, 马军, 等.
+\newblock {CPLD在超声波传感器驱动控制电路中}\allowbreak[J].
+\newblock 西安理工大学学报, 2000\allowbreak (4): 381-383.
+
+\bibitem[韩韧\ 等(2016)韩韧, 金永威, and
+  王强]{基于STM32和超声波测距的倒车雷达预警系统设计}
+韩韧, 金永威, 王强.
+\newblock
+  基于STM32和超声波测距的倒车雷达预警系统设计\allowbreak[J].
+\newblock 传感器与微系统, 2016, 35\allowbreak (4): 63-66.
+
+\bibitem[~(2022)]{CPLD芯片介绍}
+~ A~C.
+\newblock {EPM}240t100c5n-datasheet\allowbreak[EB/OL].
+\newblock 2022.
+\newblock \url{https://datasheet.ciiva.com/26806/epm240t100c5n-26806819.pdf}.
+
+\bibitem[黄丽萍(2010)]{车载可视倒车雷达预警系统的研制}
+黄丽萍.
+\newblock 车载可视倒车雷达预警系统的研制\allowbreak[Z].
+\newblock 2010.
+
+\bibitem[范思航(2014)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究39}
+范思航.
+\newblock 超声波换能器驱动及前端接收电路研究\allowbreak[D].
+\newblock 西安石油大学, 2014.
+
+\bibitem[Kuratli et~al.(1998)Kuratli and
+  Huang]{车载可视倒车雷达预警系统的研制13}
+KURATLI C, HUANG Q.
+\newblock Circuit and system design of a silicon-based miniaturized ultrasound
+  range finder system\allowbreak[C]//\allowbreak
+Where Instrumentation Is Going - Conference Proceedings, Vols 1 and 2.
+\newblock New York: Ieee, 1998: 1372-1376.
+
+\bibitem[Shin et~al.(2019-04)Shin, Kim, and
+  Choi]{车载可视倒车雷达预警系统的研制15}
+SHIN S, KIM M~H, CHOI S~B.
+\newblock Ultrasonic distance measurement method with crosstalk rejection at
+  high measurement rate\allowbreak[J].
+\newblock Ieee Transactions on Instrumentation and Measurement, 2019-04,
+  68\allowbreak (4): 972-979.
+
+\bibitem[~(2022)]{51单片机超声波测距仪防撞报警倒车雷达设计}
+~ T~I.
+\newblock {TUSS}4470芯片手册\allowbreak[EB/OL].
+\newblock 2022.
+\newblock
+  \url{https://www.ti.com.cn/cn/lit/ds/symlink/tuss4470.pdf?ts=1681895303209&ref_url=https%253A%252F%252Fwww.ti.com.cn%252Fproduct%252Fcn%252FTUSS4470%253Fqgpn%253Dtuss4470}.
+
+\bibitem[Fernando(1992)]{车载可视倒车雷达预警系统的研制16}
+FERNANDO F~J.
+\newblock A method for accurate detection of time of arrival: Analysis and
+  design of an ultrasonic ranging system\allowbreak[J].
+\newblock The Journal of the Acoustical Society of America, 1992.
+
+\bibitem[刘菊(2005)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究34}
+刘菊.
+\newblock
+  超声波测距原理及其在大型电极挤压过程中的应用\allowbreak[D].
+\newblock 湖南大学, 2005.
+
+\bibitem[汤传国(2015)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究35}
+汤传国.
+\newblock 基于超声波测距的倒车雷达系统研究\allowbreak[D].
+\newblock 长安大学, 2015.
+
+\bibitem[寇雪芹(2015)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究36}
+寇雪芹.
+\newblock
+  塔机障碍物远距离超声测距方法与识别机理研究\allowbreak[D].
+\newblock 西安建筑科技大学, 2015.
+
+\bibitem[仝志昊(2021)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究}
+仝志昊.
+\newblock
+  {面向机器人安全避障的MEMS压电超声接近觉传感器的研究}\allowbreak[D/OL].
+\newblock 苏州大学, 2021\allowbreak[2023-04-22].
+\newblock
+  \url{https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C475KOm_zrgu4lQARvep2SAkaWjBDt8_rTOnKA7PWSN5MBcLLsj6rB1Cf6AhCKsIYlif_uoWQt1s9_H4t4HpQtKu&uniplatform=NZKPT}.
+\newblock DOI: \doi{10.27351/d.cnki.gszhu.2021.002495}.
+
+\bibitem[杨令晨\ 等(2018)杨令晨, 周武能, 汤文兵, and
+  张悦]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究38}
+杨令晨, 周武能, 汤文兵, 等.
+\newblock 超声波测距系统的研究及其硬件设计\allowbreak[J].
+\newblock 仪表技术与传感器, 2018\allowbreak (2): 7.
+
+\bibitem[~(2022)]{TUSS4470芯片手册}
+~ T~I.
+\newblock {TUSS}4470芯片手册\allowbreak[EB/OL].
+\newblock 2022.
+\newblock
+  \url{https://www.ti.com.cn/cn/lit/ds/symlink/tuss4470.pdf?ts=1681895303209&ref_url=https%253A%252F%252Fwww.ti.com.cn%252Fproduct%252Fcn%252FTUSS4470%253Fqgpn%253Dtuss4470}.
+
+\bibitem[~(2021)]{CPLD芯片设计指南}
+~ A~C.
+\newblock {MAX} {II} {CPLD} design guidelines\allowbreak[EB/OL].
+\newblock 2021.
+\newblock \url{https://cdrdv2-public.intel.com/654643/an428.pdf}.
+
+\bibitem[欧赛龙科技(2011)]{超声探头手册}
+欧赛龙科技.
+\newblock 300E10TR-1手册\allowbreak[EB/OL].
+\newblock 2011.
+\newblock \url{http://www.osenon.com/cp_view.asp?/18+300E10TR-1.html}.
+
+\bibitem[徐继芳(2001)]{分离接地}
+徐继芳.
+\newblock 将保护接地与通信接地分离
+  提高通信设备的运行安全\allowbreak[J].
+\newblock 广东通信技术, 2001\allowbreak (4): 25-28.
+
+\bibitem[李万华(2018)]{寄生效应}
+李万华.
+\newblock 走线寄生效应分析\allowbreak[J].
+\newblock 内燃机与配件, 2018\allowbreak (18): 219-220.
+
+\bibitem[~(2019)]{Verilog介绍}
+~ U.
+\newblock Verilog语法入门\allowbreak[EB/OL].
+\newblock 2019.
+\newblock \url{https://vlab.ustc.edu.cn/guide/doc_verilog.html}.
+
+\bibitem[~(2022)]{SPI}
+~ H.
+\newblock （verilog）{SPI协议详讲与实现}\allowbreak[EB/OL].
+\newblock 2022.
+\newblock \url{https://zhuanlan.zhihu.com/p/546827770}.
+
+\bibitem[~(2021)]{线性序列机}
+~ P.
+\newblock {FPGA学习}-线性序列机\allowbreak[EB/OL].
+\newblock 2021.
+\newblock
+  \url{https://blog.csdn.net/weixin_58634335/article/details/122012668}.
+
+\bibitem[~(2021)]{Verilog环境搭建}
+~ T.
+\newblock Verilog环境搭建\allowbreak[EB/OL].
+\newblock 2021.
+\newblock \url{https://www.runoob.com/w3cnote/verilog-install.html}.
 
 \end{thebibliography}

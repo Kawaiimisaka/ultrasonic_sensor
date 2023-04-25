@@ -1,187 +1,49 @@
-%------------------第三章---------------------------
-    \newpage
-	\section{超声波接近传感器硬件设计}
-	
-    \subsection{超声波接近传感器控制电路设计}
-    本设计中所使用的CPLD芯片型号为EPM240T100C5N，涉及到的控制电路较简单，在最小系统板的基础上，增加了检测计数电路和TUSS4470外围电路。如图\ref{传感器整体原理图}为传感器整体的原理图，其中主要包括了电源模块、JTAG下载模块、检测计数模块、时钟模块以及复位模块\upcite{CPLD芯片设计指南}。电源
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=12cm]{figure/Overall circuit.png}
-        \caption{传感器整体原理图}
-        \label{传感器整体原理图}
-    \end{figure}
-    \subsubsection{电源模块}
-      根据查找芯片手册，可得知EPM240T100C5N的控制电压为：
-    TUSS4470芯片的控制电压为3.3V，
-    超声探头的驱动电压为：5V-30V\upcite{超声探头手册}。
-    可得出电源的设计方案。电源由DC接口、降压芯片、滤波电容组成，可得到12V以及3.3V的电压为各模块供电。电源模块中还包括了一个红色LED指示灯，当模块正常工作时，LED灯就会被点亮。
-    
-    \subsubsection{JTAG下载模块}
-    JTAG(Joint Test Action Group) 下载模块是一种用于编程和调试数字电路和嵌入式系统的通信接口。它通常由三个主要部分组成：JTAG控制器、JTAG下载模块和目标设备。JTAG下载模块的主要作用是将编译后的程序通过JTAG接口下载到目标设备中。在本设计中JTAG主要用于下载烧录调试MCU代码。
-    图\ref{JTAG下载模块电路图}左侧为JTAG接头，用于连接下载器，右侧为MCU芯片的连接图其中TCK引脚为测试时钟，
-    TDI引脚为测试数据输入，
-TDO引脚为测试数据输出，
-TMS为测试模式选择，
-因为只有一条数据线，通信协议有必要像其他串行设备接口，如SPI一样为串列传输。时钟由TCK引脚输入。配置是通过TMS引脚采用状态机的形式一次操作一位来实现的。每一位数据在每个TCK时钟脉冲下分别由TDI和TDO引脚传入或传出。可以通过加载不同的命令模式来读取芯片的标识，对输入引脚采样，驱动（或悬空）输出引脚，操控芯片功能，或者旁路（将TDI与TDO连通以在逻辑上短接多个芯片的链路）。
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=7cm]{figure/JTAG download circuit.png}
-        \caption{JTAG下载模块电路图}
-        \label{JTAG下载模块电路图}
-    \end{figure}
-    
-    \subsubsection{检测计数模块}
-    检测计数模块的功能在于，亮灯提示钢化玻璃到位，并对经过的玻璃进行计数。如图\ref{检测计数模块电路图}，CT引脚为MCU输出信号，当程序确定检测到物体后，CT引脚电压拉高，LED灯亮，当物体离开检测范围后，LED等灯灭。CT1引脚则是作为MCU的输入信号，当检测到一次物体后，CT1发出一次脉冲信号，计数加一，以此来实现计数功能。
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=7cm]{figure/detection count circuit.png}
-        \caption{检测计数模块电路图}
-        \label{检测计数模块电路图}
-    \end{figure}
 \newpage
-       \subsubsection{超声波接近传感器控制电路PCB设计}
-       在完成控制电路原理图的设计后，就将进行PCB部分的设计。如图\ref{超声波接近传感器整体PCB设计}为传感器PCB整体设计图，图\ref{超声波接近传感器控制电路PCB设计}为控制电路PCB的设计。
+\section{超声波接近传感器总体设计与检测原理}
+\subsection{超声波接近传感器总体设计}
+本设计针对生产线上检测钢化玻璃到位问题，设计了一种稳定性好、灵活性高、应用场景广的超声波接近传感器。
+本设计的总体设计如图\ref{超声波接近传感器总体设计}所示，包括了超声波接近传感器的硬件设计、软件设计和实验设计。
 \begin{figure}[ht]
 	\centering
-	\subfloat[超声波接近传感器整体PCB设计]{
-		\begin{minipage}[b]{0.5\textwidth}
-			\centering
-			\includegraphics[height=4.5cm]{figure/overall pcb.png}
-		\end{minipage}
-		\label{超声波接近传感器整体PCB设计}
-	}
-	\subfloat[超声波接近传感器控制电路PCB设计]{
-		\begin{minipage}[b]{0.5\textwidth}
-			\centering
-			\includegraphics[height=4.5cm]{figure/cpld pcb.png}
-		\end{minipage}
-		\label{超声波接近传感器控制电路PCB设计}
-	}
-	\caption{超声波接近传感器PCB设计}
-	\label{超声波接近传感器PCB设计}
+	\includegraphics[width=12cm]{figure/overall designment.png}
+	\caption{超声波接近传感器总体设计}
+	\label{超声波接近传感器总体设计}
 \end{figure}
-   \paragraph{线宽}
-   对于功率较大的部分如电源、超声换能器驱动部分，需要对布线进行加宽处理，避免因发热而影响电路板正常工作，甚至产生损坏。\par
-   \paragraph{时钟包地处理}
-   对于速率较低的时钟，需进行包地处理。包地的作用主要有两点：一是拉开与其他信号的距离，从而减小干扰；二作为自身参考和屏蔽。包地处理还需要在地线上等间距打过孔。
-  
- 	\newpage
-    \subsection{TUSS4470芯片外围电路}
-    
-    
-    \begin{figure}[ht]
-		\centering
-		\includegraphics[width=12cm]{figure/Function Block Diagram.png}
-		\caption{TUSS4470芯片功能框图}
-		\label{TUSS4470芯片功能框图}%文中引用该图片代号
-\end{figure}
- 图\ref{TUSS4470芯片功能框图}为TUSS4470驱动芯片的整体功能框图\upcite{TUSS4470芯片手册}，以此作为外围电路设计的参考资料。如图所示，芯片按照功能可分为逻辑控制、输出驱动、回波接收三个部分。其中逻辑控制部分又分为SPI通信和脉冲发生模块，SPI通信模块用于接收MCU芯片发送的芯片配置数据，脉冲发生模块的两个引脚IO1、IO2连接MCU芯片作为脉冲发生控制引脚，根据芯片不同的IO模式，两个引脚配合产生指定脉宽、脉冲数的脉冲信号；输出驱动模块的OUTA、OUTB引脚直接连接超声换能器，VDRV引脚连接外部电容，VPWR可对电容充电，在VDRV到达设定电压值后，VPWR停止对VDRV供电，这使得超声换能器的驱动电压可以保持在设定值，以此保证发出脉冲的声压水平可以稳定在一定水平，从而保证发射出稳定的脉冲波（其中VDRV的设定电压可通过SPI对芯片进行配置）；回波接收模块的作用在于：对回波信号进行处理，输出可供MCU进行检测判断的信号其中INP、INN引脚连接超声波换能器的正负端，FLT连接外部电容作为低通滤波器对回波信号进行滤波处理。OUT3引脚内部连接至模块中的对数解调模块，当回波信号在模块内进完成放大进行解调时，将某阶段信号作为零点，输出过零信号，以验证接收信号的频率， 提高对其他信号的抗干扰性。OUT4作为检测到位的指示信号，当VOUT输出电压超过芯片配置数据中设定的阈值时，OUT4拉高。（VOUT引脚的电压值由公式\ref{VOUT公式}决定）。
-  
-    \begin{equation}
-        V_{OUT}=G_{VOUT} \cdot SL_{LOG}\cdot20log_{10}(\frac{G_{LNA} \cdot G_{BPF} \cdot V_{IN}}{INT_{LOG} \cdot K_X})
-        \label{VOUT公式}
-    \end{equation}
-式中\quad $G_{VOUT}$---对数放大器斜率增益调整（Slope or gain adjustment）；\par
-\quad$SL_{LOG}$---对数运算放大器斜率调整（slope of logarithmicamplifier）；\par
-\quad$G_{LNA}$---回波增益;\par
-\quad$G_{BPF}$---$0.9v/v$;\par
-\quad$V_{IN}$---INN引脚输入;\par
-\quad$INT_{LOG}$---对数放大器截距（ logarithmic amplifier intercept）；\par
-\quad$K_X$---对数截距平差（log intercept adjustment）\par
-    回波接收模块的详细工作框图如图\ref{回波接收模块}所示。
-    \begin{figure}[ht]
-        \centering
-        \includegraphics[width=10cm]{figure/Analog Front-End Block Diagram.png}
-        \caption{回波接收模块}
-        \label{回波接收模块}
-    \end{figure}\par
 
-    参考芯片手册相关内容，进行了TUSS4470芯片外围电路的设计，如图\ref{TUSS4470芯片外围电路}所示。
-    \begin{figure}[!h]
-        \centering
-        \includegraphics[width=9cm]{figure/TUSS4470 peripheral circuit.png}
-        \caption{TUSS4470芯片外围电路}
-        \label{TUSS4470芯片外围电路}
-    \end{figure}
-\newpage
-    \subsubsection{VPWR引脚电路}
-    VPWR引脚输入电压范围为5V到36V，TUSS4470设备可能受到电池瞬变和反向电流的影响，因此采用外部组件保护芯片十分必要。图\ref{VPWR引脚}中除了靠近引脚的电容C15，二极管D3、D4和电阻R9就起到了保护芯片的作用。
-     \begin{figure}[ht]
-    	\centering
-    	\includegraphics[width=10cm]{figure/VPWR PIN.png}
-    	\caption{VPWR引脚电路}
-    	\label{VPWR引脚}
-    \end{figure}
-        \subsubsection{FLT外接滤波电容}
-    FLT引脚外接滤波电容，对应图\ref{TUSS4470芯片功能框图}回波检测模块中的低通滤波器。该滤波电容的作用在于，去除对数放大器输出中的高频信号，使解调包络信号有足够的峰值保持时间，而截止频率的大小则由FLT引脚的阻抗以及外接电容的电容量所决定，该电容虽然可以抑制高频信号的波动，但同样会减缓信号的响应速度。大电容量可以使VOUT引脚输出的电压峰值变化减小，并且减缓上升下降到峰值的时间，而最优电容量则需在应用中不断进行优化。本设计初步使用电容量为3.3nF的电容。
-    \subsubsection{VDRV引脚电路}    
-    VDRV引脚连接外部电容，TUSS4470芯片通过VPWR引脚为外部的电容充电，当其达到设定电压时则停止充电，此时该电容将为超声换能器H桥驱动电路供能。
-     \subsubsection{超声换能器驱动电路}
-    在TUSS4470的芯片手册中，超声换能器有四种不同的驱动方式，不同驱动方式产生脉冲的方式也不同，本设计中采用最典型的HALF\_BRG\_MODE\_0来进行驱动，如图\ref{参考配置方式}为参考配置方式，图\ref{实际配置方式}为本设计中所采用的方式。
-    
-\begin{figure}[ht]
+硬件设计部分包括了原理图设计和PCB设计，软件设计包括了驱动芯片配置、脉冲信号产生、物体检测三个部分的程序设计，实验设计部分包括了设计实验进行性能参数测试、稳定性测试和回波特性测试。
+\subsubsection{超声波接近传感器硬件设计}
+硬件电路原理图的设计主要分为三部分来进行,分别为：超声波接近传感器控制电路设计、TUSS4470芯片外围电路设计、检测计数电路设计。其中超声波接近传感器控制电路的设计又包括了电源电路设计、时钟电路设计、JTAG下载电路设计、复位电路设计等。其中设计难度较大的是TUSS4470芯片外围电路，需要通过查阅芯片手册来完成各个引脚的设计。\par
+硬件电路的PCB设计在传感器设计中同样有着重要的作用，对于TUSS4470芯片外围电路的PCB设计，芯片手册根据优先级给出了几大原则，用于减小各类信号相互之间的干扰，包括了电容、二极管等器件摆放位置优先级，分离接地，铺铜规则等。
+\subsubsection{超声波接近传感器软件设计}
+超声波接近传感器的软件设计根据功能分为了三个部分：芯片配置、脉冲产生、物体检测。\par
+通过查找芯片手册，可以得知TUSS4470超声驱动芯片采用四线SPI协议来完成芯片配置，并与MCU进行通信，其采用的模式为CPOL=0、CPHA=1，即上升沿进行数据发送、下降沿进行数据接收，根据查找到的资料，本设计采用线性序列机（linear sequential machine）控制移位寄存器俩实现SPI通信。此外，SPI发送的各寄存器配置数据也需要参照芯片手册，根据应用场景进行确认。\par
+在脉冲信号的模式选择上，考虑程序设计的难度以及运行速度，本设计选取脉冲模式3来产生脉冲控制信号，即以io2引脚输入的信号作为时钟信号，io1引脚的下降沿作为脉冲开始的触发信号，上升沿作为脉冲结束的触发信号。程序通过io1、io2引脚信号的下降沿进行触发计数，来得到脉冲信号的脉冲数以及发射次数。\par
+物体检测部分程序主要功能为对回波信号进行处理判断。超声探头发出的脉冲波经物体反射后，重新被传感器所接收，回波信号通过TUSS4470芯片的解调放大处理后，变为简单的回波信号，程序按照检测逻辑对回波信号进行检测判断，从而控制检测状态的转移。
+\subsubsection{超声波接近传感器实验设计}
+在完成实物的制作与调试后，还需要设计实验来测试传感器的性能以及检测逻辑的可行性。\par
+实验设计部分包括了设计实验测试超声波接近传感器性能参数、稳定性以及回波特性。性能参数测试包括了检测范围测试和精度测试，稳定性测试的目的在于测试传感器检测逻辑的必要性，回波特性测试则是为后续的应用提供参考。
+
+
+\subsection{超声波接近传感器检测原理}
+\begin{figure}[!h]
 	\centering
-	\subfloat[参考配置方式]{
-		\begin{minipage}[b]{0.5\textwidth}
-			\centering
-			\includegraphics[height=4.5cm]{figure/TUSS4470 Transducer Drive Options.png}
-		\end{minipage}
-		\label{参考配置方式}
-	}
-	\subfloat[实际配置方式]{
-		\begin{minipage}[b]{0.5\textwidth}
-			\centering
-			\includegraphics[height=4.5cm]{figure/OUTA PIN.png}
-		\end{minipage}
-		\label{实际配置方式}
-	}
-	\caption{超声换能器驱动电路设计}
-	\label{超声换能器驱动电路设计}
-\end{figure}
-    \subsubsection{芯片配置指示电路}
-    CPLD芯片通过SPI协议向TUSS4470芯片发送配置数据，并接收其反馈回数据。在芯片返回的数据当中，有一位的状态位用来反映芯片是否准备就绪，当芯片准备就绪后该位置1，可供MCU进行下一步的工作。如图为芯片配置指示电路，当芯片配置就绪后，MCU该引脚拉高，LED灯亮，用来指示芯片的配置状态。
-    \subsubsection{分离接地电路}
-    由于外围电路中包含多种类型的信号，例如VPWR引脚的电源信号，VOUT引脚的模拟信号,VOUT引脚的模拟信号，SCLK等引脚的数字信号。当产生数字信号的引脚产生脉冲时，其变换速度较快，将会在数字地产生较大的噪声；而模拟信号又容易受到外接的干扰，如果将数字信号和模拟信号直接接入同一个大地，将会严重影响模拟信号的准确性，对于超声波传感器而言，是非常致命的。本设计在原理图设计的过程中便解决了不同类型分离接地\upcite{分离接地}的问题，采用的方法是：先将不同类型的信号连接到0$\Omega$电阻，再连接到大地，0$\Omega$电阻相当于很窄的电容通道，能够有效的限制环路电流，使噪声得到抑制。起分离接地作用的电路如\ref{分离接地电路}所示。
-     \begin{figure}[!h]
-        \centering
-        \includegraphics[width=7cm]{figure/seperate ground.png}
-        \caption{分离接地电路}
-        \label{分离接地电路}
-    \end{figure}
-	\subsubsection{TUSS4479芯片外围电路PCB设计}
-    由于本设计中涉及到的信号类型较多，包括了数字信号、模拟信号、高频信号、大功率信号，各信号间会存在较大的干扰，因此在布线过程中将各信号分离十分重要，直接关系到传感器的稳定性和精度。如图\ref{TUSS4470芯片外围电路PCB设计}为TUSS4470芯片外围电路PCB设计，图\ref{TUSS4470芯片引脚图}为芯片对应的引脚图。本设计采用两层板来完成布线。
-  \begin{figure}[!h]
-   		\begin{minipage}[t]{0.5\linewidth}
-  			\centering
-  			\includegraphics[height=5cm]{figure/TUSS4470 pcb.png}
-  			\caption{TUSS4470芯片外围电路PCB设计}
-  			\label{TUSS4470芯片外围电路PCB设计}
-  		\end{minipage}
-   		\begin{minipage}[t]{0.5\linewidth}
-  			\centering
-  			\includegraphics[height=5cm]{figure/TUSS4470 PIN.png}
-  			\caption{TUSS4470芯片引脚图}
-  			\label{TUSS4470芯片引脚图}
-  		\end{minipage}  		 
-  \end{figure}\par
-    在TUSS4470驱动芯片的PCB设计过程中，最重要的就是将芯片的电源信号、数字信号以及模拟信号进行分离。参考芯片手册\upcite{TUSS4470芯片手册}，在布线时考虑到了如下事项。\par
-    \paragraph{各类信号分离接地}
-    在连接到主地前，数字接地、传感器接地、回波接地都要先通过0$\Omega$电阻或者铜迹线，如图\ref{分离接地电路}，本设计在原理图设计时采用了0$\Omega$电阻的方式来实现分离接地，因此在布线时就不需要考虑该问题。
-     \paragraph{回波接收引脚}
-    INN、INP引脚作为回波信号的接收引脚，对噪声干扰十分敏感，所以其布线必须要短且直，并且保证INN引脚的电容尽量靠近芯片引脚，以减少干扰，但考虑到后续需手工焊接，电容与芯片引脚间仍要保持一定的间隙，以减小手工焊接的难度。假设不考虑测试成本，采用贴片工艺，电容与芯片引脚间的距离还可再进一步减小，以获得到具有更高稳定性的回波信号。
-    \paragraph{VOUT引脚}
-    VOUT引脚作为模拟信号输出端，与外界的连线应该尽量短直，避免产生寄生效应\upcite{寄生效应}，以及外部噪声干扰引起的噪声耦合。\par
-    \paragraph{超声换能器驱动}
-    芯片与OUTA、OUTB引脚间的布线应尽可能短且直，以保证发出脉冲信号的质量，从而提高传感器的精度。考虑到两个引脚输出的是大功率、高频率的模拟信号，连接到两引脚的线宽应不能太小。\par
-    \paragraph{VPWR引脚}
-        根据芯片手册推荐，VPWR的解调电容应尽可能靠近引脚。\par
-     \paragraph{信号分离}
-     数字信号引脚如TXD、RXD、 SCLK、 NCS、IO1、 IO2、 OUT3、OUT4应远离模拟信号引脚，避免信号间的干扰。\par
-\subsection{本章小结}
-本章主要介绍了超声波接近传感器硬件部分的设计，首先介绍了超声波接近传感器控制电路的设计，该部分包括了原理图设计和PCB设计，重点讲解了JTAG下载模块的设计和时钟包地处理。然后又详细介绍了TUSS4470芯片外围电路的设计，该部分讲解了各管脚连接器件的选型以及PCB设计过程中需要注意的事项，原理图设计部分详细介绍了VPWR引脚、VDRV引脚以及各类信号分离接地处理的设计，而PCB设计部分则详细介绍了各类器件的布局原则，以减少信号间的相互干扰。\par
-至此已介绍完成了超声波接近传感器原理图设计和PCB设计部分的工作，下一章将详细讲解传感器的软件设计部分。
-
-      
-    
-    
-    
+	\includegraphics[width=8cm]{figure/VOUT image.png}
+	\caption{VOUT输出\upcite{TUSS4470芯片手册}}
+	\label{VOUT输出}
+\end{figure}\par
+通过查阅芯片手册\upcite{TUSS4470芯片手册}，我们可以知道，TUSS4470芯片采用的检测原理为飞行时间法，获取飞行时间的方法为固定阈值法。\par
+芯片通过滤波解调等处理，可将回波信号处理成一个简单的单峰信号，由VOUT引脚输出，当峰值超过所设定阈值时，即判定为超声换能器接收到回波，该峰值距离起点的时间随检测距离的变化而变化。如图\ref{VOUT输出}所示，当检测物体距离传感器$50mm$、$100mm$、$200mm$、$300mm$、$400mm$时，信号的峰值在不断减小,也在不断地向右侧进行移动。但是在到达有效波峰前，仍然存在着一个波峰信号，影响着物体的检测。通过查阅资料我们得知，这是由于压电振子存在的余振现象所导致的，自发自收的换能器在接收到反射回波时，发射脉冲的余振尚未消失，从而产生一段不能检测回波信号的“盲区”。\par
+波峰距离起点的时间$t$由以下公式得出：       
+\begin{align}
+	t&=t_1+t_2+t_3 \\
+	t&_2=\frac{D}{c}
+	\label{检测周期公式}
+\end{align}  
+式中\quad$t$---波峰距离起点时间；\par
+\quad$t_1$---脉冲余振时间；\par
+\quad$t_2$---飞行时间；\par    
+\quad$t_3$---芯片处理回波所花费时间；\par 
+\quad$D$---检测物体距离传感器的距离；\par  
+\quad$c$---声波在空气中的传播速度\par    
+根据任务书中的要求，超声波接近传感器的检测范围为$100mm\sim200mm$，为简化程序，我们通过设定检测窗口的方式来实现该效果。\par  
+当物体与传感器的距离确定时，回波信号波峰对应的$t$也是确定的，该值可以通过实验测得。例如距离为$100mm$、$200mm$时，对应$t$为$1.2ms$、$2.4ms$，那么我们可以设定检测窗口为$1.2ms\sim2.4ms$，只对这个范围内的波峰进行检测，而屏蔽范围外的信号，从而避免被“盲区”信号所干扰，并且实现检测$100mm\sim200mm$范围物体的功能。\par
