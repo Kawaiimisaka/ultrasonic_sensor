@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  25 APR 2023 23:30
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  26 APR 2023 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1442,7 +1442,7 @@ File: figure/双压电晶片示意图.png Graphic file (type bmp)
 File: figure/双压电晶片等效电路.png Graphic file (type bmp)
 <figure/双压电晶片等效电路.png>
 
-Overfull \hbox (2.0075pt too wide) in paragraph at lines 73--85
+Overfull \hbox (2.0075pt too wide) in paragraph at lines 71--83
 []$[]$ $[]$ 
  []
 
@@ -1478,40 +1478,37 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  (chapter/第三章.tex
 File: figure/Overall circuit.png Graphic file (type bmp)
 <figure/Overall circuit.png>
-File: figure/JTAG download circuit.png Graphic file (type bmp)
-<figure/JTAG download circuit.png>
+File: figure/detection count circuit.png Graphic file (type bmp)
+<figure/detection count circuit.png>
  [13
 
 
 
 
 ]
-File: figure/detection count circuit.png Graphic file (type bmp)
-<figure/detection count circuit.png>
- [14]
 File: figure/overall pcb.png Graphic file (type bmp)
 <figure/overall pcb.png>
 
-Overfull \hbox (18.83269pt too wide) in paragraph at lines 52--52
+Overfull \hbox (18.83269pt too wide) in paragraph at lines 41--41
  [][] 
  []
 
 File: figure/cpld pcb.png Graphic file (type bmp)
 <figure/cpld pcb.png>
 
-Overfull \hbox (12.04498pt too wide) in paragraph at lines 52--60
+Overfull \hbox (12.04498pt too wide) in paragraph at lines 41--49
  [][][][] 
  []
 
-[15]
+[14]
 File: figure/Function Block Diagram.png Graphic file (type bmp)
 <figure/Function Block Diagram.png>
- [16]
+ [15]
 File: figure/Analog Front-End Block Diagram.png Graphic file (type bmp)
 <figure/Analog Front-End Block Diagram.png>
 File: figure/TUSS4470 peripheral circuit.png Graphic file (type bmp)
 <figure/TUSS4470 peripheral circuit.png>
- [17]
+ [16]
 File: figure/VPWR PIN.png Graphic file (type bmp)
 <figure/VPWR PIN.png>
 File: figure/TUSS4470 Transducer Drive Options.png Graphic file (type bmp)
@@ -1519,11 +1516,11 @@ File: figure/TUSS4470 Transducer Drive Options.png Graphic file (type bmp)
 File: figure/OUTA PIN.png Graphic file (type bmp)
 <figure/OUTA PIN.png>
 
-Overfull \hbox (12.04498pt too wide) in paragraph at lines 130--138
+Overfull \hbox (12.04498pt too wide) in paragraph at lines 119--127
  [][][][] 
  []
 
-[18]
+[17]
 File: figure/seperate ground.png Graphic file (type bmp)
 <figure/seperate ground.png>
 File: figure/TUSS4470 pcb.png Graphic file (type bmp)
@@ -1531,11 +1528,11 @@ File: figure/TUSS4470 pcb.png Graphic file (type bmp)
 File: figure/TUSS4470 PIN.png Graphic file (type bmp)
 <figure/TUSS4470 PIN.png>
 
-Overfull \hbox (2.0075pt too wide) in paragraph at lines 154--166
+Overfull \hbox (2.0075pt too wide) in paragraph at lines 143--155
 [][] [] 
  []
 
-[19] [20]) [21]
+[18] [19]) [20]
 \openout2 = `chapter/第四章.aux'.
 
  (chapter/第四章.tex
@@ -1554,7 +1551,7 @@ Overfull \hbox (9.92535pt too wide) in paragraph at lines 22--22
 ED_-
  []
 
-[22
+[21
 
 
 
@@ -1562,30 +1559,30 @@ ED_-
 ]
 File: figure/Overall program block diagram.png Graphic file (type bmp)
 <figure/Overall program block diagram.png>
- [23]
+ [22]
 File: figure/MAIN module flow chart.png Graphic file (type bmp)
 <figure/MAIN module flow chart.png>
- [24]
+ [23]
 File: figure/DATA_SHIFT.png Graphic file (type bmp)
 <figure/DATA_SHIFT.png>
- [25] [26]
+ [24] [25]
 File: figure/SPI Program Flow Chart.png Graphic file (type bmp)
 <figure/SPI Program Flow Chart.png>
 File: figure/SPI Frame.png Graphic file (type bmp)
 <figure/SPI Frame.png>
 File: figure/SPI Transfer Sequence.png Graphic file (type bmp)
 <figure/SPI Transfer Sequence.png>
- [27] [28] [29]
+ [26] [27] [28]
 File: figure/IO MODE1.png Graphic file (type bmp)
 <figure/IO MODE1.png>
 File: figure/single pulse control.png Graphic file (type bmp)
 <figure/single pulse control.png>
 File: figure/multiple pulse control.png Graphic file (type bmp)
 <figure/multiple pulse control.png>
- [30] [31]
+ [29] [30]
 File: figure/TESTBENCH structure.png Graphic file (type bmp)
 <figure/TESTBENCH structure.png>
- [32] [33]
+ [31] [32]
 File: figure/overall wave simulation.png Graphic file (type bmp)
 <figure/overall wave simulation.png>
 
@@ -1607,7 +1604,7 @@ Overfull \hbox (22.76358pt too wide) in paragraph at lines 311--311
 [][] 
  []
 
-) [34]
+) [33]
 \openout2 = `chapter/第五章.aux'.
 
  (chapter/第五章.tex
@@ -1615,7 +1612,7 @@ File: figure/physical map.png Graphic file (type bmp)
 <figure/physical map.png>
 File: figure/debug waveform1.png Graphic file (type bmp)
 <figure/debug waveform1.png>
- [35
+ [34
 
 
 
@@ -1623,21 +1620,21 @@ File: figure/debug waveform1.png Graphic file (type bmp)
 ]
 File: figure/debug waveform2.png Graphic file (type bmp)
 <figure/debug waveform2.png>
- [36]
+ [35]
 File: figure/debug waveform9.png Graphic file (type bmp)
 <figure/debug waveform9.png>
 File: figure/debug waveform3.png Graphic file (type bmp)
 <figure/debug waveform3.png>
 File: figure/debug waveform4.png Graphic file (type bmp)
 <figure/debug waveform4.png>
- [37]
+ [36]
 File: figure/debug waveform5.png Graphic file (type bmp)
 <figure/debug waveform5.png>
 File: figure/debug waveform6.png Graphic file (type bmp)
 <figure/debug waveform6.png>
 File: figure/debug waveform7.png Graphic file (type bmp)
 <figure/debug waveform7.png>
- [38]
+ [37]
 File: figure/debug wave form8.png Graphic file (type bmp)
 <figure/debug wave form8.png>
 File: figure/虚拟示波器.png Graphic file (type bmp)
@@ -1649,7 +1646,7 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 103--111
  [][][][] 
  []
 
-[39] [40]
+[38] [39]
 File: figure/G3.png Graphic file (type bmp)
 <figure/G3.png>
 File: figure/G1.png Graphic file (type bmp)
@@ -1661,23 +1658,23 @@ Overfull \hbox (12.04498pt too wide) in paragraph at lines 209--217
  [][][][] 
  []
 
-[41]) [42]
+[40]) [41]
 \openout2 = `chapter/第六章.aux'.
 
- (chapter/第六章.tex) [43
+ (chapter/第六章.tex) [42
 
 
 
 
-] (main.bbl [44
+] (main.bbl [43
 
 
 
 
-] [45]) [46]
+] [44]) [45]
 \openout2 = `chapter/thank.aux'.
 
- (chapter/thank.tex) [47
+ (chapter/thank.tex) [46
 
 
 
@@ -1696,15 +1693,15 @@ File: lstlang3.sty 2020/03/24 1.8d listings language file
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 5.
  (code/ultrasonic_sensor3_1.v
-[48
+[47
 
 
 
 
 
-]) (code/main.v [49] [50] [51] [52] [53] [54] [55]) (code/spi.v [56]
-[57] [58] [59] [60] [61] [62]) (code/pulse_generation.v [63] [64] [65])
-(code/detected_count.v) (code/ultrasonic_sensor3_1.vt [66] [67])) [68]
+]) (code/main.v [48] [49] [50] [51] [52] [53] [54]) (code/spi.v [55]
+[56] [57] [58] [59] [60] [61]) (code/pulse_generation.v [62] [63] [64])
+(code/detected_count.v) (code/ultrasonic_sensor3_1.vt [65] [66])) [67]
 (main.aux (chapter/ZhAbstract.aux) (chapter/EnAbstract.aux) (chapter/第一章.aux)
 (chapter/第二章.aux) (chapter/第三章.aux) (chapter/第四章.aux) (chapter/第五章.aux)
 (chapter/第六章.aux) (chapter/thank.aux) (chapter/appendix1.aux))
@@ -1712,15 +1709,15 @@ nput line 5.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 740EAB24CBBDEA67946ECFF718E6AFCA;8044.
+(rerunfilecheck)             Checksum: 9674914E92C6EF3892ADB681C0B6DF6C;8020.
  ) 
 Here is how much of TeX's memory you used:
- 45198 strings out of 410532
- 1088445 string characters out of 2820404
- 1790581 words of memory out of 3000000
- 65529 multiletter control sequences out of 15000+600000
+ 45192 strings out of 410532
+ 1088349 string characters out of 2820404
+ 1789529 words of memory out of 3000000
+ 65524 multiletter control sequences out of 15000+600000
  492134 words of font info for 165 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,18n,131p,1230b,2087s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on main.pdf (74 pages).
+Output written on main.pdf (73 pages).
