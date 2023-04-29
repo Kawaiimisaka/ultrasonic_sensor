@@ -1,4 +1,4 @@
-\begin{thebibliography}{30}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -10,49 +10,6 @@
   \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
   \let\eprint\href
 \fi
-
-\bibitem[廖一\ 等(2008)廖一 and
-  曾迎生]{超声波测距传感器的研究6}
-廖一, 曾迎生.
-\newblock 基于超声传感器阵列的陆地自主车测距\allowbreak[J].
-\newblock 微计算机信息, 2008\allowbreak (10): 3.
-
-\bibitem[杜晓\ 等(2008)杜晓 and
-  张重雄]{超声波测距传感器的研究7}
-杜晓, 张重雄.
-\newblock 基于SOPC技术的井下参数测试仪的开发\allowbreak[J].
-\newblock 微计算机信息, 2008.
-
-\bibitem[王洪青\ 等(2008)王洪青, 褚金奎, 李荣华, and
-  李庆瀛]{超声波测距传感器的研究8}
-王洪青, 褚金奎, 李荣华, 等.
-\newblock
-  并行超声波测距系统在移动机器人上的应用\allowbreak[J].
-\newblock 传感器与微系统, 2008\allowbreak (09): 115-117.
-
-\bibitem[杜刚\ 等(2009)杜刚 and
-  刘建一]{超声波测距传感器的研究9}
-杜刚, 刘建一.
-\newblock 基于ARM的超声波测距系统设计\allowbreak[J].
-\newblock 福建电脑, 2009\allowbreak (3): 2.
-
-\bibitem[王丽娜(2009)]{超声波测距传感器的研究10}
-王丽娜.
-\newblock
-  基于小波变换高精度在线超声波测距技术研究\allowbreak[D].
-\newblock 长春理工大学, 2009.
-
-\bibitem[王育慷(2005)]{超声波测距传感器的研究11}
-王育慷.
-\newblock 超声波原理与现代应用探讨\allowbreak[J].
-\newblock 贵州大学学报：自然科学版, 2005, 22\allowbreak (3): 4.
-
-\bibitem[Wei et~al.(2000)Wei, Tian, Zhao, and
-  Sun]{超声波测距传感器的研究14}
-WEI S~S, TIAN L~J, ZHAO C~S, et~al.
-\newblock The design of impedance matching transformer of ultrasonic
-  motor\allowbreak[J].
-\newblock ELECTRIC MACHINES AND CONTROL, 2000.
 
 \bibitem[杨媛\ 等(2000)杨媛, 高勇, 马军, and
   李福德]{CPLD在超声波传感器驱动控制电路中}
@@ -122,27 +79,6 @@ FERNANDO F~J.
 汤传国.
 \newblock 基于超声波测距的倒车雷达系统研究\allowbreak[D].
 \newblock 长安大学, 2015.
-
-\bibitem[寇雪芹(2015)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究36}
-寇雪芹.
-\newblock
-  塔机障碍物远距离超声测距方法与识别机理研究\allowbreak[D].
-\newblock 西安建筑科技大学, 2015.
-
-\bibitem[仝志昊(2021)]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究}
-仝志昊.
-\newblock
-  {面向机器人安全避障的MEMS压电超声接近觉传感器的研究}\allowbreak[D/OL].
-\newblock 苏州大学, 2021\allowbreak[2023-04-22].
-\newblock
-  \url{https://kns.cnki.net/kcms2/article/abstract?v=3uoqIhG8C475KOm_zrgu4lQARvep2SAkaWjBDt8_rTOnKA7PWSN5MBcLLsj6rB1Cf6AhCKsIYlif_uoWQt1s9_H4t4HpQtKu&uniplatform=NZKPT}.
-\newblock DOI: \doi{10.27351/d.cnki.gszhu.2021.002495}.
-
-\bibitem[杨令晨\ 等(2018)杨令晨, 周武能, 汤文兵, and
-  张悦]{面向机器人安全避障的MEMS压电超声接近觉传感器的研究38}
-杨令晨, 周武能, 汤文兵, 等.
-\newblock 超声波测距系统的研究及其硬件设计\allowbreak[J].
-\newblock 仪表技术与传感器, 2018\allowbreak (2): 7.
 
 \bibitem[~(2022)]{TUSS4470芯片手册}
 ~ T~I.

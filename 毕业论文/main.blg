@@ -39,45 +39,46 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Reference.bib
 Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
 --line 127 of file Reference.bib
-You've used 30 entries,
+Warning--I didn't find a database entry for "车载可视倒车雷达预警系统研制"
+You've used 20 entries,
             5374 wiz_defined-function locations,
-            1217 strings with 13109 characters,
-and the built_in function-call counts, 106763 in all, are:
-= -- 3440
-> -- 9863
-< -- 13830
-+ -- 4907
-- -- 1188
-* -- 959
-:= -- 15828
-add.period$ -- 101
-call.type$ -- 30
-change.case$ -- 84
-chr.to.int$ -- 3901
-cite$ -- 30
-duplicate$ -- 717
-empty$ -- 2090
-format.name$ -- 527
-if$ -- 27746
+            1167 strings with 11265 characters,
+and the built_in function-call counts, 73834 in all, are:
+= -- 1975
+> -- 7169
+< -- 9990
++ -- 3318
+- -- 550
+* -- 598
+:= -- 10693
+add.period$ -- 69
+call.type$ -- 20
+change.case$ -- 59
+chr.to.int$ -- 2678
+cite$ -- 20
+duplicate$ -- 475
+empty$ -- 1394
+format.name$ -- 322
+if$ -- 19381
 int.to.chr$ -- 1
-int.to.str$ -- 31
+int.to.str$ -- 21
 missing$ -- 0
-newline$ -- 176
-num.names$ -- 90
-pop$ -- 3303
+newline$ -- 124
+num.names$ -- 60
+pop$ -- 2796
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 20
 quote$ -- 0
-skip$ -- 10399
+skip$ -- 7336
 stack$ -- 0
-substring$ -- 5666
-swap$ -- 30
-text.length$ -- 508
+substring$ -- 3591
+swap$ -- 20
+text.length$ -- 315
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 330
+type$ -- 220
 warning$ -- 0
-while$ -- 546
+while$ -- 343
 width$ -- 0
-write$ -- 411
-(There was 1 warning)
+write$ -- 275
+(There were 2 warnings)
