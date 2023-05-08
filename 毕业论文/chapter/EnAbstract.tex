@@ -1,11 +1,10 @@
 %!TEX root = ../main.tex
 \begin{EnAbstract}
     
-    This design aims to solve the problem of detecting whether tempered glass is in place on the production line. A stable, highly flexible, and widely applicable ultrasonic proximity sensor is designed. Compared with traditional single-chip control, this design uses a CPLD chip to control the TUSS4470 integrated chip, which can obtain a higher precision pulse signal. At the same time, this design can adjust the number of pulse waves emitted each time according to different materials and detection ranges to obtain higher quality echo signals. In addition, this design adopts a detection strategy of multiple pulse emission and setting a detection threshold to determine the detection status. By adjusting the number of pulse emissions and the detection threshold within one cycle, the flexibility and reliability of the sensor in production applications are improved.
-    
-    The purpose of this design is to create an ultrasonic proximity sensor that can detect objects in the range of 100mm to 200mm with a detection accuracy of 1mm. 
-    
-    This article will introduce in detail the hardware design, software design, and experimental design aspects of the ultrasonic proximity sensor. After completing the design of the hardware and software parts, the physical welding and production will be carried out, and the program will be debugged using an oscilloscope. Finally, an experimental plan will be designed to test the performance parameters, detection strategy feasibility, and echo characteristics of the sensor.
+
+This design aims to address the problem of detecting the presence of tempered glass on a production line by developing a highly stable, flexible, and versatile ultrasonic proximity sensor. The sensor has a detection range of 100mm to 200mm with an accuracy of 1mm.\par
+Compared to traditional MCU control, this design uses a CPLD chip to control the TUSS4470 integrated circuit, providing higher precision pulse signals. Additionally, the design can adjust the number of pulses emitted per transmission based on different materials and detection ranges to obtain higher quality echo signals. Furthermore, the design employs a detection strategy that uses multiple pulse transmissions and sets a detection threshold for the number of detections to determine the detection status. The number of pulse transmissions per cycle and the detection threshold can be adjusted according to different application scenarios, thereby improving the flexibility and reliability of the sensor.\par
+This article will provide a detailed description of the hardware design, software design, and experimental design aspects of the ultrasonic proximity sensor. After completing the hardware and software design, the sensor will be physically assembled and tested using an oscilloscope to debug the program. Finally, an experimental plan will be developed to test the sensor's performance parameters, detection strategy feasibility, and echo characteristics.
   
   
     \EnglishKeyWord ultrasonic proximity sensor, CPLD chip, TUSS4470 integrated chip , detection strategy

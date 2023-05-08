@@ -103,7 +103,7 @@
 \renewcommand{\footrulewidth}{0pt}
 
 %---------------------- 跳转链接样式 -----------------------
-\hypersetup{colorlinks = true, linkcolor = black, anchorcolor = blue, citecolor = blue, CJKbookmarks = true}
+\hypersetup{colorlinks = true, linkcolor = black, anchorcolor = blue, citecolor = black, CJKbookmarks = true,urlcolor = black}
 
 
 %------------------------ 标题样式 ------------------------

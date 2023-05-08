@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {1}绪论}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}超声波接近传感器的研究背景和意义}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}超声波接近传感器的研究背景与意义}{1}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}超声波接近传感器的研究背景}{1}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}超声波接近传感器的研究意义}{1}{subsubsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.2}超声波接近传感器的原理}{2}{subsection.1.2}%
@@ -26,7 +26,7 @@
 \contentsline {subsubsection}{\numberline {3.1.4}超声波接近传感器控制电路PCB设计}{11}{subsubsection.3.1.4}%
 \contentsline {paragraph}{\numberline {1}线宽}{11}{paragraph.3.1.4.1}%
 \contentsline {paragraph}{\numberline {2}时钟包地处理}{11}{paragraph.3.1.4.2}%
-\contentsline {subsection}{\numberline {3.2}TUSS4470芯片外围电路}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}TUSS4470芯片外围电路设计}{12}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}VPWR引脚电路}{14}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}FLT外接滤波电容}{14}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}VDRV引脚电路}{14}{subsubsection.3.2.3}%
@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {3.3}本章小结}{17}{subsection.3.3}%
 \contentsline {section}{\numberline {4}超声波接近传感器软件设计}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}超声波接近传感器的检测策略}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}传感器程序设计}{19}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}超声波接近传感器程序设计}{19}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}程序总体设计}{19}{subsubsection.4.2.1}%
 \contentsline {subsubsection}{\numberline {4.2.2}控制模块}{20}{subsubsection.4.2.2}%
 \contentsline {paragraph}{\numberline {1}控制模块功能介绍}{20}{paragraph.4.2.2.1}%
@@ -52,7 +52,7 @@
 \contentsline {paragraph}{\numberline {1}SPI模块介绍}{21}{paragraph.4.2.3.1}%
 \contentsline {paragraph}{\numberline {2}SPI模块通信模式选择}{21}{paragraph.4.2.3.2}%
 \contentsline {paragraph}{\numberline {3}SPI模块实现原理}{21}{paragraph.4.2.3.3}%
-\contentsline {paragraph}{\numberline {4}SPI模块程序设计}{21}{paragraph.4.2.3.4}%
+\contentsline {paragraph}{\numberline {4}SPI模块程序设计}{22}{paragraph.4.2.3.4}%
 \contentsline {paragraph}{\numberline {5}数据结构}{23}{paragraph.4.2.3.5}%
 \contentsline {paragraph}{\numberline {6}寄存器配置}{24}{paragraph.4.2.3.6}%
 \contentsline {subsubsection}{\numberline {4.2.4}脉冲信号发生模块}{25}{subsubsection.4.2.4}%
@@ -70,7 +70,7 @@
 \contentsline {subsection}{\numberline {5.2}超声波接近传感器实验}{34}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}实验器材}{34}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}超声波接近传感器性能参数测试}{35}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}超声波接近传感器稳定性测试}{35}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3}超声波接近传感器检测策略测试}{35}{subsubsection.5.2.3}%
 \contentsline {subsubsection}{\numberline {5.2.4}不同材料测试}{36}{subsubsection.5.2.4}%
 \contentsline {subsubsection}{\numberline {5.2.5}不同脉冲数测试}{36}{subsubsection.5.2.5}%
 \contentsline {subsubsection}{\numberline {5.2.6}不同距离测试}{37}{subsubsection.5.2.6}%

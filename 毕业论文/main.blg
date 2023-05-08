@@ -39,10 +39,9 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Reference.bib
 Warning--entry type for "车载可视倒车雷达预警系统的研制" isn't style-file defined
 --line 127 of file Reference.bib
-Warning--I didn't find a database entry for "车载可视倒车雷达预警系统研制"
 You've used 20 entries,
             5374 wiz_defined-function locations,
-            1167 strings with 11265 characters,
+            1166 strings with 11223 characters,
 and the built_in function-call counts, 73834 in all, are:
 = -- 1975
 > -- 7169
@@ -81,4 +80,4 @@ warning$ -- 0
 while$ -- 343
 width$ -- 0
 write$ -- 275
-(There were 2 warnings)
+(There was 1 warning)

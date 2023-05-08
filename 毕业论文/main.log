@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  29 APR 2023 11:56
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  30 APR 2023 09:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1404,14 +1404,19 @@ Underfull \vbox (badness 10000) detected at line 40
 ])
 \openout2 = `chapter/EnAbstract.aux'.
 
- (chapter/EnAbstract.tex [1
+ (chapter/EnAbstract.tex
+Overfull \hbox (8.97931pt too wide) in paragraph at lines 6--6
+[]\TU/TimesNewRoman(0)/m/n/12.045 Compared to traditional MCU control, this des
+ign uses a CPLD chip to control the TUSS4470
+ []
 
-
-
-
-
-]) (main.toc
 [1
+
+
+
+
+
+]) (main.toc [1
 
 
 
@@ -1572,12 +1577,24 @@ File: figure/SPI Program Flow Chart.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+Overfull \hbox (0.45932pt too wide) in paragraph at lines 106--108
+[]\TU/SimSun(0)/m/n/12.045 图 中 \TU/TimesNewRoman(0)/m/n/12.045 SPI_CNT \TU/SimS
+un(0)/m/n/12.045 用 于 记 录 收 发 数 据 的 帧 数\TU/TimesNewRoman(0)/m/n/12.045 ;DONE \TU
+/SimSun(0)/m/n/12.045 为 每 帧 数 据 发 送 完 成 标 志 位\TU/TimesNewRoman(0)/m/n/12.045 ;W
+ORK
+ []
+
 [22]
 File: figure/SPI Frame.png Graphic file (type bmp)
 <figure/SPI Frame.png>
 File: figure/SPI Transfer Sequence.png Graphic file (type bmp)
 <figure/SPI Transfer Sequence.png>
- [23] [24] [25]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23] [24] [25]
 File: figure/IO MODE1.png Graphic file (type bmp)
 <figure/IO MODE1.png>
 File: figure/single pulse control.png Graphic file (type bmp)
@@ -1715,12 +1732,12 @@ nput line 5.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A686E6547B89CB661D49501818ED771E;7872.
+(rerunfilecheck)             Checksum: 30A9732FEACDBD7C6237DC5822AFEEBA;7936.
  ) 
 Here is how much of TeX's memory you used:
  45135 strings out of 410532
  1085796 string characters out of 2820404
- 1788617 words of memory out of 3000000
+ 1788631 words of memory out of 3000000
  65467 multiletter control sequences out of 15000+600000
  492134 words of font info for 165 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
