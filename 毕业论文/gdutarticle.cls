@@ -40,6 +40,7 @@
 \RequirePackage{pgfplots} % 解决 warning
 \pgfplotsset{compat=1.18}
 
+
 \RequirePackage{setspace} % 有人反映缺乏此宏包
 % \RequirePackage{cite} % 引用
 %----------------------- 定义计数器 -----------------------
@@ -101,6 +102,7 @@
 \renewcommand{\headrulewidth}{0pt}
 % 设置页脚横线粗细
 \renewcommand{\footrulewidth}{0pt}
+
 
 %---------------------- 跳转链接样式 -----------------------
 \hypersetup{colorlinks = true, linkcolor = black, anchorcolor = blue, citecolor = black, CJKbookmarks = true,urlcolor = black}
@@ -480,11 +482,11 @@
     #1#2
 }
 %------------------------ 自动加载 ------------------------
-\AtBeginDocument{
-    \ifcoverpage
-        \makecover
-    \fi
-    \ifspine
-        \makespine
-    \fi
-}
+% \AtBeginDocument{
+%     \ifcoverpage
+%         \makecover
+%     \fi
+%     \ifspine
+%         \makespine
+%     \fi
+%}
