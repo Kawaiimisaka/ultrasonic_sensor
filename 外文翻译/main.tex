@@ -1,0 +1,61 @@
+\documentclass{gdutarticle}
+%\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+%\addbibresource{References.bib}
+\newcommand\myemptypage{%插入空白页便于打印
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+\infosetup{
+  subject = 本科毕业设计（论文）,
+  title  = 高测量速率下具有串扰抑制的超声波测距方法,
+  subtitle = Ultrasonic Distance Measurement Method With Crosstalk Rejection at High Measurement Rate,
+  college = 机电工程学院,
+  major   = 机械电子工程,
+  grade   = 2019级(2)班,
+  stuid   = 3119000323,
+  name    = 周浩能,
+  teacher = 刘桂贤
+}
+
+
+
+\includeonly{
+	chapter/第一章.tex,
+	chapter/第二章.tex
+}
+
+
+
+
+\begin{document}
+\makecover
+%\myemptypage
+
+%\makespine
+%\myemptypage
+
+%\include{chapter/ZhAbstract.tex}
+%\myemptypage
+
+%\include{chapter/EnAbstract.tex}
+%\myemptypage
+
+\makecontent
+\include{chapter/第一章.tex}
+\include{chapter/第二章.tex}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
