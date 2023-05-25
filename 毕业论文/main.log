@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  20 MAY 2023 19:21
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.10) (preloaded format=xelatex 2023.4.17)  25 MAY 2023 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1608,21 +1608,21 @@ File: figure/TESTBENCH structure.png Graphic file (type bmp)
 File: figure/overall wave simulation.png Graphic file (type bmp)
 <figure/overall wave simulation.png>
 
-Overfull \hbox (22.76358pt too wide) in paragraph at lines 289--289
+Overfull \hbox (22.76358pt too wide) in paragraph at lines 296--296
 [][] 
  []
 
 File: figure/spi wave simulation.png Graphic file (type bmp)
 <figure/spi wave simulation.png>
 
-Overfull \hbox (22.76358pt too wide) in paragraph at lines 296--296
+Overfull \hbox (22.76358pt too wide) in paragraph at lines 303--303
 [][] 
  []
 
 File: figure/pulse wave simulation.png Graphic file (type bmp)
 <figure/pulse wave simulation.png>
 
-Overfull \hbox (22.76358pt too wide) in paragraph at lines 302--302
+Overfull \hbox (22.76358pt too wide) in paragraph at lines 309--309
 [][] 
  []
 
@@ -1632,17 +1632,21 @@ Overfull \hbox (22.76358pt too wide) in paragraph at lines 302--302
  (chapter/第五章.tex
 File: figure/physical map.png Graphic file (type bmp)
 <figure/physical map.png>
-File: figure/debug waveform1.png Graphic file (type bmp)
-<figure/debug waveform1.png>
  [30
 
 
 
 
 ]
+File: figure/debug waveform1.png Graphic file (type bmp)
+<figure/debug waveform1.png>
+
+
+LaTeX Warning: Reference `SPI数据结构图1' on page 31 undefined on input line 27.
+
 File: figure/debug waveform2.png Graphic file (type bmp)
 <figure/debug waveform2.png>
- [31]
+[31]
 File: figure/debug waveform9.png Graphic file (type bmp)
 <figure/debug waveform9.png>
 File: figure/debug waveform3.png Graphic file (type bmp)
@@ -1664,7 +1668,7 @@ File: figure/虚拟示波器.png Graphic file (type bmp)
 File: figure/实验器材图.png Graphic file (type bmp)
 <figure/实验器材图.png>
 
-Overfull \hbox (12.04498pt too wide) in paragraph at lines 102--110
+Overfull \hbox (12.04498pt too wide) in paragraph at lines 110--118
  [][][][] 
  []
 
@@ -1676,7 +1680,7 @@ File: figure/G1.png Graphic file (type bmp)
 File: figure/G2.png Graphic file (type bmp)
 <figure/G2.png>
 
-Overfull \hbox (12.04498pt too wide) in paragraph at lines 208--216
+Overfull \hbox (12.04498pt too wide) in paragraph at lines 217--225
  [][][][] 
  []
 
@@ -1731,14 +1735,17 @@ nput line 5.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C0662B84943CD819905AA66B166FC504;7960.
+(rerunfilecheck)             Checksum: 30A9732FEACDBD7C6237DC5822AFEEBA;7936.
  ) 
 Here is how much of TeX's memory you used:
- 45136 strings out of 410532
- 1085807 string characters out of 2820404
- 1790877 words of memory out of 3000000
- 65468 multiletter control sequences out of 15000+600000
+ 45127 strings out of 410532
+ 1085077 string characters out of 2820404
+ 1790817 words of memory out of 3000000
+ 65459 multiletter control sequences out of 15000+600000
  492134 words of font info for 165 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,18n,131p,1264b,2087s stack positions out of 10000i,1000n,20000p,200000b,80000s

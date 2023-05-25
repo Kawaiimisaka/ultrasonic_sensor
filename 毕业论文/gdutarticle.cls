@@ -157,7 +157,7 @@
             \bfseries\zihao{2}{\cjkht\GDUT@info@title} \\
 
             \ifdefined\GDUT@info@subtitle
-            \bfseries\zihao{-2}{\tnr \GDUT@info@subtitle}
+            \bfseries\zihao{-2}{\tnr \GDUT@info@subtitle}%外文题目
             \fi
 
         }\vfill
@@ -441,12 +441,17 @@
     showstringspaces=false                        
 }
 %------------------------ 参考文献 ------------------------
+
 \bibliographystyle{gbt7714-numerical}
 \newcommand{\makereference}[1]{
     \clearpage
     \phantomsection
     \addcontentsline{toc}{section}{参考文献}
-    \bibliography{#1}
+	\linespread{1.5}
+	\setlength{\bibsep}{0em} % 设置参考文献条目间的距离
+	\bibliography{#1}   % 参考文献
+	
+       
 }
 \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
 

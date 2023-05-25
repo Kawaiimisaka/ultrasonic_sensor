@@ -15,44 +15,50 @@
 
 \subsubsection{超声波接近传感器的调试}
 通过示波器对各引脚输出的波形进行检测，然后修改程序，直至每个引脚可以输出正常波形，以下为传感器正常工作时各引脚输出的波形。\par
+如图\ref{SPI发送数据波形图}，为采样率100MHz时示波器采集的波形，上方蓝色的为NSS端口的波形，下方黄色的为MOSI端口向驱动芯片发送的配置数据。可以看到，当NSS信号拉低时，MCU开始发送数据，等待一帧数据发送完成后，NSS拉高，并且在下一帧数据发送前，NSS会再次拉低，以实现低-高-低的过程。本设计的程序可以实现连续发送10帧配置数据的功能。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform1.png}
 	\caption{SPI发送数据波形图}
 	\label{SPI发送数据波形图}
 \end{figure}\par
-如图\ref{SPI发送数据波形图}，为采样率100MHz时示波器采集的波形，上方蓝色的为NSS端口的波形，下方黄色的为MOSI端口向驱动芯片发送的配置数据。可以看到，当NSS信号拉低时，MCU开始发送数据，等待一帧数据发送完成后，NSS拉高，并且在下一帧数据发送前，NSS会再次拉低，以实现低-高-低的过程。本设计的程序可以实现连续发送10帧配置数据的功能。
+
+
+图\ref{SPI接收数据波形图}为SPI接收数据的波形图，上方蓝色的波形为NSS端口发送的信号，下方黄色的为MISO端口接收的波形信号。当每次NSS信号拉低时，超声驱动芯片会向MCU返回数据，返回数据的结构如图\ref{SPI数据结构图1}和表\ref{芯片状态表}所示，当传感器正常工作时，只有VDRV\_READY状态位为1，其余位都为0。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform2.png}
 	\caption{SPI接收数据波形图}
 	\label{SPI接收数据波形图}
 \end{figure}\par
-图\ref{SPI接收数据波形图}为SPI接收数据的波形图，上方蓝色的波形为NSS端口发送的信号，下方黄色的为MISO端口接收的波形信号。当每次NSS信号拉低时，超声驱动芯片会向MCU返回数据，返回数据的结构如图\ref{SPI数据结构图1}和表\ref{芯片状态表}所示，当传感器正常工作时，只有VDRV\_READY状态位为1，其余位都为0。
+
 \newpage
+如图\ref{io1、io2引脚波形图}所示，上方波形为io1端口信号，下方波形为io2端口信号，两引脚按照IO模式3产生信号，当io1引脚信号拉低时，io2开始产生波形，直到产生指定脉冲数波形后，io1拉高，停止产生波形。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform9.png}
 	\caption{io1、io2引脚波形图}
 	\label{io1、io2引脚波形图}
 \end{figure}\par
-如图\ref{io1、io2引脚波形图}所示，上方波形为io1端口信号，下方波形为io2端口信号，两引脚按照IO模式3产生信号，当io1引脚信号拉低时，io2开始产生波形，直到产生指定脉冲数波形后，io1拉高，停止产生波形。
 
+图\ref{超声探头波形图(50MHz采样频率)}为OUTA和OUTB引脚输出的波形，采样频率50MHz，可以看到，探头发出了10个周期频率为300kHz的脉冲波。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform3.png}
-	\caption{超声探头波形图1}
-	\label{超声探头波形图1}
+	\caption{超声探头波形图(50MHz采样频率)}
+	\label{超声探头波形图(50MHz采样频率)}
 \end{figure}\par
-图\ref{超声探头波形图1}为OUTA和OUTB引脚输出的波形，采样频率50MHz，可以看到，探头发出了10个周期频率为300kHz的脉冲波。
+
+图\ref{超声探头波形图(10MHz采样频率)}为示波器采样率10MHz时采集到的波形，超声探头连续的发送波形，以10个脉冲为发送周期，每过2.4ms完成一次脉冲的发送。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm]{figure/debug waveform4.png}
-	\caption{超声探头波形图2}
-	\label{超声探头波形图2}
+	\caption{超声探头波形图(10MHz采样频率)}
+	\label{超声探头波形图(10MHz采样频率)}
 \end{figure}\par
-图\ref{超声探头波形图2}为示波器采样率10MHz时采集到的波形，超声探头连续的发送波形，以10个脉冲为发送周期，每过2.4ms完成一次脉冲的发送。
+
 \newpage
+图\ref{VOUT引脚波形图（无物体遮挡）}为无物体遮挡的情况下，VOUT引脚输出的波形，采样频率为1MHz。第一个波峰为探头发出脉冲信号时所引起的干扰，在设计检测程序时需要屏蔽该段的信号，经测量，该段信号的持续时间约为发射脉冲后的0.5ms。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform5.png}
@@ -60,29 +66,31 @@
 	\label{VOUT引脚波形图（无物体遮挡）}
 \end{figure}\par
 
-图\ref{VOUT引脚波形图（无物体遮挡）}为无物体遮挡的情况下，VOUT引脚输出的波形，采样频率为1MHz。第一个波峰为探头发出脉冲信号时所引起的干扰，在设计检测程序时需要屏蔽该段的信号，经测量，该段信号的持续时间约为发射脉冲后的0.5ms。
+图\ref{VOUT引脚波形图（有物体遮挡）}为有物体遮挡时VOUT引脚的输出波形，采样频率为1MHz。当有物体遮挡时，发射的10个脉冲波遇到物体后会进行反射，重新被探头所接收。经过芯片的放大解调处理，形成第二个峰值较低的波峰。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform6.png}
 	\caption{VOUT引脚波形图（有物体遮挡）}
 	\label{VOUT引脚波形图（有物体遮挡）}
 \end{figure}\par
-图\ref{VOUT引脚波形图（有物体遮挡）}为有物体遮挡时VOUT引脚的输出波形，采样频率为1MHz。当有物体遮挡时，发射的10个脉冲波遇到物体后会进行反射，重新被探头所接收。经过芯片的放大解调处理，形成第二个峰值较低的波峰。
+
+图\ref{OUT4引脚波形图（无物体遮挡）}为OUT4引脚的输出波形，采样频率为1MHz。根据芯片手册中所介绍内容，我们不难知道，当VOUT引脚的电压值超过所设定的阈值时，OUT4引脚就会拉高。上图所示波形VOUT的阈值设置为0.9V，当VOUT形成第一个波峰时，电压值超过0.9V的频段OUT4也会拉高。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug waveform7.png}
 	\caption{OUT4引脚波形图（无物体遮挡）}
 	\label{OUT4引脚波形图（无物体遮挡）}
 \end{figure}\par
-图\ref{OUT4引脚波形图（无物体遮挡）}为OUT4引脚的输出波形，采样频率为1MHz。根据芯片手册中所介绍内容，我们不难知道，当VOUT引脚的电压值超过所设定的阈值时，OUT4引脚就会拉高。上图所示波形VOUT的阈值设置为0.9V，当VOUT形成第一个波峰时，电压值超过0.9V的频段OUT4也会拉高。
+
 \newpage
+图\ref{OUT4引脚波形图（有物体遮挡）}为有物体遮挡时OUT4引脚输出的波形，采样频率为1MHz。当有物体遮挡时，VOUT处理回波产生第二个波峰，而这第二个波峰才是检测所需要用到的有效信号。在这个频段中，VOUT电压值超过所设定的阈值，OUT4第二次拉高，该信号将作为检测物体的重要触发事件。为屏蔽OUT4的第一次拉高信号，在MAIN模块中需要延时一段时间，跳过第一个信号后再开始进行检测，此时只会检测到OUT4的第二个拉高信号，检测有效。
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=8cm,height=3.5cm]{figure/debug wave form8.png}
 	\caption{OUT4引脚波形图（有物体遮挡）}
 	\label{OUT4引脚波形图（有物体遮挡）}
 \end{figure}\par
-图\ref{OUT4引脚波形图（有物体遮挡）}为有物体遮挡时OUT4引脚输出的波形，采样频率为1MHz。当有物体遮挡时，VOUT处理回波产生第二个波峰，而这第二个波峰才是检测所需要用到的有效信号。在这个频段中，VOUT电压值超过所设定的阈值，OUT4第二次拉高，该信号将作为检测物体的重要触发事件。为屏蔽OUT4的第一次拉高信号，在MAIN模块中需要延时一段时间，跳过第一个信号后再开始进行检测，此时只会检测到OUT4的第二个拉高信号，检测有效。
+
 
 
 
@@ -111,11 +119,11 @@
 	\label{实验器材图}
 \end{figure}
 \subsubsection{超声波接近传感器性能参数测试}
-在本设计的实验中，对传感器的各性能参数进行了测试，如表所示，有效检测范围为100mm-200mm，传感器精度为1mm，LED检测指示灯刷新的频率为83.3Hz，即每过12ms完成一次检测状态的刷新。
+在本设计的实验中，对传感器的各性能参数进行了测试，如表\ref{性能参数表}所示，有效检测范围为100mm-200mm，传感器精度为1mm，LED检测指示灯刷新的频率为83.3Hz，即每过12ms完成一次检测状态的刷新。
 \begin{table}[!h]
 	\centering
 	\caption{性能参数表}
-	
+	\label{性能参数表}
 	\begin{GDUTtable}{\textwidth}{Y Y Y}
 		\textbf{参数名 }& \textbf{参数值} &\textbf{单位}    \\ 
 		\hline
@@ -166,10 +174,11 @@
 可以看到，在检测物体存在干扰时，可以通过调整检测逻辑来提高传感器的抗干扰性，保证其在各种复杂的应用场景都能正常工作。
 
 \subsubsection{不同材料测试}
-将测试物体放置在距离超声波传感器150mm的位置，每次发射脉冲数为8的脉冲，对于不同材料的检测物体进行测试，观察VOUT波形的峰值，测量五次取平均值。实验材料为亚克力板、纸板、陶瓷板、玻璃，实验结果如表所示。
+将测试物体放置在距离超声波传感器150mm的位置，每次发射脉冲数为8的脉冲，对于不同材料的检测物体进行测试，观察VOUT波形的峰值，测量五次取平均值。实验材料为亚克力板、纸板、陶瓷板、玻璃，实验结果如表\ref{不同材料测试结果}所示。
 \begin{table}[!h]
 	\centering
 	\caption{不同材料测试结果}
+	\label{不同材料测试结果}
 	\begin{GDUTtable}{\textwidth}{Y Y Y}
 		\textbf{材料类型 }& \textbf{VOUT波形峰值} &\textbf{单位}      \\
 		\hline
@@ -196,7 +205,7 @@
 图中每个数据点都为实验五次取平均值后的结果，可以看到，当每次发射脉冲波的脉冲数越多时，VOUT引脚的峰值就越大。
 
 \subsubsection{不同距离测试}
-以亚克力板和陶瓷板作为检测物体，将测试物体放置在距离传感器50mm，100mm，150mm，200mm，250mm的位置，测试其回波信号$t$值的大小，$t$值为波峰距离检测周期起点的时间，实验结果如图所示，图\ref{亚克力板}为亚克力板的实验结果作图，图\ref{陶瓷板}为陶瓷板的实验结果作图。
+以亚克力板和陶瓷板作为检测物体，将测试物体放置在距离传感器50mm，100mm，150mm，200mm，250mm的位置，测试其回波信号$t$值的大小，$t$值为波峰距离检测周期起点的时间，实验结果如图\ref{不同距离实验结果}所示，图\ref{亚克力板}为亚克力板的实验结果作图，图\ref{陶瓷板}为陶瓷板的实验结果作图。
 \begin{figure}[!h]
 	\centering
 	\subfloat[亚克力板]{
